@@ -1,0 +1,182 @@
+{
+  "config": {
+    "fasce": {
+      "fascia1Count": 4,
+      "fascia2Count": 2,
+      "fascia3Count": 2
+    }
+  },
+  "allenatori": [
+    {
+      "nome": "Mattia Beltrame",
+      "fascia": 1,
+      "foto": "images/mattia_beltrame.jpg"
+    },
+    {
+      "nome": "Federico Burello",
+      "fascia": 1,
+      "foto": "images/federico_burello.jpg"
+    },
+    { "nome": "Lorenzo Moro", "fascia": 1, "foto": "images/lorenzo_moro.jpg" },
+    {
+      "nome": "Kevin Di Bernardo",
+      "fascia": 1,
+      "foto": "images/kevin_di_bernardo.jpg"
+    },
+    {
+      "nome": "Denis Mascherin",
+      "fascia": 2,
+      "foto": "images/denis_mascherin.jpg"
+    },
+    {
+      "nome": "Cristian Tartaro",
+      "fascia": 2,
+      "foto": "images/cristian_tartaro.jpg"
+    },
+    {
+      "nome": "Alex Beltrame",
+      "fascia": 3,
+      "foto": "images/alex_beltrame.jpg"
+    },
+    { "nome": "Nicola Marano", "fascia": 3, "foto": "images/nicola_marano.jpg" }
+  ],
+  "classificaSerieA": [
+    { "pos": 1, "nome": "Milan", "punti": 31, "logo": "images/milan.png" },
+    { "pos": 2, "nome": "Napoli", "punti": 31, "logo": "images/napoli.png" },
+    { "pos": 3, "nome": "Inter", "punti": 30, "logo": "images/inter.png" },
+    { "pos": 4, "nome": "Roma", "punti": 27, "logo": "images/roma.png" },
+    { "pos": 5, "nome": "Bologna", "punti": 25, "logo": "images/bologna.png" },
+    { "pos": 6, "nome": "Como", "punti": 24, "logo": "images/como.png" },
+    {
+      "pos": 7,
+      "nome": "Juventus",
+      "punti": 23,
+      "logo": "images/juventus.png"
+    },
+    {
+      "pos": 8,
+      "nome": "Sassuolo",
+      "punti": 20,
+      "logo": "images/sassuolo.png"
+    },
+    {
+      "pos": 9,
+      "nome": "Cremonese",
+      "punti": 20,
+      "logo": "images/cremonese.png"
+    },
+    { "pos": 10, "nome": "Lazio", "punti": 19, "logo": "images/lazio.png" },
+    { "pos": 11, "nome": "Udinese", "punti": 18, "logo": "images/udinese.png" },
+    {
+      "pos": 12,
+      "nome": "Atalanta",
+      "punti": 16,
+      "logo": "images/atalanta.png"
+    },
+    {
+      "pos": 13,
+      "nome": "Cagliari",
+      "punti": 14,
+      "logo": "images/cagliari.png"
+    },
+    { "pos": 14, "nome": "Genoa", "punti": 14, "logo": "images/genoa.png" },
+    { "pos": 15, "nome": "Parma", "punti": 14, "logo": "images/parma.png" },
+    { "pos": 16, "nome": "Torino", "punti": 14, "logo": "images/torino.png" },
+    { "pos": 17, "nome": "Lecce", "punti": 13, "logo": "images/lecce.png" },
+    { "pos": 18, "nome": "Pisa", "punti": 10, "logo": "images/pisa.png" },
+    { "pos": 19, "nome": "Verona", "punti": 9, "logo": "images/verona.png" },
+    {
+      "pos": 20,
+      "nome": "Fiorentina",
+      "punti": 6,
+      "logo": "images/fiorentina.png"
+    }
+  ],
+  "classificaFantacalcio": [
+    { "pos": 1, "nome": "Napoli", "punti": 27, "logo": "images/napoli.png" },
+    { "pos": 2, "nome": "Inter", "punti": 25, "logo": "images/inter.png" },
+    { "pos": 3, "nome": "Milan", "punti": 25, "logo": "images/milan.png" },
+    {
+      "pos": 4,
+      "nome": "Atalanta",
+      "punti": 21,
+      "logo": "images/atalanta.png"
+    },
+    {
+      "pos": 5,
+      "nome": "Juventus",
+      "punti": 18,
+      "logo": "images/juventus.png"
+    },
+    { "pos": 6, "nome": "Lazio", "punti": 18, "logo": "images/lazio.png" },
+    { "pos": 7, "nome": "Roma", "punti": 14, "logo": "images/roma.png" },
+    { "pos": 8, "nome": "Bologna", "punti": 10, "logo": "images/bologna.png" }
+  ],
+  "palmares": {
+    "serieA": [
+      { "stagione": "2025/2026", "squadra": "", "allenatore": "" },
+      {
+        "stagione": "2024/2025",
+        "squadra": "Napoli",
+        "allenatore": "Mattia Beltrame",
+        "emoji": "🏆",
+        "cuore": "💙💙"
+      },
+      {
+        "stagione": "2023/2024",
+        "squadra": "Inter",
+        "allenatore": "Mattia Beltrame",
+        "emoji": "🏆",
+        "cuore": "🖤💙"
+      },
+      {
+        "stagione": "2022/2023",
+        "squadra": "Inter",
+        "allenatore": "Mattia Beltrame",
+        "emoji": "🏆",
+        "cuore": "🖤💙"
+      },
+      {
+        "stagione": "2021/2022",
+        "squadra": "Roma",
+        "allenatore": "Denis Mascherin",
+        "emoji": "🏆",
+        "cuore": "💛❤️"
+      }
+    ],
+    "coppaItalia": [
+      { "stagione": "2025/2026", "squadra": "", "allenatore": "" },
+      {
+        "stagione": "2024/2025",
+        "squadra": "Bologna",
+        "allenatore": "Federico Burello",
+        "emoji": "🏆",
+        "cuore": "❤️💙"
+      },
+      {
+        "stagione": "2023/2024",
+        "squadra": "Juventus",
+        "allenatore": "Denis Mascherin",
+        "emoji": "🏆",
+        "cuore": "🤍🖤"
+      }
+    ],
+    "worldCup": [
+      { "stagione": "2026", "squadra": "", "allenatore": "" },
+      {
+        "stagione": "2022",
+        "squadra": "Argentina",
+        "allenatore": "Kevin Sandri",
+        "bandiera": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
+      }
+    ],
+    "euro": [
+      {
+        "stagione": "2024",
+        "squadra": "Spagna",
+        "allenatore": "Cristian Tartaro",
+        "bandiera": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
+      }
+    ]
+  }
+}

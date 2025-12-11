@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANTA MASTERCHEF 2025-2026</title>
+    <link rel="stylesheet" href="sorteggiosquadre.css">
+    <link rel="stylesheet" href="ticker.css"> <!-- Collegamento al file CSS -->
+    <link rel="icon" type="image/png" href="images/Serie_A.png">
+</head>
+<body>
+    <header class="page-header">
+        <p class="eyebrow">Stagione 2025/2026 · Live Draw</p>
+        <h1>Sorteggio Fantacalcio Lega Udinese 1896</h1>
+        <p class="subtitle">Estrazione in diretta, panoramica fasce e classifiche sempre visibili.</p>
+    </header>
+
+    <nav class="section-nav">
+        <button class="chip-btn" onclick="document.getElementById('fasce').scrollIntoView({ behavior: 'smooth' })">Fasce</button>
+        <button class="chip-btn" onclick="document.getElementById('sorteggio').scrollIntoView({ behavior: 'smooth' })">Sorteggio</button>
+        <button class="chip-btn" onclick="document.getElementById('classifica').scrollIntoView({ behavior: 'smooth' })">Classifiche</button>
+        <button class="chip-btn" onclick="document.getElementById('palmares').scrollIntoView({ behavior: 'smooth' })">Palmarès</button>
+    </nav>
+
+    <div class="layout-grid">
+        <section class="panel" id="fasce">
+            <div class="section-header">
+                <h2>Suddivisione Fasce</h2>
+                <p class="helper-text">Aggiornata automaticamente con gli abbinamenti.</p>
+            </div>
+            <table id="tabellaFasce">
+                <thead>
+                    <tr>
+                        <th>Fascia</th>
+                        <th>Squadra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenuto popolato dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <main class="container main-card">
+            <section id="sorteggio">
+                <div class="section-header">
+                    <h2>Estrazione delle squadre</h2>
+                    <p class="helper-text">Premi per scoprire l'abbinamento successivo.</p>
+                </div>
+                <div class="actions">
+                    <button id="btnProssimo" onclick="mostraProssimo()">Mostra Prossima Squadra</button>
+                    <button id="btnRicomincia" class="ghost" onclick="ricominciaSorteggio()" style="display: none;">Ricomincia Sorteggio</button>
+                </div>
+            </section>
+
+            <section id="risultati">
+                <div class="section-header">
+                    <h2>Risultati</h2>
+                    <p class="helper-text">Le ultime estrazioni appaiono in cima.</p>
+                </div>
+                <ul id="output" class="results-list"></ul>
+            </section>
+        </main>
+
+        <section class="panel" id="classifica">
+            <div class="section-header">
+                <h2>Classifica Serie A Enilive 2025-2026</h2>
+                <p class="helper-text">Snapshot della stagione in corso.</p>
+            </div>
+            <table id="tabellaClassifica">
+                <thead>
+                    <tr>
+                        <th>Posizione</th>
+                        <th>Squadra</th>
+                        <th>Punti</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- La classifica verrà popolata dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer id="palmares" class="panel palmares">
+        <div class="section-header">
+            <h2>Palmarès</h2>
+            <p class="helper-text">Ultimi vincitori e allenatori protagonisti.</p>
+        </div>
+        <div id="palmares-content" class="palmares-grid"></div>
+    </footer>
+    
+    <!-- Script principali -->
+    <script src="js/sorteggiosquadre.js"></script>
+    <script src="js/menuDestra.js"></script>
+    <script src="js/menuSotto.js"></script>
+    <script src="js/classificaFantacalcio.js"></script>
+    <script src="js/menuFasce.js"></script> <!-- Nuovo file JS per il menu delle fasce -->
+</body>
+</html>
