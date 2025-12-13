@@ -75,29 +75,29 @@
       "logo": "images/atalanta.png"
     },
     {
-      "pos": 13,
+      "pos": 14,
       "nome": "Cagliari",
       "punti": 14,
       "logo": "images/cagliari.png"
     },
-    { "pos": 14,
+    { "pos": 15,
       "nome": "Genoa",
       "punti": 14,
       "logo": "images/genoa.png" 
     },
-    { "pos": 15,
+    { "pos": 16,
       "nome": "Parma",
       "punti": 14,
        "logo": "images/parma.png" 
     },
-    { "pos": 16,
+    { "pos": 17,
      "nome": "Torino",
       "punti": 14, 
       "logo": "images/torino.png" 
     },
-    { "pos": 17,
+    { "pos": 13,
       "nome": "Lecce",
-       "punti": 13, 
+       "punti": 16, 
        "logo": "images/lecce.png" 
     },
     { "pos": 18,
@@ -118,14 +118,14 @@
     }
   ],
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Napoli", "punti": 27, "logo": "images/napoli.png" },
-    { "pos": 2, "nome": "Inter", "punti": 25, "logo": "images/inter.png" },
-    { "pos": 3, "nome": "Milan", "punti": 25, "logo": "images/milan.png" },
-    { "pos": 4, "nome": "Atalanta", "punti": 21, "logo": "images/atalanta.png" },
-    { "pos": 5, "nome": "Juventus","punti": 18, "logo": "images/juventus.png" },
-    { "pos": 6, "nome": "Lazio", "punti": 18, "logo": "images/lazio.png" },
-    { "pos": 7, "nome": "Roma", "punti": 14, "logo": "images/roma.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 10, "logo": "images/bologna.png" }
+    { "pos": 1, "nome": "Napoli", "punti": 28, "logo": "images/napoli.png" },
+    { "pos": 2, "nome": "Inter", "punti": 26, "logo": "images/inter.png" },
+    { "pos": 3, "nome": "Milan", "punti": 26, "logo": "images/milan.png" },
+    { "pos": 4, "nome": "Atalanta", "punti": 22, "logo": "images/atalanta.png" },
+    { "pos": 5, "nome": "Juventus","punti": 19, "logo": "images/juventus.png" },
+    { "pos": 6, "nome": "Lazio", "punti": 19, "logo": "images/lazio.png" },
+    { "pos": 7, "nome": "Roma", "punti": 15, "logo": "images/roma.png" },
+    { "pos": 8, "nome": "Bologna", "punti": 11, "logo": "images/bologna.png" }
   ],
   "palmares": {
     "serieA": [
