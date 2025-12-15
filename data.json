@@ -120,7 +120,7 @@
   "classificaFantacalcio": [
     { "pos": 1, "nome": "Milan", "punti": 28, "logo": "images/milan.png" },
     { "pos": 2, "nome": "Napoli", "punti": 27, "logo": "images/napoli.png" },
-    { "pos": 3, "nome": "Inter", "punti": 25, "logo": "images/milan.png" },
+    { "pos": 3, "nome": "Inter", "punti": 25, "logo": "images/inter.png" },
     { "pos": 4, "nome": "Atalanta", "punti": 24, "logo": "images/atalanta.png" },
     { "pos": 5, "nome": "Lazio","punti": 19, "logo": "images/lazio.png" },
     { "pos": 6, "nome": "Juventus", "punti": 18, "logo": "images/juventus.png" },
