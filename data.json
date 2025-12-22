@@ -30,12 +30,12 @@
     },
     {
       "nome": "Cristian Tartaro",
-      "fascia": 2,
+      "fascia": 3,
       "foto": "images/cristian_tartaro.jpg"
     },
     {
       "nome": "Alex Beltrame",
-      "fascia": 3,
+      "fascia": 2,
       "foto": "images/alex_beltrame.jpg"
     },
     { 
@@ -49,50 +49,50 @@
     { "pos": 2, "nome": "Milan", "punti": 32, "logo": "images/milan.png" },
     { "pos": 3, "nome": "Napoli", "punti": 31, "logo": "images/napoli.png" },
     { "pos": 4, "nome": "Roma", "punti": 30, "logo": "images/roma.png" },
-    { "pos": 5, "nome": "Juventus", "punti": 26, "logo": "images/juventus.png" },
+    { "pos": 5, "nome": "Juventus", "punti": 29, "logo": "images/juventus.png" },
     { "pos": 6, "nome": "Bologna", "punti": 25, "logo": "images/bologna.png" },
     { "pos": 7, "nome": "Como", "punti": 24, "logo": "images/como.png" },
-    { "pos": 8, "nome": "Lazio", "punti": 22, "logo": "images/lazio.png" },
+    { "pos": 8, "nome": "Lazio", "punti": 23, "logo": "images/lazio.png" },
     {
       "pos": 11,
       "nome": "Cremonese",
-      "punti": 20,
+      "punti": 21,
       "logo": "images/cremonese.png"
     },
-    { "pos": 9,
+    { "pos": 10,
        "nome": "Sassuolo",
         "punti": 21, 
         "logo": "images/sassuolo.png" 
       },
-    { "pos": 10,
+    { "pos": 12,
      "nome": "Udinese",
       "punti": 21, 
       "logo": "images/udinese.png" },
     {
-      "pos": 12,
+      "pos": 9,
       "nome": "Atalanta",
-      "punti": 19,
+      "punti": 22,
       "logo": "images/atalanta.png"
     },
     {
       "pos": 15,
       "nome": "Cagliari",
-      "punti": 14,
+      "punti": 15,
       "logo": "images/cagliari.png"
     },
-    { "pos": 16,
+    { "pos": 17,
       "nome": "Genoa",
       "punti": 14,
       "logo": "images/genoa.png" 
     },
-    { "pos": 17,
+    { "pos": 16,
       "nome": "Parma",
       "punti": 14,
        "logo": "images/parma.png" 
     },
     { "pos": 13,
      "nome": "Torino",
-      "punti": 17, 
+      "punti": 20, 
       "logo": "images/torino.png" 
     },
     { "pos": 14,
@@ -102,7 +102,7 @@
     },
     { "pos": 19,
      "nome": "Pisa", 
-     "punti": 10, 
+     "punti": 11, 
      "logo": "images/pisa.png" 
     },
     { "pos": 18,
@@ -113,7 +113,7 @@
     {
       "pos": 20,
       "nome": "Fiorentina",
-      "punti": 6,
+      "punti": 9,
       "logo": "images/fiorentina.png"
     }
   ],
