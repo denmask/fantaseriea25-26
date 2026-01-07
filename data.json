@@ -48,9 +48,9 @@
     { "pos": 1, "nome": "Inter", "punti": 39, "logo": "images/inter.png" },
     { "pos": 2, "nome": "Milan", "punti": 38, "logo": "images/milan.png" },
     { "pos": 3, "nome": "Napoli", "punti": 37, "logo": "images/napoli.png" },
-    { "pos": 4, "nome": "Juventus", "punti": 33, "logo": "images/juventus.png" },
-    { "pos": 5, "nome": "Roma", "punti": 33, "logo": "images/roma.png" },
-    { "pos": 6, "nome": "Como", "punti": 30, "logo": "images/como.png" },
+    { "pos": 4, "nome": "Juventus", "punti": 36, "logo": "images/juventus.png" },
+    { "pos": 5, "nome": "Roma", "punti": 36, "logo": "images/roma.png" },
+    { "pos": 6, "nome": "Como", "punti": 33, "logo": "images/como.png" },
     { "pos": 7, "nome": "Bologna", "punti": 26, "logo": "images/bologna.png" },
     { "pos": 8, "nome": "Atalanta", "punti": 25, "logo": "images/atalanta.png" },
     {
@@ -118,14 +118,14 @@
     }
   ],
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Milan", "punti": 34, "logo": "images/milan.png" },
-    { "pos": 2, "nome": "Napoli", "punti": 33, "logo": "images/napoli.png" },
+    { "pos": 1, "nome": "Milan", "punti": 35, "logo": "images/milan.png" },
+    { "pos": 2, "nome": "Napoli", "punti": 34, "logo": "images/napoli.png" },
     { "pos": 3, "nome": "Atalanta", "punti": 30, "logo": "images/atalanta.png" },
-    { "pos": 4, "nome": "Inter", "punti": 28, "logo": "images/inter.png" },
-    { "pos": 5, "nome": "Roma","punti": 20, "logo": "images/roma.png" },
-    { "pos": 6, "nome": "Juventus", "punti": 18, "logo": "images/juventus.png" },
-    { "pos": 7, "nome": "Lazio", "punti": 18, "logo": "images/lazio.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 13, "logo": "images/bologna.png" }
+    { "pos": 4, "nome": "Inter", "punti": 29, "logo": "images/inter.png" },
+    { "pos": 5, "nome": "Roma","punti": 21, "logo": "images/roma.png" },
+    { "pos": 6, "nome": "Juventus", "punti": 21, "logo": "images/juventus.png" },
+    { "pos": 7, "nome": "Lazio", "punti": 19, "logo": "images/lazio.png" },
+    { "pos": 8, "nome": "Bologna", "punti": 14, "logo": "images/bologna.png" }
   ],
   "palmares": {
     "serieA": [
