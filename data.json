@@ -46,7 +46,7 @@
   ],
   "classificaSerieA": [
     { "pos": 1, "nome": "Inter", "punti": 42, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Milan", "punti": 41, "logo": "images/milan.png" },
+    { "pos": 2, "nome": "Milan", "punti": 39, "logo": "images/milan.png" },
     { "pos": 3, "nome": "Napoli", "punti": 38, "logo": "images/napoli.png" },
     { "pos": 4, "nome": "Juventus", "punti": 36, "logo": "images/juventus.png" },
     { "pos": 5, "nome": "Roma", "punti": 36, "logo": "images/roma.png" },
@@ -56,7 +56,7 @@
     {
       "pos": 13,
       "nome": "Cremonese",
-      "punti": 21,
+      "punti": 22,
       "logo": "images/cremonese.png"
     },
     { "pos": 10,
@@ -77,12 +77,12 @@
     {
       "pos": 14,
       "nome": "Cagliari",
-      "punti": 18,
+      "punti": 19,
       "logo": "images/cagliari.png"
     },
     { "pos": 17,
       "nome": "Genoa",
-      "punti": 15,
+      "punti": 16,
       "logo": "images/genoa.png" 
     },
     { "pos": 15,
