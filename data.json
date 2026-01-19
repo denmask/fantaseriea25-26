@@ -45,13 +45,13 @@
     }
   ],
   "classificaSerieA": [
-    { "pos": 1, "nome": "Inter", "punti": 46, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Milan", "punti": 43, "logo": "images/milan.png" },
-    { "pos": 3, "nome": "Napoli", "punti": 40, "logo": "images/napoli.png" },
-    { "pos": 4, "nome": "Juventus", "punti": 39, "logo": "images/juventus.png" },
-    { "pos": 5, "nome": "Roma", "punti": 39, "logo": "images/roma.png" },
+    { "pos": 1, "nome": "Inter", "punti": 49, "logo": "images/inter.png" },
+    { "pos": 2, "nome": "Milan", "punti": 46, "logo": "images/milan.png" },
+    { "pos": 3, "nome": "Napoli", "punti": 43, "logo": "images/napoli.png" },
+    { "pos": 4, "nome": "Roma", "punti": 42, "logo": "images/roma.png" },
+    { "pos": 5, "nome": "Juventus", "punti": 39, "logo": "images/juventus.png" },
     { "pos": 6, "nome": "Como", "punti": 34, "logo": "images/como.png" },
-    { "pos": 7, "nome": "Atalanta", "punti": 31, "logo": "images/atalanta.png" },
+    { "pos": 7, "nome": "Atalanta", "punti": 32, "logo": "images/atalanta.png" },
     { "pos": 8, "nome": "Bologna", "punti": 30, "logo": "images/bologna.png" },
     {
       "pos": 9,
@@ -70,44 +70,44 @@
       "logo": "images/sassuolo.png" },
     {
       "pos": 12,
+      "nome": "Parma",
+      "punti": 23,
+      "logo": "images/parma.png"
+    },
+    {
+      "pos": 13,
       "nome": "Torino",
       "punti": 23,
       "logo": "images/torino.png"
     },
-    {
-      "pos": 13,
+    { "pos": 14,
       "nome": "Cremonese",
       "punti": 22,
-      "logo": "images/cremonese.png"
-    },
-    { "pos": 14,
-      "nome": "Parma",
-      "punti": 22,
-      "logo": "images/parma.png" 
+      "logo": "images/cremonese.png" 
     },
     { "pos": 15,
-      "nome": "Genoa",
-      "punti": 19,
-       "logo": "images/genoa.png" 
+      "nome": "Cagliari",
+      "punti": 22,
+       "logo": "images/cagliari.png" 
     },
     { "pos": 16,
-     "nome": "Cagliari",
-      "punti": 19, 
-      "logo": "images/cagliari.png" 
+     "nome": "Genoa",
+      "punti": 20, 
+      "logo": "images/genoa.png" 
     },
     { "pos": 17,
-      "nome": "Lecce",
+      "nome": "Fiorentina",
        "punti": 17, 
-       "logo": "images/lecce.png" 
+       "logo": "images/fiorentina.png" 
     },
     { "pos": 18,
-     "nome": "Fiorentina", 
+     "nome": "Lecce", 
      "punti": 14, 
      "logo": "images/fiorentina.png" 
     },
     { "pos": 19,
      "nome": "Pisa", 
-     "punti": 13, 
+     "punti": 14, 
      "logo": "images/pisa.png" 
     },
     {
@@ -118,13 +118,13 @@
     }
   ],
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Napoli", "punti": 39, "logo": "images/napoli.png" },
-    { "pos": 2, "nome": "Inter", "punti": 37, "logo": "images/inter.png" },
-    { "pos": 3, "nome": "Atalanta", "punti": 37, "logo": "images/atalanta.png" },
-    { "pos": 4, "nome": "Milan", "punti": 35, "logo": "images/milan.png" },
+    { "pos": 1, "nome": "Napoli", "punti": 40, "logo": "images/napoli.png" },
+    { "pos": 2, "nome": "Inter", "punti": 40, "logo": "images/inter.png" },
+    { "pos": 3, "nome": "Atalanta", "punti": 38, "logo": "images/atalanta.png" },
+    { "pos": 4, "nome": "Milan", "punti": 36, "logo": "images/milan.png" },
     { "pos": 5, "nome": "Juventus","punti": 25, "logo": "images/juventus.png" },
     { "pos": 6, "nome": "Roma", "punti": 21, "logo": "images/roma.png" },
-    { "pos": 7, "nome": "Lazio", "punti": 18, "logo": "images/lazio.png" },
+    { "pos": 7, "nome": "Lazio", "punti": 21, "logo": "images/lazio.png" },
     { "pos": 8, "nome": "Bologna", "punti": 17, "logo": "images/bologna.png" }
   ],
   "palmares": {
