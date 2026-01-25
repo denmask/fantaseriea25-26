@@ -76,14 +76,14 @@
     },
     {
       "pos": 13,
-      "nome": "Parma",
-      "punti": 24,
-      "logo": "images/parma.png"
-    },
-    { "pos": 14,
       "nome": "Cremonese",
       "punti": 23,
-      "logo": "images/cremonese.png" 
+      "logo": "images/cremonese.png"
+    },
+    { "pos": 14,
+      "nome": "Parma",
+      "punti": 23,
+      "logo": "images/parma.png" 
     },
     { "pos": 15,
       "nome": "Torino",
