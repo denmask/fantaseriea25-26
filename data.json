@@ -52,7 +52,7 @@
     { "pos": 5, "nome": "Como", "punti": 40, "logo": "images/como.png" },
     { "pos": 6, "nome": "Juventus", "punti": 39, "logo": "images/juventus.png" },
     { "pos": 7, "nome": "Atalanta", "punti": 35, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 31, "logo": "images/bologna.png" },
+    { "pos": 8, "nome": "Bologna", "punti": 33, "logo": "images/bologna.png" },
     {
       "pos": 9,
       "nome": "Lazio",
