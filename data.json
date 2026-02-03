@@ -55,14 +55,14 @@
     { "pos": 8, "nome": "Lazio", "punti": 32, "logo": "images/lazio.png" },
     {
       "pos": 9,
-      "nome": "Bologna",
-      "punti": 30,
-      "logo": "images/bologna.png"
+      "nome": "Udinese",
+      "punti": 32,
+      "logo": "images/udinese.png"
     },
     { "pos": 10,
-       "nome": "Udinese",
-        "punti": 29, 
-        "logo": "images/udinese.png" 
+       "nome": "Bologna",
+        "punti": 30, 
+        "logo": "images/bologna.png" 
       },
     { "pos": 11,
      "nome": "Sassuolo",
