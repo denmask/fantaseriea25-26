@@ -31,12 +31,12 @@
     },
     {
       "nome": "Alex Beltrame",
-      "fascia": 3,
+      "fascia": 2,
       "foto": "images/alex_beltrame.jpg"
     },
     {
       "nome": "Cristian Tartaro",
-      "fascia": 2,
+      "fascia": 3,
       "foto": "images/cristian_tartaro.jpg"
     },
     { 
@@ -98,7 +98,7 @@
     },
     { "pos": 17,
       "nome": "Lecce",
-       "punti": 21, 
+       "punti": 24, 
        "logo": "images/lecce.png" 
     },
     { "pos": 18,
