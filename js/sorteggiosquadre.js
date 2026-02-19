@@ -2,17 +2,13 @@ let dataSet = null;
 let fascia1_allenatori = [];
 let fascia2_allenatori = [];
 let fascia3_allenatori = [];
-
 let fascia1_squadre = [];
 let fascia2_squadre = [];
 let fascia3_squadre_pure = [];
 let resto_squadre = [];
-
 let logoPerSquadra = {};
 let fotoAllenatore = {};
-
 let fasceCalcolate = { fascia1: [], fascia2: [], fascia3_pure: [], resto: [] };
-
 let risultati = [];
 let risultatiMostrati = 0;
 let audio = null;
@@ -56,10 +52,6 @@ function caricaEstrazioni() {
   return estrazioni ? JSON.parse(estrazioni) : [];
 }
 
-function mostraEstrazioniSalvate() {
-  return caricaEstrazioni();
-}
-
 function visualizzaStorico() {
   const estrazioni = caricaEstrazioni();
   if (estrazioni.length === 0) {
@@ -80,61 +72,38 @@ function visualizzaStorico() {
         <strong>${fascia}:</strong> ${dettagli}
       </li>`;
     });
-    html += `</ul>
-      <button onclick="eliminaEstrazione(${realIndex})" style="margin-top: 10px; padding: 5px 15px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer;">
-        Elimina questa estrazione
-      </button>
-    </div>`;
+    html += `</ul><button onclick="eliminaEstrazione(${realIndex})" style="margin-top: 10px; padding: 5px 15px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer;">Elimina</button></div>`;
   });
   html += "</div>";
-  const container = document.getElementById("output");
-  const storicoDiv = document.createElement("div");
-  storicoDiv.innerHTML = html;
-  container.insertBefore(storicoDiv, container.firstChild);
+  document.getElementById("output").innerHTML = html;
 }
 
 function eliminaEstrazione(index) {
-  if (confirm("Sei sicuro di voler eliminare questa estrazione?")) {
+  if (confirm("Sei sicuro?")) {
     let estrazioni = caricaEstrazioni();
     estrazioni.splice(index, 1);
     localStorage.setItem("estrazioniFantacalcio", JSON.stringify(estrazioni));
-    alert("Estrazione eliminata!");
-    document.getElementById("output").innerHTML = "";
     visualizzaStorico();
   }
 }
 
 function resetCompleto() {
-  if (confirm("Sei sicuro di voler eliminare TUTTO? Questo cancellerà:\n- Tutte le estrazioni nello storico\n- L'estrazione corrente in corso\n\nQuesta operazione non può essere annullata!")) {
+  if (confirm("Vuoi eliminare tutto?")) {
     localStorage.removeItem("estrazioniFantacalcio");
     localStorage.removeItem("estrazioneCorrente");
-    risultati = [];
-    risultatiMostrati = 0;
-    document.getElementById("output").innerHTML = "";
-    inizializzaSorteggio();
-    alert("Reset completo eseguito! Tutte le estrazioni sono state eliminate.");
+    location.reload();
   }
 }
 
 function inizializzaZoneFasce() {
   const output = document.getElementById("output");
   output.innerHTML = "";
-
-  const zonaF1 = document.createElement("div");
-  zonaF1.id = "zona-fascia-1";
-  zonaF1.classList.add("zona-fascia");
-
-  const zonaF2 = document.createElement("div");
-  zonaF2.id = "zona-fascia-2";
-  zonaF2.classList.add("zona-fascia");
-
-  const zonaF3 = document.createElement("div");
-  zonaF3.id = "zona-fascia-3";
-  zonaF3.classList.add("zona-fascia");
-
-  output.appendChild(zonaF1);
-  output.appendChild(zonaF2);
-  output.appendChild(zonaF3);
+  ["zona-fascia-1", "zona-fascia-2", "zona-fascia-3"].forEach(id => {
+    const div = document.createElement("div");
+    div.id = id;
+    div.classList.add("zona-fascia");
+    output.appendChild(div);
+  });
 }
 
 function getZonaFascia(fasciaLabel) {
@@ -147,113 +116,24 @@ function getZonaFascia(fasciaLabel) {
 function creaCardEstrazione(fascia, allenatore, squadra, dettagli) {
   let evidenza = document.createElement("div");
   evidenza.classList.add("casella-evidenza");
-
   let etichettaFascia = document.createElement("div");
   etichettaFascia.classList.add("etichetta-fascia");
   etichettaFascia.textContent = fascia;
-
-  if (!allenatore || !squadra) {
-    let testo = document.createElement("p");
-    testo.innerHTML = `Errore di assegnazione. Dettagli: ${dettagli}`;
-    evidenza.appendChild(testo);
-  } else {
+  if (allenatore && squadra) {
     let imgAllenatore = document.createElement("img");
-    const foto = fotoAllenatore[allenatore] || `images/${allenatore.toLowerCase().replace(/ /g, "_")}.jpg`;
-    imgAllenatore.src = foto;
-    imgAllenatore.alt = `Foto di ${allenatore}`;
+    imgAllenatore.src = fotoAllenatore[allenatore] || `images/${allenatore.toLowerCase().replace(/ /g, "_")}.jpg`;
     imgAllenatore.classList.add("foto-allenatore");
-
     let imgSquadra = document.createElement("img");
-    const stemma = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
-    imgSquadra.src = stemma;
-    imgSquadra.alt = `Stemma ${squadra}`;
+    imgSquadra.src = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
     imgSquadra.classList.add("stemma-squadra");
-
     let testo = document.createElement("p");
     testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong>${squadra}</strong>!`;
-
     evidenza.appendChild(imgAllenatore);
     evidenza.appendChild(imgSquadra);
     evidenza.appendChild(testo);
   }
-
   evidenza.prepend(etichettaFascia);
   return evidenza;
-}
-
-function ripristinaRisultatiVisibili() {
-  inizializzaZoneFasce();
-
-  for (let i = 0; i < risultatiMostrati; i++) {
-    let risultato = risultati[i];
-    let [fascia, dettagli] = risultato.split(": ");
-    let [parte1, parte2] = dettagli.split(" -> ");
-
-    if (parte1 === "__HEADER__") {
-      let zona = getZonaFascia(fascia);
-      let header = document.createElement("div");
-      header.classList.add("fascia-header-annuncio");
-      header.textContent = parte2;
-      zona.appendChild(header);
-      continue;
-    }
-
-    let allenatore = parte1;
-    let squadra = parte2;
-    let card = creaCardEstrazione(fascia, allenatore, squadra, dettagli);
-    let zona = getZonaFascia(fascia);
-    zona.appendChild(card);
-  }
-
-  if (risultatiMostrati === risultati.length && risultati.length > 0) {
-    document.getElementById("btnProssimo").style.display = "none";
-    document.getElementById("btnRicomincia").style.display = "inline-block";
-  }
-}
-
-async function caricaDati() {
-  try {
-    const response = await fetch("data.json", { cache: "no-cache" });
-    if (!response.ok) throw new Error("Errore fetch data.json");
-    dataSet = await response.json();
-  } catch (error) {
-    console.error("Impossibile caricare data.json", error);
-    alert("Impossibile caricare data.json. Controlla il server locale.");
-    return;
-  }
-
-  const classifica = [...dataSet.classificaSerieA].sort((a, b) => a.pos - b.pos);
-  const fascia1Count = dataSet?.config?.fasce?.fascia1Count ?? 4;
-  const fascia2Count = dataSet?.config?.fasce?.fascia2Count ?? 2;
-  const fascia3Count = dataSet?.config?.fasce?.fascia3Count ?? 2;
-
-  const startF3 = fascia1Count + fascia2Count;
-  const endF3 = startF3 + fascia3Count;
-
-  fasceCalcolate.fascia1 = classifica.slice(0, fascia1Count);
-  fasceCalcolate.fascia2 = classifica.slice(fascia1Count, startF3);
-  fasceCalcolate.fascia3_pure = classifica.slice(startF3, endF3);
-  fasceCalcolate.resto = classifica.slice(endF3);
-
-  fascia1_squadre = fasceCalcolate.fascia1.map((s) => s.nome);
-  fascia2_squadre = fasceCalcolate.fascia2.map((s) => s.nome);
-  fascia3_squadre_pure = fasceCalcolate.fascia3_pure.map((s) => s.nome);
-  resto_squadre = fasceCalcolate.resto.map((s) => s.nome);
-
-  logoPerSquadra = Object.fromEntries(classifica.map((s) => [s.nome, s.logo]));
-  fotoAllenatore = Object.fromEntries((dataSet.allenatori || []).map((a) => [a.nome, a.foto]));
-
-  fascia1_allenatori = dataSet.allenatori.filter((a) => a.fascia === 1).map((a) => a.nome);
-  fascia2_allenatori = dataSet.allenatori.filter((a) => a.fascia === 2).map((a) => a.nome);
-  fascia3_allenatori = dataSet.allenatori.filter((a) => a.fascia === 3).map((a) => a.nome);
-
-  window.dataSet = dataSet;
-  window.fasceCalcolate = fasceCalcolate;
-
-  renderPalmares(dataSet?.palmares);
-
-  document.dispatchEvent(new CustomEvent("dati-caricati", { detail: dataSet }));
-  document.dispatchEvent(new CustomEvent("fasce-calcolate", { detail: fasceCalcolate }));
 }
 
 function renderFasceTable() {
@@ -262,17 +142,23 @@ function renderFasceTable() {
   tbody.innerHTML = "";
   const renderRow = (item, label, classe) => {
     const row = document.createElement("tr");
-    row.innerHTML = `
-      <td class="${classe}">${label}</td>
-      <td>
-        <img src="${item.logo || ""}" alt="${item.nome}" class="stemma">
-        ${item.nome}
-      </td>`;
+    row.innerHTML = `<td class="${classe}">${label}</td><td><img src="${item.logo || ""}" class="stemma"> ${item.nome}</td>`;
     tbody.appendChild(row);
   };
-  fasceCalcolate.fascia1.forEach((s) => renderRow(s, "Fascia 1", "fascia1"));
-  fasceCalcolate.fascia2.forEach((s) => renderRow(s, "Fascia 2", "fascia2"));
-  fasceCalcolate.fascia3_pure.forEach((s) => renderRow(s, "Fascia 3", "fascia3"));
+  fasceCalcolate.fascia1.forEach(s => renderRow(s, "Fascia 1", "fascia1"));
+  fasceCalcolate.fascia2.forEach(s => renderRow(s, "Fascia 2", "fascia2"));
+  fasceCalcolate.fascia3_pure.forEach(s => renderRow(s, "Fascia 3", "fascia3"));
+}
+
+function renderClassificaReale() {
+  const tbody = document.querySelector("#tabellaClassifica tbody");
+  if (!tbody) return;
+  tbody.innerHTML = "";
+  [...dataSet.classificaSerieA].sort((a,b) => a.pos - b.pos).forEach(s => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${s.pos}</td><td><img src="${s.logo}" class="stemma"> ${s.nome}</td><td>${s.punti}</td>`;
+    tbody.appendChild(row);
+  });
 }
 
 function renderPalmares(palmares) {
@@ -286,41 +172,41 @@ function renderPalmares(palmares) {
     h3.textContent = title;
     section.appendChild(h3);
     const ul = document.createElement("ul");
-    (items || []).forEach((item) => {
+    (items || []).forEach(item => {
       const li = document.createElement("li");
-      const labelEmoji = item.emoji ? `${item.emoji} ` : "";
-      const cuore = item.cuore ? ` ${item.cuore}` : "";
-      const allenatore = item.allenatore ? `<span class="allenatore">${item.allenatore}</span>` : "";
-      const bandiera = item.bandiera ? `<img src="${item.bandiera}" alt="${item.squadra}" style="width: 35px; height: 24px;">` : "";
-      const squadra = item.squadra ? item.squadra : "";
-      li.innerHTML = `${item.stagione}: ${labelEmoji}${squadra ? squadra : "🏆"} ${bandiera}${cuore} ${allenatore}`;
+      li.innerHTML = `${item.stagione}: ${item.emoji || ""} ${item.squadra || "🏆"} ${item.bandiera ? `<img src="${item.bandiera}" style="width:35px;height:24px;">` : ""} <span class="allenatore">${item.allenatore || ""}</span>`;
       ul.appendChild(li);
     });
     section.appendChild(ul);
     container.appendChild(section);
   };
-  makeList("Serie A TIM/Enilive", palmares.serieA);
-  makeList("Coppa Italia Frecciarossa", palmares.coppaItalia);
-  makeList("Fifa World Cup", palmares.worldCup);
-  makeList("Euro", palmares.euro);
+  makeList("Serie A", palmares.serieA);
+  makeList("Coppa Italia", palmares.coppaItalia);
 }
 
-function playSuspense() {
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-  }
-  audio = new Audio("countdown-suspense.mp3");
-  audio.loop = true;
-  audio.volume = 0.5;
-  audio.play();
-}
-
-function stopSuspense() {
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-  }
+async function caricaDati() {
+  try {
+    const response = await fetch("data.json", { cache: "no-cache" });
+    dataSet = await response.json();
+    const classifica = [...dataSet.classificaSerieA].sort((a, b) => a.pos - b.pos);
+    const f1c = dataSet?.config?.fasce?.fascia1Count ?? 4;
+    const f2c = dataSet?.config?.fasce?.fascia2Count ?? 2;
+    const f3c = dataSet?.config?.fasce?.fascia3Count ?? 2;
+    fasceCalcolate.fascia1 = classifica.slice(0, f1c);
+    fasceCalcolate.fascia2 = classifica.slice(f1c, f1c + f2c);
+    fasceCalcolate.fascia3_pure = classifica.slice(f1c + f2c, f1c + f2c + f3c);
+    logoPerSquadra = Object.fromEntries(classifica.map(s => [s.nome, s.logo]));
+    fotoAllenatore = Object.fromEntries((dataSet.allenatori || []).map(a => [a.nome, a.foto]));
+    fascia1_allenatori = dataSet.allenatori.filter(a => a.fascia === 1).map(a => a.nome);
+    fascia2_allenatori = dataSet.allenatori.filter(a => a.fascia === 2).map(a => a.nome);
+    fascia3_allenatori = dataSet.allenatori.filter(a => a.fascia === 3).map(a => a.nome);
+    fascia1_squadre = fasceCalcolate.fascia1.map(s => s.nome);
+    fascia2_squadre = fasceCalcolate.fascia2.map(s => s.nome);
+    fascia3_squadre_pure = fasceCalcolate.fascia3_pure.map(s => s.nome);
+    renderFasceTable();
+    renderClassificaReale();
+    renderPalmares(dataSet?.palmares);
+  } catch (e) { console.error(e); }
 }
 
 function shuffleArray(array) {
@@ -331,200 +217,134 @@ function shuffleArray(array) {
   return array;
 }
 
-function getSquadreVietateFascia1(allenatore, squadreDisponibili) {
-  const INTER = "Inter";
-  const MILAN = "Milan";
-  const JUVENTUS = "Juventus";
-
-  const interisti = ["Federico Burello", "Mattia Beltrame"];
-  const milanisti = ["Kevin Di Bernardo", "Lorenzo Moro"];
-  const noJuve = ["Federico Burello", "Mattia Beltrame", "Kevin Di Bernardo"];
-
-  let vietate = [];
-  if (interisti.includes(allenatore)) vietate.push(MILAN);
-  if (milanisti.includes(allenatore)) vietate.push(INTER);
-  if (noJuve.includes(allenatore)) vietate.push(JUVENTUS);
-
-  return vietate.filter((v) => squadreDisponibili.includes(v));
+function getSquadreVietateFascia1(allenatore, disponibili) {
+  const v = [];
+  if (["Federico Burello", "Mattia Beltrame"].includes(allenatore)) v.push("Milan");
+  if (["Kevin Di Bernardo", "Lorenzo Moro"].includes(allenatore)) v.push("Inter");
+  if (["Federico Burello", "Mattia Beltrame", "Kevin Di Bernardo"].includes(allenatore)) v.push("Juventus");
+  return v.filter(s => disponibili.includes(s));
 }
 
-function getSquadreVietateFascia3(allenatore, squadreDisponibili) {
-  const BOLOGNA = "Bologna";
-  const noBologna = ["Nicola Marano"];
-
-  let vietate = [];
-  if (noBologna.includes(allenatore)) vietate.push(BOLOGNA);
-
-  return vietate.filter((v) => squadreDisponibili.includes(v));
+function getSquadreVietateFascia3(allenatore, disponibili) {
+  if (allenatore === "Nicola Marano") return ["Bologna"].filter(s => disponibili.includes(s));
+  return [];
 }
 
 function assegnaSquadreConVincoli(allenatori, squadre, fascia, fnVietate) {
   let tentativi = 0;
-  const MAX_TENTATIVI = 1000;
-
-  while (tentativi < MAX_TENTATIVI) {
+  while (tentativi < 1000) {
     tentativi++;
-    let squadreDisponibili = shuffleArray([...squadre]);
-    let assegnazioni = [];
-    let successo = true;
-
+    let disp = shuffleArray([...squadre]);
+    let ass = [];
+    let ok = true;
     for (let i = 0; i < allenatori.length; i++) {
-      const allenatore = allenatori[i];
-      const vietate = fnVietate(allenatore, squadreDisponibili);
-      const ammesse = squadreDisponibili.filter((s) => !vietate.includes(s));
-
-      if (ammesse.length === 0) {
-        successo = false;
-        break;
-      }
-
-      const squadraScelta = ammesse[0];
-      assegnazioni.push({ allenatore, squadra: squadraScelta });
-      squadreDisponibili = squadreDisponibili.filter((s) => s !== squadraScelta);
+      const v = fnVietate(allenatori[i], disp);
+      const ammesse = disp.filter(s => !v.includes(s));
+      if (ammesse.length === 0) { ok = false; break; }
+      const s = ammesse[0];
+      ass.push({ a: allenatori[i], s: s });
+      disp = disp.filter(x => x !== s);
     }
-
-    if (successo) {
-      assegnazioni.forEach(({ allenatore, squadra }) => {
-        risultati.push(`Fascia ${fascia}: ${allenatore} -> ${squadra}`);
-      });
+    if (ok) {
+      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
       return true;
     }
   }
-
-  console.error(`Impossibile trovare un'assegnazione valida per la Fascia ${fascia} dopo ${MAX_TENTATIVI} tentativi.`);
-  alert(`Errore: impossibile completare il sorteggio di Fascia ${fascia} rispettando tutti i vincoli. Riprova.`);
   return false;
 }
 
 function assegnaSquadre(allenatori, squadre, fascia) {
-  let squadreDisponibili = [...squadre];
-  shuffleArray(squadreDisponibili);
-  for (let i = 0; i < allenatori.length && i < squadreDisponibili.length; i++) {
-    risultati.push(`Fascia ${fascia}: ${allenatori[i]} -> ${squadreDisponibili[i]}`);
+  let disp = shuffleArray([...squadre]);
+  for (let i = 0; i < allenatori.length && i < disp.length; i++) {
+    risultati.push(`Fascia ${fascia}: ${allenatori[i]} -> ${disp[i]}`);
   }
 }
 
 function inizializzaSorteggio() {
-  const estrazioneCaricata = caricaEstrazioneCorrente();
-
-  if (!estrazioneCaricata) {
+  if (!caricaEstrazioneCorrente()) {
     risultati = [];
     risultatiMostrati = 0;
-
-    risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
-    assegnaSquadreConVincoli(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
-
-    risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
-    assegnaSquadre(fascia2_allenatori, fascia2_squadre, 2);
-
     risultati.push("Fascia 1: __HEADER__ -> ⚽ SORTEGGIO FASCIA 1");
     assegnaSquadreConVincoli(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietateFascia1);
-
+    risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
+    assegnaSquadre(fascia2_allenatori, fascia2_squadre, 2);
+    risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
+    assegnaSquadreConVincoli(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
     salvaEstrazioneCorrente();
   }
-
   inizializzaZoneFasce();
-  renderFasceTable();
-
-  if (risultatiMostrati < risultati.length) {
-    document.getElementById("btnProssimo").style.display = "inline-block";
-    document.getElementById("btnProssimo").disabled = false;
-    document.getElementById("btnRicomincia").style.display = "none";
-  } else {
+  if (risultatiMostrati >= risultati.length) {
     document.getElementById("btnProssimo").style.display = "none";
     document.getElementById("btnRicomincia").style.display = "inline-block";
   }
+  if (risultatiMostrati > 0) ripristinaRisultatiVisibili();
+}
 
-  if (risultatiMostrati > 0) {
-    ripristinaRisultatiVisibili();
+function ripristinaRisultatiVisibili() {
+  for (let i = 0; i < risultatiMostrati; i++) {
+    let [f, d] = risultati[i].split(": ");
+    let [p1, p2] = d.split(" -> ");
+    if (p1 === "__HEADER__") {
+      let h = document.createElement("div");
+      h.classList.add("fascia-header-annuncio");
+      h.textContent = p2;
+      getZonaFascia(f).appendChild(h);
+    } else {
+      getZonaFascia(f).appendChild(creaCardEstrazione(f, p1, p2, d));
+    }
   }
 }
 
 function mostraProssimo() {
-  if (risultatiMostrati >= risultati.length) {
-    alert("Tutte le squadre sono state assegnate!");
-    return;
-  }
-
+  if (risultatiMostrati >= risultati.length) return;
   document.getElementById("btnProssimo").disabled = true;
-
-  let risultato = risultati[risultatiMostrati];
-  let [fascia, dettagli] = risultato.split(": ");
-  let [parte1, parte2] = dettagli.split(" -> ");
-
-  if (parte1 === "__HEADER__") {
-    let zona = getZonaFascia(fascia);
-    let header = document.createElement("div");
-    header.classList.add("fascia-header-annuncio");
-    header.textContent = parte2;
-    zona.appendChild(header);
-
+  let [f, d] = risultati[risultatiMostrati].split(": ");
+  let [p1, p2] = d.split(" -> ");
+  if (p1 === "__HEADER__") {
+    let h = document.createElement("div");
+    h.classList.add("fascia-header-annuncio");
+    h.textContent = p2;
+    getZonaFascia(f).appendChild(h);
     risultatiMostrati++;
     salvaEstrazioneCorrente();
     document.getElementById("btnProssimo").disabled = false;
-
-    if (risultatiMostrati === risultati.length) {
-      document.getElementById("btnProssimo").style.display = "none";
-      document.getElementById("btnRicomincia").style.display = "inline-block";
-      salvaEstrazioneCopletataInStorico();
-      localStorage.removeItem("estrazioneCorrente");
-      alert("Estrazione completata e salvata nello storico!");
-    }
+    controllaFine();
     return;
   }
-
-  let allenatore = parte1;
-  let squadra = parte2;
-
-  playSuspense();
-
-  let output = document.getElementById("output");
-  let countdown = 15;
-  let countdownDisplay = document.createElement("div");
-  countdownDisplay.classList.add("countdown-display");
-  countdownDisplay.textContent = countdown;
-  countdownDisplay.style.color = "red";
-  countdownDisplay.style.fontSize = "50px";
-  output.appendChild(countdownDisplay);
-
-  let countdownInterval = setInterval(() => {
-    countdown--;
-    countdownDisplay.textContent = countdown;
-
-    if (audio && !audio.paused && countdown <= 3) {
-      audio.volume = 0.8;
-    }
-
-    if (countdown === 0) {
-      clearInterval(countdownInterval);
-      stopSuspense();
-      countdownDisplay.remove();
-
-      let card = creaCardEstrazione(fascia, allenatore, squadra, dettagli);
-      let zona = getZonaFascia(fascia);
-      zona.appendChild(card);
-
-      risultatiMostrati++;
-      salvaEstrazioneCorrente();
-      document.getElementById("btnProssimo").disabled = false;
-
-      if (risultatiMostrati === risultati.length) {
-        document.getElementById("btnProssimo").style.display = "none";
-        document.getElementById("btnRicomincia").style.display = "inline-block";
-        salvaEstrazioneCopletataInStorico();
-        localStorage.removeItem("estrazioneCorrente");
-        alert("Estrazione completata e salvata nello storico!");
-      }
+  if (audio) { audio.pause(); }
+  audio = new Audio("countdown-suspense.mp3");
+  audio.play();
+  let c = 15;
+  let disp = document.createElement("div");
+  disp.classList.add("countdown-display");
+  disp.textContent = c;
+  document.getElementById("output").appendChild(disp);
+  let timer = setInterval(() => {
+    c--;
+    disp.textContent = c;
+    if (c <= 5) disp.classList.add("countdown-urgente");
+    if (c === 0) {
+      clearInterval(timer);
+      disp.classList.add("countdown-fine");
+      setTimeout(() => {
+        disp.remove();
+        const card = creaCardEstrazione(f, p1, p2, d);
+        getZonaFascia(f).appendChild(card);
+        risultatiMostrati++;
+        salvaEstrazioneCorrente();
+        document.getElementById("btnProssimo").disabled = false;
+        controllaFine();
+      }, 400);
     }
   }, 1000);
 }
 
-function ricominciaSorteggio() {
-  if (confirm("Vuoi ricominciare un nuovo sorteggio? L'estrazione corrente verrà eliminata.")) {
+function controllaFine() {
+  if (risultatiMostrati === risultati.length) {
+    document.getElementById("btnProssimo").style.display = "none";
+    document.getElementById("btnRicomincia").style.display = "inline-block";
+    salvaEstrazioneCopletataInStorico();
     localStorage.removeItem("estrazioneCorrente");
-    risultati = [];
-    risultatiMostrati = 0;
-    inizializzaSorteggio();
   }
 }
 
