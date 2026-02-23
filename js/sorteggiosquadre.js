@@ -219,9 +219,19 @@ function shuffleArray(array) {
 
 function getSquadreVietateFascia1(allenatore, disponibili) {
   const v = [];
-  if (["Federico Burello", "Mattia Beltrame"].includes(allenatore)) v.push("Milan");
-  if (["Kevin Di Bernardo", "Lorenzo Moro"].includes(allenatore)) v.push("Inter");
-  if (["Federico Burello", "Mattia Beltrame", "Kevin Di Bernardo"].includes(allenatore)) v.push("Juventus");
+  if (allenatore === "Kevin Di Bernardo") v.push("Inter");
+  if (allenatore === "Federico Burello") v.push("Napoli", "Milan");
+  if (allenatore === "Lorenzo Moro") v.push("Inter", "Napoli");
+  if (allenatore === "Denis Mascherin") {
+    v.push("Inter");
+    if (!disponibili.includes("Juventus")) v.push("Juventus");
+  }
+  return v.filter(s => disponibili.includes(s));
+}
+
+function getSquadreVietateFascia2(allenatore, disponibili) {
+  const v = [];
+  if (allenatore === "Cristian Tartaro") v.push("Juventus");
   return v.filter(s => disponibili.includes(s));
 }
 
@@ -253,13 +263,6 @@ function assegnaSquadreConVincoli(allenatori, squadre, fascia, fnVietate) {
   return false;
 }
 
-function assegnaSquadre(allenatori, squadre, fascia) {
-  let disp = shuffleArray([...squadre]);
-  for (let i = 0; i < allenatori.length && i < disp.length; i++) {
-    risultati.push(`Fascia ${fascia}: ${allenatori[i]} -> ${disp[i]}`);
-  }
-}
-
 function inizializzaSorteggio() {
   if (!caricaEstrazioneCorrente()) {
     risultati = [];
@@ -267,7 +270,7 @@ function inizializzaSorteggio() {
     risultati.push("Fascia 1: __HEADER__ -> ⚽ SORTEGGIO FASCIA 1");
     assegnaSquadreConVincoli(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietateFascia1);
     risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
-    assegnaSquadre(fascia2_allenatori, fascia2_squadre, 2);
+    assegnaSquadreConVincoli(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietateFascia2);
     risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
     assegnaSquadreConVincoli(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
     salvaEstrazioneCorrente();

@@ -13,11 +13,6 @@
       "foto": "images/federico_burello.jpg"
     },
     {
-      "nome": "Mattia Beltrame",
-      "fascia": 1,
-      "foto": "images/mattia_beltrame.jpg"
-    },
-    {
       "nome": "Kevin Di Bernardo",
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg"
@@ -26,7 +21,7 @@
     { "nome": "Lorenzo Moro", "fascia": 1, "foto": "images/lorenzo_moro.jpg" },
     {
       "nome": "Denis Mascherin",
-      "fascia": 2,
+      "fascia": 1,
       "foto": "images/denis_mascherin.jpg"
     },
     {
@@ -36,34 +31,39 @@
     },
     {
       "nome": "Cristian Tartaro",
-      "fascia": 3,
+      "fascia": 2,
       "foto": "images/cristian_tartaro.jpg"
     },
     { 
       "nome": "Nicola Marano", 
       "fascia": 3, 
       "foto": "images/nicola_marano.jpg" 
+    },
+    {
+      "nome": "NEW ENTRY", 
+      "fascia": 3, 
+      "foto": "images/images.jpg"
     }
   ],
   "classificaSerieA": [
-    { "pos": 1, "nome": "Inter", "punti": 61, "logo": "images/inter.png" },
+    { "pos": 1, "nome": "Inter", "punti": 64, "logo": "images/inter.png" },
     { "pos": 2, "nome": "Milan", "punti": 54, "logo": "images/milan.png" },
-    { "pos": 3, "nome": "Napoli", "punti": 50, "logo": "images/napoli.png" },
-    { "pos": 4, "nome": "Roma", "punti": 47, "logo": "images/roma.png" },
+    { "pos": 3, "nome": "Roma", "punti": 50, "logo": "images/roma.png" },
+    { "pos": 4, "nome": "Napoli", "punti": 50, "logo": "images/napoli.png" },
     { "pos": 5, "nome": "Juventus", "punti": 46, "logo": "images/juventus.png" },
-    { "pos": 6, "nome": "Como", "punti": 42, "logo": "images/como.png" },
-    { "pos": 7, "nome": "Atalanta", "punti": 42, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 33, "logo": "images/bologna.png" },
+    { "pos": 6, "nome": "Como", "punti": 45, "logo": "images/como.png" },
+    { "pos": 7, "nome": "Atalanta", "punti": 45, "logo": "images/atalanta.png" },
+    { "pos": 8, "nome": "Sassuolo", "punti": 35, "logo": "images/sassuolo.png" },
     {
       "pos": 9,
       "nome": "Lazio",
-      "punti": 33,
+      "punti": 34,
       "logo": "images/lazio.png"
     },
     { "pos": 10,
-       "nome": "Sassuolo",
-        "punti": 32, 
-        "logo": "images/sassuolo.png" 
+       "nome": "Bologna",
+        "punti": 33, 
+        "logo": "images/bologna.png" 
       },
     { "pos": 11,
      "nome": "Udinese",
@@ -72,24 +72,24 @@
     {
       "pos": 12,
       "nome": "Parma",
-      "punti": 29,
+      "punti": 32,
       "logo": "images/parma.png"
     },
     {
       "pos": 13,
       "nome": "Cagliari",
-      "punti": 28,
+      "punti": 29,
       "logo": "images/cagliari.png"
     },
     { "pos": 14,
-      "nome": "Torino",
+      "nome": "Genoa",
       "punti": 27,
-      "logo": "images/torino.png" 
+      "logo": "images/genoa.png" 
     },
     { "pos": 15,
-      "nome": "Genoa",
-      "punti": 24,
-       "logo": "images/genoa.png" 
+      "nome": "Torino",
+      "punti": 27,
+       "logo": "images/torino.png" 
     },
     { "pos": 16,
      "nome": "Cremonese",
@@ -119,12 +119,12 @@
     }
   ],
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Inter", "punti": 50, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Napoli", "punti": 43, "logo": "images/napoli.png" },
-    { "pos": 3, "nome": "Atalanta", "punti": 43, "logo": "images/atalanta.png" },
+    { "pos": 1, "nome": "Inter", "punti": 53, "logo": "images/inter.png" },
+    { "pos": 2, "nome": "Napoli", "punti": 46, "logo": "images/napoli.png" },
+    { "pos": 3, "nome": "Atalanta", "punti": 46, "logo": "images/atalanta.png" },
     { "pos": 4, "nome": "Milan", "punti": 41, "logo": "images/milan.png" },
     { "pos": 5, "nome": "Juventus","punti": 34, "logo": "images/juventus.png" },
-    { "pos": 6, "nome": "Roma", "punti": 29, "logo": "images/roma.png" },
+    { "pos": 6, "nome": "Roma", "punti": 32, "logo": "images/roma.png" },
     { "pos": 7, "nome": "Lazio", "punti": 27, "logo": "images/lazio.png" },
     { "pos": 8, "nome": "Bologna", "punti": 20, "logo": "images/bologna.png" }
   ],
