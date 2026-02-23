@@ -161,10 +161,34 @@ function renderClassificaReale() {
   });
 }
 
+const TEAM_COLORS = {
+  "Inter":     { primary: "#0068a8", secondary: "#000000", heart: "💙🖤" },
+  "Milan":     { primary: "#cc0000", secondary: "#000000", heart: "❤️🖤" },
+  "Juventus":  { primary: "#ffffff", secondary: "#000000", heart: "🤍🖤" },
+  "Napoli":    { primary: "#009fd4", secondary: "#003087", heart: "💙💙" },
+  "Roma":      { primary: "#cc0000", secondary: "#f5c518", heart: "❤️💛" },
+  "Lazio":     { primary: "#87ceeb", secondary: "#ffffff", heart: "💙🤍" },
+  "Atalanta":  { primary: "#0000ff", secondary: "#000000", heart: "💙🖤" },
+  "Fiorentina":{ primary: "#6a0dad", secondary: "#ffffff", heart: "💜" },
+  "Bologna":   { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Torino":    { primary: "#8b0000", secondary: "#ffffff", heart: "🤎" },
+  "Udinese":   { primary: "#000000", secondary: "#ffffff", heart: "🖤🤍" },
+  "Genoa":     { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Verona":    { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
+  "Empoli":    { primary: "#1e90ff", secondary: "#ffffff", heart: "💙" },
+  "Lecce":     { primary: "#ffcc00", secondary: "#cc0000", heart: "💛❤️" },
+  "Parma":     { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
+  "Cagliari":  { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Venezia":   { primary: "#ff6600", secondary: "#1e3a5f", heart: "🧡💙" },
+  "Monza":     { primary: "#cc0000", secondary: "#ffffff", heart: "❤️🤍" },
+  "Como":      { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
+};
+
 function renderPalmares(palmares) {
   const container = document.getElementById("palmares-content");
   if (!container || !palmares) return;
   container.innerHTML = "";
+
   const makeList = (title, items) => {
     const section = document.createElement("div");
     section.classList.add("sezione");
@@ -172,14 +196,41 @@ function renderPalmares(palmares) {
     h3.textContent = title;
     section.appendChild(h3);
     const ul = document.createElement("ul");
+
     (items || []).forEach(item => {
       const li = document.createElement("li");
-      li.innerHTML = `${item.stagione}: ${item.emoji || ""} ${item.squadra || "🏆"} ${item.bandiera ? `<img src="${item.bandiera}" style="width:35px;height:24px;">` : ""} <span class="allenatore">${item.allenatore || ""}</span>`;
+      const tc = TEAM_COLORS[item.squadra] || null;
+      const isPending = !item.squadra || item.squadra === "";
+      const hearts = tc ? `<span class="team-hearts">${tc.heart}</span>` : "";
+
+      if (isPending) {
+        li.classList.add("palmares-pending");
+        li.innerHTML = `
+          <div class="palmares-row">
+            <span class="palmares-stagione">${item.stagione}</span>
+            <span class="palmares-squadra pending-text">⏳ In corso…</span>
+          </div>`;
+      } else {
+        if (tc) {
+          li.style.setProperty("--team-color", tc.primary);
+          li.style.setProperty("--team-color-2", tc.secondary);
+        }
+        li.classList.add("palmares-item-colored");
+        li.innerHTML = `
+          <div class="palmares-row">
+            <span class="palmares-stagione">${item.stagione}</span>
+            <span class="palmares-squadra">${item.emoji || "🏆"} ${item.squadra}${hearts}</span>
+            ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera">` : ""}
+          </div>
+          <span class="allenatore">👤 ${item.allenatore || ""}</span>`;
+      }
       ul.appendChild(li);
     });
+
     section.appendChild(ul);
     container.appendChild(section);
   };
+
   makeList("Serie A", palmares.serieA);
   makeList("Coppa Italia", palmares.coppaItalia);
 }
