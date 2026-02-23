@@ -49,7 +49,6 @@ body::before {
 
 body > * { position: relative; z-index: 1; }
 
-/* ─── PAGE HEADER ─── */
 .page-header {
   position: relative;
   padding: clamp(40px, 6vw, 70px) clamp(24px, 5vw, 80px);
@@ -124,7 +123,6 @@ body > * { position: relative; z-index: 1; }
   animation: fadeInDown 0.7s 0.2s ease both;
 }
 
-/* ─── NAV ─── */
 .section-nav {
   display: flex;
   gap: 8px;
@@ -165,7 +163,6 @@ body > * { position: relative; z-index: 1; }
   box-shadow: 0 0 20px rgba(212,175,55,0.1);
 }
 
-/* ─── LAYOUT ─── */
 .layout-grid {
   display: grid;
   grid-template-columns: 280px 1fr 280px;
@@ -194,7 +191,6 @@ body > * { position: relative; z-index: 1; }
   padding: 32px 28px;
 }
 
-/* ─── SECTION HEADERS ─── */
 .section-header {
   margin-bottom: 20px;
   padding-bottom: 16px;
@@ -228,7 +224,6 @@ body > * { position: relative; z-index: 1; }
   font-family: "JetBrains Mono", monospace;
 }
 
-/* ─── TABLES ─── */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -287,7 +282,11 @@ td img {
   margin-right: 8px;
 }
 
-/* ─── BUTTONS ─── */
+/* --- FIX JUVE BIANCA --- */
+img[src*="juventus"] {
+  filter: brightness(0) invert(1) !important;
+}
+
 button {
   background: transparent;
   color: var(--text);
@@ -362,7 +361,6 @@ button.ghost:hover {
   margin-bottom: 24px;
 }
 
-/* ─── OUTPUT / RISULTATI ─── */
 #output {
   display: flex;
   flex-direction: column;
@@ -386,7 +384,6 @@ li {
   margin-bottom: 16px;
 }
 
-/* ─── FASCIA HEADER ANNOUNCEMENT ─── */
 .fascia-header-annuncio {
   display: flex;
   align-items: center;
@@ -409,7 +406,6 @@ li {
   font-size: 18px;
 }
 
-/* ─── CARD ESTRAZIONE ─── */
 .casella-evidenza {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -505,7 +501,6 @@ li {
   font-weight: 700;
 }
 
-/* ─── COUNTDOWN ─── */
 .countdown-display {
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(100px, 20vw, 200px);
@@ -535,7 +530,6 @@ li {
   animation: countdownEsplodi 0.4s ease-out forwards;
 }
 
-/* ─── CLASSIFICA FANTACALCIO ─── */
 #classificaFantacalcio {
   margin-top: 20px;
   padding-top: 20px;
@@ -558,7 +552,6 @@ li {
   object-fit: contain;
 }
 
-/* ─── PALMARES ─── */
 #palmares {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -687,14 +680,13 @@ li {
   font-size: 12px;
   color: var(--muted-2);
   font-family: "DM Sans", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
   margin-top: 5px;
   padding-left: 2px;
   letter-spacing: 0.01em;
 }
 
-/* ─── STORICO ─── */
 .storico-estrazioni {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -746,7 +738,6 @@ li {
   border-radius: 6px;
 }
 
-/* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
@@ -755,7 +746,6 @@ li {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
-/* ─── ANIMATIONS ─── */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -787,7 +777,6 @@ li {
   100% { transform: scale(0.3); opacity: 0; }
 }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 720px) {
   .page-header { padding: 36px 18px; }
   .container { padding: 24px 18px; }
