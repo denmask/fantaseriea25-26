@@ -125,11 +125,11 @@ body > * { position: relative; z-index: 1; }
 
 .section-nav {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 20px clamp(18px, 3vw, 40px);
+  padding: 18px clamp(18px, 3vw, 40px);
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -140,26 +140,27 @@ body > * { position: relative; z-index: 1; }
 }
 
 .chip-btn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   color: var(--muted-2);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 9px 20px;
+  border-radius: 8px;
+  padding: 10px 24px;
   cursor: pointer;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-family: "JetBrains Mono", monospace;
   transition: all 0.2s ease;
   box-shadow: none;
+  backdrop-filter: blur(5px);
 }
 
 .chip-btn:hover {
   color: var(--gold);
   border-color: var(--gold);
   background: var(--gold-dim);
-  transform: none;
+  transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(212,175,55,0.1);
 }
 
@@ -228,23 +229,26 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 th {
-  background: var(--surface-3);
+  background: linear-gradient(180deg, var(--surface-3) 0%, #0f172a 100%);
   color: var(--gold);
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-family: "JetBrains Mono", monospace;
-  padding: 10px 12px;
+  padding: 14px 12px;
   border-bottom: 1px solid var(--border-glow);
 }
 
 td {
-  padding: 10px 12px;
-  font-size: 13px;
+  padding: 12px 12px;
+  font-size: 14px;
   border-bottom: 1px solid var(--border);
   color: var(--muted-2);
   background: transparent;
@@ -252,7 +256,7 @@ td {
 }
 
 tr:hover td {
-  background: rgba(255,255,255,0.02);
+  background: rgba(212, 175, 55, 0.05);
   color: var(--text);
 }
 
@@ -271,9 +275,9 @@ td img {
   letter-spacing: 0.1em;
 }
 
-.fascia1 { color: var(--gold) !important; }
-.fascia2 { color: #60a5fa !important; }
-.fascia3 { color: var(--green) !important; }
+.fascia1 { color: var(--gold) !important; font-weight: 800; }
+.fascia2 { color: #60a5fa !important; font-weight: 700; }
+.fascia3 { color: var(--green) !important; font-weight: 700; }
 
 .stemma {
   width: 22px;
@@ -388,37 +392,42 @@ li {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 18px;
-  background: var(--surface-3);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: 8px;
+  padding: 18px 24px;
+  background: linear-gradient(90deg, var(--surface-3) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--border-glow);
+  border-left: 5px solid var(--gold);
+  border-radius: 12px;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 0.1em;
   color: var(--gold);
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   animation: headerEntrata 0.4s ease-out both;
 }
 
 .fascia-header-annuncio::before {
   content: "⚽";
-  font-family: sans-serif;
-  font-size: 18px;
+  font-size: 28px;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
 }
 
 .casella-evidenza {
-  background: var(--surface-2);
+  background: linear-gradient(145deg, var(--surface-2) 0%, var(--surface) 100%);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px 24px;
+  border-radius: 20px;
+  padding: 25px 20px;
   text-align: center;
-  box-shadow: var(--shadow), 0 0 0 1px rgba(212,175,55,0.05);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(212, 175, 55, 0.1);
   animation: cardEntrata 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .casella-evidenza::before {
@@ -442,63 +451,81 @@ li {
 
 .etichetta-fascia {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--surface-3);
-  color: var(--gold);
-  padding: 4px 12px;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 4px;
-  border: 1px solid var(--border-glow);
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, var(--gold) 0%, #8b6f23 100%);
+  color: #000;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 30px;
+  border: none;
   font-family: "JetBrains Mono", monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .casella-evidenza .foto-allenatore {
-  width: 100px;
-  height: 130px;
+  width: 90px;
+  height: 110px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  margin: 12px 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--border-glow);
+  transition: all 0.3s ease;
+  order: 1;
+}
+
+.casella-evidenza .stemma-squadra {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  padding: 12px;
+  background: var(--surface-3);
+  border-radius: 16px;
+  border: 2px solid var(--border-glow);
+  transition: all 0.3s ease;
+  order: 2;
+}
+
+.casella-evidenza p {
+  flex: 1;
+  min-width: 200px;
+  font-size: 16px;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  order: 3;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  transition: transform 0.3s ease;
+}
+
+.casella-evidenza p strong {
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.casella-evidenza:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
 }
 
 .casella-evidenza:hover .foto-allenatore {
   transform: scale(1.05) translateY(-2px);
 }
 
-.casella-evidenza .stemma-squadra {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin: 12px 10px 0;
-  padding: 8px;
-  background: var(--surface-3);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: transform 0.3s ease;
-}
-
 .casella-evidenza:hover .stemma-squadra {
   transform: scale(1.08) rotate(3deg);
-}
-
-.casella-evidenza p {
-  font-size: 15px;
-  margin: 14px 0 0 0;
-  color: var(--muted-2);
-  line-height: 1.5;
-  position: relative;
-  z-index: 1;
-}
-
-.casella-evidenza p strong {
-  color: var(--text);
-  font-weight: 700;
 }
 
 .countdown-display {
@@ -571,27 +598,46 @@ li {
 
 .palmares-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .sezione {
-  background: var(--surface-2);
+  background: linear-gradient(145deg, var(--surface-2) 0%, var(--surface) 100%);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px;
-  overflow: hidden;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sezione:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.2);
+  border-color: var(--border-glow);
 }
 
 .sezione h3 {
-  margin: 0 0 16px 0;
+  margin: 0 0 20px 0;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   letter-spacing: 0.1em;
   color: var(--gold);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border-glow);
   padding-bottom: 12px;
+  position: relative;
+}
+
+.sezione h3::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  box-shadow: 0 0 15px var(--gold);
 }
 
 .sezione ul { margin: 0; }
@@ -600,91 +646,142 @@ li {
   display: block;
   padding: 0;
   border: none;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
 .sezione li:last-child { margin-bottom: 0; }
 
 .palmares-item-colored {
-  background: var(--surface-3);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border);
   border-left: 4px solid var(--team-color, var(--gold));
-  border-radius: 10px;
-  padding: 12px 14px;
-  transition: opacity 0.2s, transform 0.2s;
-  cursor: default;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.palmares-item-colored::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
 }
 
 .palmares-item-colored:hover {
-  opacity: 0.85;
-  transform: translateX(3px);
-}
-
-.palmares-pending {
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 12px 14px;
-  opacity: 0.6;
-}
-
-.pending-text {
-  color: var(--muted) !important;
-  font-style: italic;
+  background: var(--surface-3);
+  transform: translateX(5px) scale(1.02);
+  border-left-width: 6px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .palmares-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
 .palmares-stagione {
   font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  color: var(--muted);
+  font-size: 12px;
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
   font-weight: 700;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  min-width: 72px;
 }
 
 .palmares-squadra {
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.03em;
+}
+
+.team-hearts {
+  font-size: 14px;
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.palmares-bandiera {
+  width: 32px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-left: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.allenatore {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted-2);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.allenatore::before {
+  content: "👤";
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.palmares-item-colored:hover .allenatore {
+  color: var(--text);
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.palmares-pending {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.palmares-pending:hover {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.pending-text {
+  color: var(--muted) !important;
+  font-style: italic;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.team-hearts {
-  font-size: 13px;
-  letter-spacing: -1px;
-  opacity: 0.85;
-}
-
-.palmares-bandiera {
-  width: 28px;
-  height: 19px;
-  object-fit: contain;
-  border-radius: 2px;
-  margin-left: auto;
-  opacity: 0.85;
-}
-
-.allenatore {
-  display: block;
-  font-size: 12px;
-  color: var(--muted-2);
-  font-family: "DM Sans", sans-serif;
-  font-weight: 700;
+.pending-text::before {
+  content: "⏳";
   font-style: normal;
-  margin-top: 5px;
-  padding-left: 2px;
-  letter-spacing: 0.01em;
 }
 
 .storico-estrazioni {
@@ -738,6 +835,28 @@ li {
   border-radius: 6px;
 }
 
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--gold), transparent, var(--blue), transparent);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+  opacity: 0.5;
+}
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
@@ -777,6 +896,15 @@ li {
   100% { transform: scale(0.3); opacity: 0; }
 }
 
+@keyframes highlightNew {
+  0% { background: rgba(212, 175, 55, 0.3); }
+  100% { background: transparent; }
+}
+
+.highlight-new {
+  animation: highlightNew 2s ease-out;
+}
+
 @media (max-width: 720px) {
   .page-header { padding: 36px 18px; }
   .container { padding: 24px 18px; }
@@ -785,4 +913,26 @@ li {
   .actions { flex-direction: column; }
   button { width: 100%; }
   #btnProssimo { width: 100%; }
+  
+  .casella-evidenza {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .casella-evidenza p {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .palmares-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sezione h3 {
+    font-size: 24px;
+  }
+  
+  .palmares-squadra {
+    font-size: 20px;
+  }
 }

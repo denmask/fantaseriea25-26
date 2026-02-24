@@ -119,19 +119,26 @@ function creaCardEstrazione(fascia, allenatore, squadra, dettagli) {
   let etichettaFascia = document.createElement("div");
   etichettaFascia.classList.add("etichetta-fascia");
   etichettaFascia.textContent = fascia;
+  
   if (allenatore && squadra) {
     let imgAllenatore = document.createElement("img");
     imgAllenatore.src = fotoAllenatore[allenatore] || `images/${allenatore.toLowerCase().replace(/ /g, "_")}.jpg`;
     imgAllenatore.classList.add("foto-allenatore");
+    imgAllenatore.alt = allenatore;
+    
     let imgSquadra = document.createElement("img");
     imgSquadra.src = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
     imgSquadra.classList.add("stemma-squadra");
+    imgSquadra.alt = squadra;
+    
     let testo = document.createElement("p");
     testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong>${squadra}</strong>!`;
+    
     evidenza.appendChild(imgAllenatore);
     evidenza.appendChild(imgSquadra);
     evidenza.appendChild(testo);
   }
+  
   evidenza.prepend(etichettaFascia);
   return evidenza;
 }
@@ -140,11 +147,13 @@ function renderFasceTable() {
   const tbody = document.querySelector("#tabellaFasce tbody");
   if (!tbody) return;
   tbody.innerHTML = "";
+  
   const renderRow = (item, label, classe) => {
     const row = document.createElement("tr");
-    row.innerHTML = `<td class="${classe}">${label}</td><td><img src="${item.logo || ""}" class="stemma"> ${item.nome}</td>`;
+    row.innerHTML = `<td class="${classe}">${label}</td><td><img src="${item.logo || ""}" class="stemma" alt="${item.nome}"> ${item.nome}</td>`;
     tbody.appendChild(row);
   };
+  
   fasceCalcolate.fascia1.forEach(s => renderRow(s, "Fascia 1", "fascia1"));
   fasceCalcolate.fascia2.forEach(s => renderRow(s, "Fascia 2", "fascia2"));
   fasceCalcolate.fascia3_pure.forEach(s => renderRow(s, "Fascia 3", "fascia3"));
@@ -156,7 +165,7 @@ function renderClassificaReale() {
   tbody.innerHTML = "";
   [...dataSet.classificaSerieA].sort((a,b) => a.pos - b.pos).forEach(s => {
     const row = document.createElement("tr");
-    row.innerHTML = `<td>${s.pos}</td><td><img src="${s.logo}" class="stemma"> ${s.nome}</td><td>${s.punti}</td>`;
+    row.innerHTML = `<td>${s.pos}</td><td><img src="${s.logo}" class="stemma" alt="${s.nome}"> ${s.nome}</td><td>${s.punti}</td>`;
     tbody.appendChild(row);
   });
 }
@@ -220,9 +229,9 @@ function renderPalmares(palmares) {
           <div class="palmares-row">
             <span class="palmares-stagione">${item.stagione}</span>
             <span class="palmares-squadra">${item.emoji || "🏆"} ${item.squadra}${hearts}</span>
-            ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera">` : ""}
+            ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera" alt="bandiera">` : ""}
           </div>
-          <span class="allenatore">👤 ${item.allenatore || ""}</span>`;
+          <span class="allenatore">${item.allenatore || ""}</span>`;
       }
       ul.appendChild(li);
     });
@@ -233,6 +242,8 @@ function renderPalmares(palmares) {
 
   makeList("Serie A", palmares.serieA);
   makeList("Coppa Italia", palmares.coppaItalia);
+  makeList("Mondiali", palmares.worldCup);
+  makeList("Europei", palmares.euro);
 }
 
 async function caricaDati() {
@@ -383,6 +394,7 @@ function mostraProssimo() {
       setTimeout(() => {
         disp.remove();
         const card = creaCardEstrazione(f, p1, p2, d);
+        card.classList.add("highlight-new");
         getZonaFascia(f).appendChild(card);
         risultatiMostrati++;
         salvaEstrazioneCorrente();
@@ -402,9 +414,37 @@ function controllaFine() {
   }
 }
 
+function aggiungiEffettiGlow() {
+  const buttons = document.querySelectorAll('button:not(#btnProssimo)');
+  buttons.forEach(btn => {
+    btn.classList.add('glow-effect');
+  });
+}
+
+function miglioraVisibilitaAllenatori() {
+  const allenatoriElements = document.querySelectorAll('.allenatore');
+  allenatoriElements.forEach(el => {
+    if (el.textContent.includes('Mattia Beltrame')) {
+      el.style.background = 'linear-gradient(90deg, rgba(212,175,55,0.2), rgba(0,0,0,0.3))';
+      el.style.borderColor = 'var(--gold)';
+    }
+  });
+}
+
+function aggiungiTooltip() {
+  const squadreElements = document.querySelectorAll('#tabellaClassifica td:nth-child(2)');
+  squadreElements.forEach(el => {
+    el.setAttribute('title', 'Clicca per dettagli squadra');
+    el.style.cursor = 'help';
+  });
+}
+
 async function bootstrap() {
   await caricaDati();
   inizializzaSorteggio();
+  aggiungiEffettiGlow();
+  miglioraVisibilitaAllenatori();
+  aggiungiTooltip();
 }
 
 document.addEventListener("DOMContentLoaded", bootstrap);
