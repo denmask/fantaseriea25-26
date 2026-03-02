@@ -49,16 +49,16 @@
     { "pos": 1, "nome": "Inter", "punti": 67, "logo": "images/inter.png" },
     { "pos": 2, "nome": "Milan", "punti": 57, "logo": "images/milan.png" },
     { "pos": 3, "nome": "Napoli", "punti": 53, "logo": "images/napoli.png" },
-    { "pos": 4, "nome": "Roma", "punti": 50, "logo": "images/roma.png" },
+    { "pos": 4, "nome": "Roma", "punti": 51, "logo": "images/roma.png" },
     { "pos": 5, "nome": "Como", "punti": 48, "logo": "images/como.png" },
-    { "pos": 6, "nome": "Juventus", "punti": 46, "logo": "images/juventus.png" },
+    { "pos": 6, "nome": "Juventus", "punti": 47, "logo": "images/juventus.png" },
     { "pos": 7, "nome": "Atalanta", "punti": 45, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 36, "logo": "images/bologna.png" },
+    { "pos": 8, "nome": "Sassuolo", "punti": 38, "logo": "images/sassuolo.png" },
     {
       "pos": 9,
-      "nome": "Sassuolo",
-      "punti": 35,
-      "logo": "images/sassuolo.png"
+      "nome": "Bologna",
+      "punti": 36,
+      "logo": "images/bologna.png"
     },
     { "pos": 10,
        "nome": "Lazio",
@@ -83,7 +83,7 @@
     },
     { "pos": 14,
       "nome": "Torino",
-      "punti": 27,
+      "punti": 30,
       "logo": "images/torino.png" 
     },
     { "pos": 15,
@@ -120,12 +120,12 @@
   ],
   "classificaFantacalcio": [
     { "pos": 1, "nome": "Inter", "punti": 54, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Napoli", "punti": 49, "logo": "images/napoli.png" },
-    { "pos": 3, "nome": "Atalanta", "punti": 47, "logo": "images/atalanta.png" },
+    { "pos": 2, "nome": "Napoli", "punti": 47, "logo": "images/napoli.png" },
+    { "pos": 3, "nome": "Atalanta", "punti": 46, "logo": "images/atalanta.png" },
     { "pos": 4, "nome": "Milan", "punti": 42, "logo": "images/milan.png" },
     { "pos": 5, "nome": "Juventus","punti": 37, "logo": "images/juventus.png" },
-    { "pos": 6, "nome": "Roma", "punti": 33, "logo": "images/roma.png" },
-    { "pos": 7, "nome": "Lazio", "punti": 27, "logo": "images/lazio.png" },
+    { "pos": 6, "nome": "Roma", "punti": 35, "logo": "images/roma.png" },
+    { "pos": 7, "nome": "Lazio", "punti": 28, "logo": "images/lazio.png" },
     { "pos": 8, "nome": "Bologna", "punti": 20, "logo": "images/bologna.png" }
   ],
   "palmares": {
