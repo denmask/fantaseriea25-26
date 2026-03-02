@@ -282,15 +282,17 @@ function shuffleArray(array) {
 }
 
 function getSquadreVietateFascia1(allenatore, disponibili) {
-  const v = [];
-  if (allenatore === "Kevin Di Bernardo") v.push("Inter");
-  if (allenatore === "Federico Burello") v.push("Napoli", "Milan");
-  if (allenatore === "Lorenzo Moro") v.push("Inter", "Napoli");
-  if (allenatore === "Denis Mascherin") {
-    v.push("Inter");
-    if (!disponibili.includes("Juventus")) v.push("Juventus");
-  }
-  return v.filter(s => disponibili.includes(s));
+  // Definisco per ogni allenatore le squadre AMMESSE
+  const ammesse = {
+    "Federico Burello":  ["Inter", "Roma", "Napoli"],   // non Milan
+    "Kevin Di Bernardo": ["Milan", "Roma"],              // non Napoli, non Inter
+    "Lorenzo Moro":      ["Milan", "Roma"],              // non Inter, non Napoli
+    "Denis Mascherin":   ["Milan", "Roma", "Napoli"],   // non Inter
+  };
+  const listaAmmessa = ammesse[allenatore];
+  if (!listaAmmessa) return [];
+  // Vietate = tutte le disponibili NON presenti nella lista ammessa
+  return disponibili.filter(s => !listaAmmessa.includes(s));
 }
 
 function getSquadreVietateFascia2(allenatore, disponibili) {
@@ -327,16 +329,48 @@ function assegnaSquadreConVincoli(allenatori, squadre, fascia, fnVietate) {
   return false;
 }
 
+// Fascia con ordine fisso squadre per classifica reale — usata per tutte le fasce
+function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
+  let tentativi = 0;
+  while (tentativi < 1000) {
+    tentativi++;
+    let allenDisp = shuffleArray([...allenatori]);
+    let ass = [];
+    let ok = true;
+    for (let i = 0; i < squadreOrdinate.length; i++) {
+      const squadra = squadreOrdinate[i];
+      const allenatoreIdx = allenDisp.findIndex(a => {
+        const vietate = fnVietate(a, [squadra]);
+        return !vietate.includes(squadra);
+      });
+      if (allenatoreIdx === -1) { ok = false; break; }
+      ass.push({ a: allenDisp[allenatoreIdx], s: squadra });
+      allenDisp.splice(allenatoreIdx, 1);
+    }
+    if (ok) {
+      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
+      return true;
+    }
+  }
+  return false;
+}
+
+// Fascia 3: le squadre vengono estratte in ordine di classifica reale (prima Atalanta, poi Sassuolo)
+// L'allenatore assegnato a ciascuna squadra è casuale (rispettando vincoli)
+function assegnaFascia3ConOrdineSquadre(allenatori, squadreOrdinate, fnVietate) {
+  return assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, 3, fnVietate);
+}
+
 function inizializzaSorteggio() {
   if (!caricaEstrazioneCorrente()) {
     risultati = [];
     risultatiMostrati = 0;
     risultati.push("Fascia 1: __HEADER__ -> ⚽ SORTEGGIO FASCIA 1");
-    assegnaSquadreConVincoli(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietateFascia1);
+    assegnaFasciaConOrdineSquadre(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietateFascia1);
     risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
-    assegnaSquadreConVincoli(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietateFascia2);
+    assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietateFascia2);
     risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
-    assegnaSquadreConVincoli(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
+    assegnaFascia3ConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, getSquadreVietateFascia3);
     salvaEstrazioneCorrente();
   }
   inizializzaZoneFasce();
