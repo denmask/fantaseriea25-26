@@ -130,13 +130,9 @@ function creaCardEstrazione(fascia, allenatore, squadra, dettagli) {
     imgSquadra.src = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
     imgSquadra.classList.add("stemma-squadra");
     imgSquadra.alt = squadra;
-    imgSquadra.style.background = "transparent";
-    imgSquadra.style.border = "none";
-    imgSquadra.style.boxShadow = "none";
-    imgSquadra.style.backgroundColor = "transparent";
     
     let testo = document.createElement("p");
-    testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong>${squadra}</strong>!`;
+    testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong style="color:var(--gold)">${squadra}</strong>`;
     
     evidenza.appendChild(imgAllenatore);
     evidenza.appendChild(imgSquadra);
@@ -272,6 +268,8 @@ async function caricaDati() {
     renderFasceTable();
     renderClassificaReale();
     renderPalmares(dataSet?.palmares);
+    window.dataSet = dataSet;
+    document.dispatchEvent(new CustomEvent("dati-caricati", { detail: dataSet }));
   } catch (e) { console.error(e); }
 }
 
@@ -378,6 +376,8 @@ function mostraProssimo() {
     salvaEstrazioneCorrente();
     document.getElementById("btnProssimo").disabled = false;
     controllaFine();
+    // Mostra automaticamente la prima squadra della fascia
+    setTimeout(() => mostraProssimo(), 300);
     return;
   }
   if (audio) { audio.pause(); }
