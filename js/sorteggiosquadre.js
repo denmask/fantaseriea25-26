@@ -130,6 +130,10 @@ function creaCardEstrazione(fascia, allenatore, squadra, dettagli) {
     imgSquadra.src = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
     imgSquadra.classList.add("stemma-squadra");
     imgSquadra.alt = squadra;
+    imgSquadra.style.background = "transparent";
+    imgSquadra.style.border = "none";
+    imgSquadra.style.boxShadow = "none";
+    imgSquadra.style.backgroundColor = "transparent";
     
     let testo = document.createElement("p");
     testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong>${squadra}</strong>!`;

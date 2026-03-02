@@ -407,9 +407,7 @@ li {
 }
 
 .fascia-header-annuncio::before {
-  content: "⚽";
-  font-size: 28px;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+  content: "";
 }
 
 .casella-evidenza {
@@ -483,7 +481,7 @@ li {
   height: 90px;
   object-fit: contain;
   padding: 12px;
-  background: var(--surface-3);
+  background: transparent;
   border-radius: 16px;
   border: 2px solid var(--border-glow);
   transition: all 0.3s ease;
