@@ -1,51 +1,49 @@
 function renderClassificaFantacalcio(dataset) {
-  const classificaSerieA = document.getElementById("classifica");
-  if (!classificaSerieA || !dataset?.classificaFantacalcio) return;
-
-  const classificaFantacalcio = document.createElement("div");
-  classificaFantacalcio.id = "classificaFantacalcio";
-  classificaFantacalcio.classList.add("schermata");
+  const container = document.getElementById("classifica-fanta");
+  if (!container || !dataset?.classificaFantacalcio) return;
 
   let tabellaHTML = `
-        <h2>Classifica Fantacalcio 2025/2026</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Posizione</th>
-                    <th>Squadra</th>
-                    <th>Punti</th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Squadra</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
 
   dataset.classificaFantacalcio
     .sort((a, b) => a.pos - b.pos)
     .forEach((squadra) => {
       tabellaHTML += `
-                <tr>
-                    <td>${squadra.pos}</td>
-                    <td><img src="${squadra.logo}" alt="${squadra.nome}" class="logo-squadra"> ${squadra.nome}</td>
-                    <td>${squadra.punti}</td>
-                </tr>
-            `;
+        <tr>
+          <td>${squadra.pos}</td>
+          <td><img src="${squadra.logo}" alt="${squadra.nome}" class="stemma"> ${squadra.nome}</td>
+          <td>${squadra.punti}</td>
+        </tr>
+      `;
     });
 
-  tabellaHTML += `
-            </tbody>
-        </table>
-    `;
-
-  classificaFantacalcio.innerHTML = tabellaHTML;
-  classificaSerieA.appendChild(classificaFantacalcio);
+  tabellaHTML += `</tbody></table>`;
+  container.innerHTML = tabellaHTML;
 }
 
-document.addEventListener("dati-caricati", (evt) =>
-  renderClassificaFantacalcio(evt.detail)
-);
+document.addEventListener("dati-caricati", (evt) => {
+  renderClassificaFantacalcio(evt.detail);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.dataSet) {
-    renderClassificaFantacalcio(window.dataSet);
-  }
+  const carica = () => {
+    if (window.dataSet) {
+      renderClassificaFantacalcio(window.dataSet);
+    } else {
+      fetch("data.json", { cache: "no-cache" })
+        .then(r => r.json())
+        .then(data => renderClassificaFantacalcio(data))
+        .catch(e => console.error("Errore classifica fanta:", e));
+    }
+  };
+  setTimeout(carica, 600);
 });
