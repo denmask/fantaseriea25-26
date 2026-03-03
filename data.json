@@ -53,27 +53,27 @@
     { "pos": 5, "nome": "Como", "punti": 48, "logo": "images/como.png" },
     { "pos": 6, "nome": "Juventus", "punti": 47, "logo": "images/juventus.png" },
     { "pos": 7, "nome": "Atalanta", "punti": 45, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Sassuolo", "punti": 38, "logo": "images/sassuolo.png" },
+    { "pos": 8, "nome": "Bologna", "punti": 39, "logo": "images/bologna.png" },
     {
       "pos": 9,
-      "nome": "Bologna",
-      "punti": 36,
-      "logo": "images/bologna.png"
+      "nome": "Sassuolo",
+      "punti": 38,
+      "logo": "images/sassuolo.png"
     },
     { "pos": 10,
-       "nome": "Lazio",
-        "punti": 34, 
-        "logo": "images/lazio.png" 
+       "nome": "Udinese",
+        "punti": 35, 
+        "logo": "images/udinese.png" 
       },
     { "pos": 11,
-     "nome": "Parma",
-      "punti": 33, 
-      "logo": "images/parma.png" },
+     "nome": "Lazio",
+      "punti": 34, 
+      "logo": "images/lazio.png" },
     {
       "pos": 12,
-      "nome": "Udinese",
-      "punti": 32,
-      "logo": "images/udinese.png"
+      "nome": "Parma",
+      "punti": 33,
+      "logo": "images/parma.png"
     },
     {
       "pos": 13,
@@ -120,12 +120,12 @@
   ],
   "classificaFantacalcio": [
     { "pos": 1, "nome": "Inter", "punti": 54, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Napoli", "punti": 47, "logo": "images/napoli.png" },
+    { "pos": 2, "nome": "Napoli", "punti": 46, "logo": "images/napoli.png" },
     { "pos": 3, "nome": "Atalanta", "punti": 46, "logo": "images/atalanta.png" },
     { "pos": 4, "nome": "Milan", "punti": 42, "logo": "images/milan.png" },
     { "pos": 5, "nome": "Juventus","punti": 37, "logo": "images/juventus.png" },
     { "pos": 6, "nome": "Roma", "punti": 35, "logo": "images/roma.png" },
-    { "pos": 7, "nome": "Lazio", "punti": 28, "logo": "images/lazio.png" },
+    { "pos": 7, "nome": "Lazio", "punti": 30, "logo": "images/lazio.png" },
     { "pos": 8, "nome": "Bologna", "punti": 20, "logo": "images/bologna.png" }
   ],
   "palmares": {
