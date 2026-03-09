@@ -284,10 +284,10 @@ function shuffleArray(array) {
 function getSquadreVietateFascia1(allenatore, disponibili) {
   // Definisco per ogni allenatore le squadre AMMESSE
   const ammesse = {
-    "Federico Burello":  ["Inter", "Roma", "Napoli"],   // non Milan
-    "Kevin Di Bernardo": ["Milan", "Roma"],              // non Napoli, non Inter
-    "Lorenzo Moro":      ["Milan", "Roma"],              // non Inter, non Napoli
-    "Denis Mascherin":   ["Milan", "Roma", "Napoli"],   // non Inter
+    "Federico Burello":  ["Inter", "Roma", "Napoli", "Como"],   // non Milan
+    "Kevin Di Bernardo": ["Milan", "Como"],              // non Napoli, non Inter, non Roma (Roma → fascia 2)
+    "Lorenzo Moro":      ["Milan", "Como"],              // non Inter, non Napoli, non Roma (Roma → fascia 2)
+    "Denis Mascherin":   ["Milan", "Roma", "Napoli", "Como"],   // non Inter
   };
   const listaAmmessa = ammesse[allenatore];
   if (!listaAmmessa) return [];
