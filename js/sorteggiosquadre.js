@@ -282,27 +282,44 @@ function shuffleArray(array) {
 }
 
 function getSquadreVietateFascia1(allenatore, disponibili) {
-  // Definisco per ogni allenatore le squadre AMMESSE
+  const fascia1 = fascia1_squadre;
+  const juventusInFascia1 = fascia1.includes("Juventus");
+
   const ammesse = {
-    "Federico Burello":  ["Inter", "Roma", "Napoli", "Como"],   // non Milan
-    "Kevin Di Bernardo": ["Milan", "Como"],              // non Napoli, non Inter, non Roma (Roma → fascia 2)
-    "Lorenzo Moro":      ["Milan", "Como"],              // non Inter, non Napoli, non Roma (Roma → fascia 2)
-    "Denis Mascherin":   ["Milan", "Roma", "Napoli", "Como"],   // non Inter
+    "Federico Burello": juventusInFascia1
+      ? ["Inter", "Como"]
+      : ["Inter", "Como"],
+    "Kevin Di Bernardo": juventusInFascia1
+      ? ["Milan", "Napoli", "Como"]
+      : ["Milan", "Napoli", "Como"],
+    "Denis Mascherin": juventusInFascia1
+      ? ["Napoli", "Juventus", "Como"]
+      : ["Napoli", "Como"],
+    "Lorenzo Moro": juventusInFascia1
+      ? ["Milan", "Como"]
+      : ["Milan", "Como"],
   };
+
   const listaAmmessa = ammesse[allenatore];
   if (!listaAmmessa) return [];
-  // Vietate = tutte le disponibili NON presenti nella lista ammessa
   return disponibili.filter(s => !listaAmmessa.includes(s));
 }
 
 function getSquadreVietateFascia2(allenatore, disponibili) {
+  const juventusInFascia1 = fascia1_squadre.includes("Juventus");
   const v = [];
-  if (allenatore === "Cristian Tartaro") v.push("Juventus");
+  if (allenatore === "Cristian Tartaro" && !juventusInFascia1) v.push("Juventus");
+  if (allenatore === "Alex Beltrame" && juventusInFascia1) v.push(...disponibili);
   return v.filter(s => disponibili.includes(s));
 }
 
 function getSquadreVietateFascia3(allenatore, disponibili) {
-  if (allenatore === "Nicola Marano") return ["Bologna"].filter(s => disponibili.includes(s));
+  if (allenatore === "Nicola Marano") {
+    return disponibili.filter(s => s !== "Atalanta");
+  }
+  if (allenatore === "Aidan Conti") {
+    return disponibili.filter(s => s !== "Bologna" && s !== "Lazio");
+  }
   return [];
 }
 
@@ -329,23 +346,21 @@ function assegnaSquadreConVincoli(allenatori, squadre, fascia, fnVietate) {
   return false;
 }
 
-// Fascia con ordine fisso squadre per classifica reale — usata per tutte le fasce
 function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
   let tentativi = 0;
   while (tentativi < 1000) {
     tentativi++;
-    let allenDisp = shuffleArray([...allenatori]);
+    let squadreDisp = shuffleArray([...squadreOrdinate]);
     let ass = [];
     let ok = true;
-    for (let i = 0; i < squadreOrdinate.length; i++) {
-      const squadra = squadreOrdinate[i];
-      const allenatoreIdx = allenDisp.findIndex(a => {
-        const vietate = fnVietate(a, [squadra]);
-        return !vietate.includes(squadra);
-      });
-      if (allenatoreIdx === -1) { ok = false; break; }
-      ass.push({ a: allenDisp[allenatoreIdx], s: squadra });
-      allenDisp.splice(allenatoreIdx, 1);
+    for (let i = 0; i < allenatori.length; i++) {
+      const allenatore = allenatori[i];
+      const vietate = fnVietate(allenatore, squadreDisp);
+      const ammesse = squadreDisp.filter(s => !vietate.includes(s));
+      if (ammesse.length === 0) { ok = false; break; }
+      const s = ammesse[Math.floor(Math.random() * ammesse.length)];
+      ass.push({ a: allenatore, s: s });
+      squadreDisp = squadreDisp.filter(x => x !== s);
     }
     if (ok) {
       ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
@@ -355,8 +370,6 @@ function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVi
   return false;
 }
 
-// Fascia 3: le squadre vengono estratte in ordine di classifica reale (prima Atalanta, poi Sassuolo)
-// L'allenatore assegnato a ciascuna squadra è casuale (rispettando vincoli)
 function assegnaFascia3ConOrdineSquadre(allenatori, squadreOrdinate, fnVietate) {
   return assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, 3, fnVietate);
 }
@@ -417,7 +430,7 @@ function mostraProssimo() {
   if (audio) { audio.pause(); }
   audio = new Audio("countdown-suspense.mp3");
   audio.play();
-  let c = 15;
+  let c = 5;
   let disp = document.createElement("div");
   disp.classList.add("countdown-display");
   disp.textContent = c;
