@@ -190,7 +190,9 @@ const TEAM_COLORS = {
   "Cagliari":  { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
   "Venezia":   { primary: "#ff6600", secondary: "#1e3a5f", heart: "🧡💙" },
   "Monza":     { primary: "#cc0000", secondary: "#ffffff", heart: "❤️🤍" },
-  "Como":      { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
+  "Como":       { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
+  "Argentina":  { primary: "#74acdf", secondary: "#ffffff", heart: "💙🤍" },
+  "Spagna":     { primary: "#c60b1e", secondary: "#f1bf00", heart: "❤️💛" },
 };
 
 function renderPalmares(palmares) {
@@ -198,11 +200,18 @@ function renderPalmares(palmares) {
   if (!container || !palmares) return;
   container.innerHTML = "";
 
+  const icone = {
+    "Serie A":    "⚽",
+    "Coppa Italia": "🏅",
+    "Mondiali":   "🌍",
+    "Europei":    "🌟",
+  };
+
   const makeList = (title, items) => {
     const section = document.createElement("div");
     section.classList.add("sezione");
     const h3 = document.createElement("h3");
-    h3.textContent = title;
+    h3.innerHTML = `<span class="palmares-icon">${icone[title] || "🏆"}</span>${title}`;
     section.appendChild(h3);
     const ul = document.createElement("ul");
 
@@ -210,14 +219,15 @@ function renderPalmares(palmares) {
       const li = document.createElement("li");
       const tc = TEAM_COLORS[item.squadra] || null;
       const isPending = !item.squadra || item.squadra === "";
-      const hearts = tc ? `<span class="team-hearts">${tc.heart}</span>` : "";
+      const isNazionale = !!item.bandiera;
+      const hearts = (tc && !isNazionale) ? `<span class="team-hearts">${tc.heart}</span>` : "";
 
       if (isPending) {
         li.classList.add("palmares-pending");
         li.innerHTML = `
           <div class="palmares-row">
-            <span class="palmares-stagione">${item.stagione}</span>
-            <span class="palmares-squadra pending-text">⏳ In corso…</span>
+            <span class="palmares-stagione">${item.stagione.replace("/20", "/").replace("20", "")}</span>
+            <span class="palmares-squadra pending-text">In corso…</span>
           </div>`;
       } else {
         if (tc) {
@@ -227,9 +237,12 @@ function renderPalmares(palmares) {
         li.classList.add("palmares-item-colored");
         li.innerHTML = `
           <div class="palmares-row">
-            <span class="palmares-stagione">${item.stagione}</span>
-            <span class="palmares-squadra">${item.emoji || "🏆"} ${item.squadra}${hearts}</span>
-            ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera" alt="bandiera">` : ""}
+            <span class="palmares-stagione">${item.stagione.replace("/20", "/").replace("20", "")}</span>
+            <span class="palmares-squadra">
+              ${item.emoji || "🏆"} ${item.squadra}
+              ${hearts}
+              ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera" alt="bandiera">` : ""}
+            </span>
           </div>
           <span class="allenatore">${item.allenatore || ""}</span>`;
       }
@@ -472,16 +485,6 @@ function aggiungiEffettiGlow() {
   });
 }
 
-function miglioraVisibilitaAllenatori() {
-  const allenatoriElements = document.querySelectorAll('.allenatore');
-  allenatoriElements.forEach(el => {
-    if (el.textContent.includes('Mattia Beltrame')) {
-      el.style.background = 'linear-gradient(90deg, rgba(212,175,55,0.2), rgba(0,0,0,0.3))';
-      el.style.borderColor = 'var(--gold)';
-    }
-  });
-}
-
 function aggiungiTooltip() {
   const squadreElements = document.querySelectorAll('#tabellaClassifica td:nth-child(2)');
   squadreElements.forEach(el => {
@@ -494,7 +497,6 @@ async function bootstrap() {
   await caricaDati();
   inizializzaSorteggio();
   aggiungiEffettiGlow();
-  miglioraVisibilitaAllenatori();
   aggiungiTooltip();
 }
 
