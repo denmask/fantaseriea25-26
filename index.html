@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FANTA MASTERCHEF 2025-2026</title>
     <link rel="stylesheet" href="sorteggiosquadre.css">
+    <link rel="stylesheet" href="whatsapp-icons.css">
     <link rel="stylesheet" href="ticker.css">
     <link rel="icon" type="image/png" href="images/Serie_A.png">
 </head>
@@ -33,7 +34,12 @@
                 <div class="actions">
                     <button id="btnProssimo" onclick="mostraProssimo()">▶ Mostra Prossima Squadra</button>
                     <button id="btnRicomincia" class="ghost" onclick="ricominciaSorteggio()" style="display:none;">↺ Ricomincia</button>
-                    <button id="btnWhatsApp" class="ghost whatsapp-btn" onclick="condividiSuWhatsApp()" style="display:none;" title="Condividi sorteggio su WhatsApp">📱 Condividi su WhatsApp</button>
+                    <button id="btnWhatsApp" class="whatsapp-btn" onclick="condividiSuWhatsApp()" style="display:none;">
+                      <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a5.446 5.446 0 0 0-5.448 5.449c0 1.066.262 2.107.767 3.031l-1.144 3.541 3.623-1.138c.885.471 1.887.764 2.959.764h.004a5.446 5.446 0 0 0 5.449-5.449 5.426 5.426 0 0 0-5.507-5.443M12.002 0C5.869 0 .958 4.922.958 11.055c0 1.929.424 3.777 1.241 5.434L.057 24l5.904-1.849A11.04 11.04 0 0 0 12.002 24c6.133 0 11.044-4.922 11.044-11.055S18.135 0 12.002 0"/>
+                      </svg>
+                      <span class="whatsapp-text">Condividi Sondaggio</span>
+                    </button>
                     <button onclick="resetCompleto()" class="ghost" style="border-color:rgba(255,61,87,0.4);color:#ff3d57;">✕ Reset</button>
                 </div>
             </section>
@@ -93,15 +99,7 @@
         </div>
     </div>
 
-    <script>
-    function mostraTab(id, btn) {
-        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById('tab-' + id).classList.add('active');
-        btn.classList.add('active');
-    }
-    </script>
-
+    <script src="js/navigation.js"></script>
     <script src="js/sorteggiosquadre.js"></script>
     <script src="js/menuDestra.js"></script>
     <script src="js/menuSotto.js"></script>
