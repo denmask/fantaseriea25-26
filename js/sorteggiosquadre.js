@@ -473,9 +473,83 @@ function controllaFine() {
   if (risultatiMostrati === risultati.length) {
     document.getElementById("btnProssimo").style.display = "none";
     document.getElementById("btnRicomincia").style.display = "inline-block";
+    document.getElementById("btnWhatsApp").style.display = "inline-block";
     salvaEstrazioneCopletataInStorico();
     localStorage.removeItem("estrazioneCorrente");
   }
+}
+
+function generaMessaggioWhatsApp() {
+  if (risultati.length === 0) {
+    alert("Nessun sorteggio da condividere!");
+    return "";
+  }
+
+  // Mappa allenatori con loro fascia
+  const allenaoriMap = {};
+  dataSet.allenatori.forEach(a => {
+    allenaoriMap[a.nome] = a.fascia;
+  });
+
+  // Estrai le estrazioni (escludendo gli header)
+  const estrazioni = risultati
+    .filter(riga => {
+      const [fascia, dettagli] = riga.split(": ");
+      const [p1, p2] = dettagli.split(" -> ");
+      return p1 !== "__HEADER__";
+    })
+    .map((riga, index) => {
+      const [fascia, dettagli] = riga.split(": ");
+      const [allenatore, squadra] = dettagli.split(" -> ");
+      const fasciaNum = fascia.split(" ")[1];
+      const allenatoreFascia = allenaoriMap[allenatore] || "?";
+      return {
+        ordine: index + 1,
+        allenatore,
+        squadra,
+        fasciaEstrazione: fasciaNum,
+        fasciaAllenatore: allenatoreFascia
+      };
+    });
+
+  // Crea il messaggio
+  const ora = new Date().toLocaleString("it-IT");
+  let messaggio = "🎯 *SORTEGGIO FANTACALCIO* 🎯\n";
+  messaggio += "*Lega Udinese 1896*\n";
+  messaggio += `📅 ${ora}\n\n`;
+  messaggio += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  estrazioni.forEach(e => {
+    const ordinaleDi = ["1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°"];
+    const ordine = ordinaleDi[e.ordine - 1] || e.ordine + "°";
+    const fasciaEmoji = ["", "🔴", "🟡", "🟢"][e.fasciaAllenatore] || "⚽";
+    messaggio += `${ordine} ${e.allenatore} (Fascia ${e.fasciaAllenatore}) ${fasciaEmoji}\n`;
+    messaggio += `   → *${e.squadra}*\n\n`;
+  });
+
+  messaggio += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  messaggio += `✅ Estrazione completata: ${estrazioni.length}/8 allenatori\n`;
+  messaggio += "🏆 Buona fortuna a tutti!\n";
+
+  return messaggio;
+}
+
+function condividiSuWhatsApp() {
+  const messaggio = generaMessaggioWhatsApp();
+  
+  if (!messaggio) {
+    alert("Nessun sorteggio disponibile!");
+    return;
+  }
+
+  // Codifica il messaggio per URL
+  const messaggioEncodato = encodeURIComponent(messaggio);
+  
+  // Link WhatsApp Web
+  const urlWhatsApp = `https://wa.me/?text=${messaggioEncodato}`;
+  
+  // Apri in nuova finestra
+  window.open(urlWhatsApp, "_blank");
 }
 
 function aggiungiEffettiGlow() {

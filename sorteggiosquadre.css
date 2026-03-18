@@ -969,3 +969,23 @@ li {
     font-size: 20px;
   }
 }
+
+/* Stile per bottone WhatsApp */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%) !important;
+  color: white !important;
+  border: 1px solid rgba(37, 211, 102, 0.5) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #20ba5a 0%, #1aa84e 100%) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(0);
+}
