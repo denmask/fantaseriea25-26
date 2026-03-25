@@ -307,7 +307,7 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
       : ["Milan", "Napoli", "Como"],
     "Denis Mascherin": juventusInFascia1
       ? ["Napoli", "Juventus", "Como"]
-      : ["Napoli", "Como"],
+      : ["Napoli", "Como", "Milan"],
     "Lorenzo Moro": juventusInFascia1
       ? ["Milan", "Como"]
       : ["Milan", "Como"],
@@ -328,7 +328,7 @@ function getSquadreVietateFascia2(allenatore, disponibili) {
 
 function getSquadreVietateFascia3(allenatore, disponibili) {
   if (allenatore === "Nicola Marano") {
-    return disponibili.filter(s => s !== "Atalanta");
+    return disponibili.filter(s => s !== "Atalanta" && s !== "Lazio");
   }
   if (allenatore === "Aidan Conti") {
     return disponibili.filter(s => s !== "Lazio" && s !== "Bologna");
