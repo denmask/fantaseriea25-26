@@ -331,7 +331,7 @@ function getSquadreVietateFascia3(allenatore, disponibili) {
     return disponibili.filter(s => s !== "Atalanta" && s !== "Lazio");
   }
   if (allenatore === "Aidan Conti") {
-    return disponibili.filter(s => s !== "Lazio" && s !== "Bologna" && s !== "Atalanta");
+    return disponibili.filter(s => s !== "Bologna" && s !== "Lazio" && s !== "Atalanta");
   }
   return [];
 }
