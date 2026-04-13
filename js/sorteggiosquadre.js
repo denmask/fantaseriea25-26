@@ -312,11 +312,23 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
 }
 
 function getSquadreVietateFascia2(allenatore, disponibili) {
-  const juventusInFascia1 = fascia1_squadre.includes("Juventus");
-  const v = [];
-  if (allenatore === "Cristian Tartaro" && !juventusInFascia1) v.push("Juventus");
-  if (allenatore === "Alex Beltrame" && juventusInFascia1) v.push(...disponibili);
-  return v.filter(s => disponibili.includes(s));
+  // fascia2_squadre = [pos5, pos6] dalla classifica reale
+  const squadraPos5 = fascia2_squadre[0]; // es. Como
+  const squadraPos6 = fascia2_squadre[1]; // es. Roma
+
+  if (allenatore === "Alex Beltrame") {
+    // Deve prendere SOLO la squadra in 5ª posizione
+    return disponibili.filter(s => s !== squadraPos5);
+  }
+  if (allenatore === "Cristian Tartaro") {
+    // Deve prendere la squadra in 6ª posizione, ma NON la Juventus
+    const vietate = disponibili.filter(s => s !== squadraPos6);
+    if (!vietate.includes("Juventus") && disponibili.includes("Juventus")) {
+      vietate.push("Juventus");
+    }
+    return vietate;
+  }
+  return [];
 }
 
 function getSquadreVietateFascia3(allenatore, disponibili) {

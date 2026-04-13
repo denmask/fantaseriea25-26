@@ -18,7 +18,7 @@ function renderFasceDaEvento(fasceCalcolate) {
 
   fasceCalcolate.fascia1.forEach((s) => createRow("Fascia 1", s, "fascia1"));
   fasceCalcolate.fascia2.forEach((s) => createRow("Fascia 2", s, "fascia2"));
-  fasceCalcolate.fascia3.forEach((s) => createRow("Fascia 3", s, "fascia3"));
+  fasceCalcolate.fascia3_pure.forEach((s) => createRow("Fascia 3", s, "fascia3"));
 }
 
 document.addEventListener("fasce-calcolate", (evt) =>
