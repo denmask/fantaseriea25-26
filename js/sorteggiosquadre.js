@@ -67,9 +67,10 @@ function visualizzaStorico() {
       <ul style="list-style: none; padding: 0;">`;
     estrazione.risultati.forEach((ris) => {
       const [fascia, dettagli] = ris.split(": ");
-      if (dettagli && dettagli.startsWith("__HEADER__")) return;
+      const [p1, p2] = dettagli.split(" -> ");
+      if (p1 === "__HEADER__") return;
       html += `<li style="padding: 8px; margin: 5px 0; background: #f9f9f9; border-left: 3px solid #4CAF50; padding-left: 10px;">
-        <strong>${fascia}:</strong> ${dettagli}
+        <strong>${fascia}:</strong> ${p1} → ${p2}
       </li>`;
     });
     html += `</ul><button onclick="eliminaEstrazione(${realIndex})" style="margin-top: 10px; padding: 5px 15px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer;">Elimina</button></div>`;
@@ -119,26 +120,26 @@ function creaCardEstrazione(fascia, allenatore, squadra, dettagli) {
   let etichettaFascia = document.createElement("div");
   etichettaFascia.classList.add("etichetta-fascia");
   etichettaFascia.textContent = fascia;
-  
+
   if (allenatore && squadra) {
     let imgAllenatore = document.createElement("img");
     imgAllenatore.src = fotoAllenatore[allenatore] || `images/${allenatore.toLowerCase().replace(/ /g, "_")}.jpg`;
     imgAllenatore.classList.add("foto-allenatore");
     imgAllenatore.alt = allenatore;
-    
+
     let imgSquadra = document.createElement("img");
     imgSquadra.src = logoPerSquadra[squadra] || `images/${squadra.toLowerCase().replace(/ /g, "_")}.png`;
     imgSquadra.classList.add("stemma-squadra");
     imgSquadra.alt = squadra;
-    
+
     let testo = document.createElement("p");
     testo.innerHTML = `<strong>${allenatore}</strong> è stato assegnato alla squadra <strong style="color:var(--gold)">${squadra}</strong>`;
-    
+
     evidenza.appendChild(imgAllenatore);
     evidenza.appendChild(imgSquadra);
     evidenza.appendChild(testo);
   }
-  
+
   evidenza.prepend(etichettaFascia);
   return evidenza;
 }
@@ -147,13 +148,13 @@ function renderFasceTable() {
   const tbody = document.querySelector("#tabellaFasce tbody");
   if (!tbody) return;
   tbody.innerHTML = "";
-  
+
   const renderRow = (item, label, classe) => {
     const row = document.createElement("tr");
     row.innerHTML = `<td class="${classe}">${label}</td><td><img src="${item.logo || ""}" class="stemma" alt="${item.nome}"> ${item.nome}</td>`;
     tbody.appendChild(row);
   };
-  
+
   fasceCalcolate.fascia1.forEach(s => renderRow(s, "Fascia 1", "fascia1"));
   fasceCalcolate.fascia2.forEach(s => renderRow(s, "Fascia 2", "fascia2"));
   fasceCalcolate.fascia3_pure.forEach(s => renderRow(s, "Fascia 3", "fascia3"));
@@ -163,7 +164,7 @@ function renderClassificaReale() {
   const tbody = document.querySelector("#tabellaClassifica tbody");
   if (!tbody) return;
   tbody.innerHTML = "";
-  [...dataSet.classificaSerieA].sort((a,b) => a.pos - b.pos).forEach(s => {
+  [...dataSet.classificaSerieA].sort((a, b) => a.pos - b.pos).forEach(s => {
     const row = document.createElement("tr");
     row.innerHTML = `<td>${s.pos}</td><td><img src="${s.logo}" class="stemma" alt="${s.nome}"> ${s.nome}</td><td>${s.punti}</td>`;
     tbody.appendChild(row);
@@ -171,25 +172,25 @@ function renderClassificaReale() {
 }
 
 const TEAM_COLORS = {
-  "Inter":     { primary: "#0068a8", secondary: "#000000", heart: "💙🖤" },
-  "Milan":     { primary: "#cc0000", secondary: "#000000", heart: "❤️🖤" },
-  "Juventus":  { primary: "#ffffff", secondary: "#000000", heart: "🤍🖤" },
-  "Napoli":    { primary: "#009fd4", secondary: "#003087", heart: "💙💙" },
-  "Roma":      { primary: "#cc0000", secondary: "#f5c518", heart: "❤️💛" },
-  "Lazio":     { primary: "#87ceeb", secondary: "#ffffff", heart: "💙🤍" },
-  "Atalanta":  { primary: "#0000ff", secondary: "#000000", heart: "💙🖤" },
-  "Fiorentina":{ primary: "#6a0dad", secondary: "#ffffff", heart: "💜" },
-  "Bologna":   { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Torino":    { primary: "#8b0000", secondary: "#ffffff", heart: "🤎" },
-  "Udinese":   { primary: "#000000", secondary: "#ffffff", heart: "🖤🤍" },
-  "Genoa":     { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Verona":    { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
-  "Empoli":    { primary: "#1e90ff", secondary: "#ffffff", heart: "💙" },
-  "Lecce":     { primary: "#ffcc00", secondary: "#cc0000", heart: "💛❤️" },
-  "Parma":     { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
-  "Cagliari":  { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Venezia":   { primary: "#ff6600", secondary: "#1e3a5f", heart: "🧡💙" },
-  "Monza":     { primary: "#cc0000", secondary: "#ffffff", heart: "❤️🤍" },
+  "Inter":      { primary: "#0068a8", secondary: "#000000", heart: "💙🖤" },
+  "Milan":      { primary: "#cc0000", secondary: "#000000", heart: "❤️🖤" },
+  "Juventus":   { primary: "#ffffff", secondary: "#000000", heart: "🤍🖤" },
+  "Napoli":     { primary: "#009fd4", secondary: "#003087", heart: "💙💙" },
+  "Roma":       { primary: "#cc0000", secondary: "#f5c518", heart: "❤️💛" },
+  "Lazio":      { primary: "#87ceeb", secondary: "#ffffff", heart: "💙🤍" },
+  "Atalanta":   { primary: "#0000ff", secondary: "#000000", heart: "💙🖤" },
+  "Fiorentina": { primary: "#6a0dad", secondary: "#ffffff", heart: "💜" },
+  "Bologna":    { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Torino":     { primary: "#8b0000", secondary: "#ffffff", heart: "🤎" },
+  "Udinese":    { primary: "#000000", secondary: "#ffffff", heart: "🖤🤍" },
+  "Genoa":      { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Verona":     { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
+  "Empoli":     { primary: "#1e90ff", secondary: "#ffffff", heart: "💙" },
+  "Lecce":      { primary: "#ffcc00", secondary: "#cc0000", heart: "💛❤️" },
+  "Parma":      { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
+  "Cagliari":   { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Venezia":    { primary: "#ff6600", secondary: "#1e3a5f", heart: "🧡💙" },
+  "Monza":      { primary: "#cc0000", secondary: "#ffffff", heart: "❤️🤍" },
   "Como":       { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
   "Argentina":  { primary: "#74acdf", secondary: "#ffffff", heart: "💙🤍" },
   "Spagna":     { primary: "#c60b1e", secondary: "#f1bf00", heart: "❤️💛" },
@@ -201,10 +202,10 @@ function renderPalmares(palmares) {
   container.innerHTML = "";
 
   const icone = {
-    "Serie A":    "⚽",
+    "Serie A":      "⚽",
     "Coppa Italia": "🏅",
-    "Mondiali":   "🌍",
-    "Europei":    "🌟",
+    "Mondiali":     "🌍",
+    "Europei":      "🌟",
   };
 
   const makeList = (title, items) => {
@@ -299,18 +300,10 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
   const juventusInFascia1 = fascia1.includes("Juventus");
 
   const ammesse = {
-    "Federico Burello": juventusInFascia1
-      ? ["Inter", "Como"]
-      : ["Inter", "Como"],
-    "Kevin Di Bernardo": juventusInFascia1
-      ? ["Milan", "Napoli", "Como"]
-      : ["Milan", "Napoli", "Como"],
-    "Denis Mascherin": juventusInFascia1
-      ? ["Napoli", "Juventus", "Como"]
-      : ["Napoli", "Como", "Milan"],
-    "Lorenzo Moro": juventusInFascia1
-      ? ["Milan", "Como"]
-      : ["Milan", "Como"],
+    "Federico Burello":  juventusInFascia1 ? ["Inter", "Como"] : ["Inter", "Como"],
+    "Kevin Di Bernardo": juventusInFascia1 ? ["Milan", "Napoli", "Como"] : ["Milan", "Napoli", "Como"],
+    "Denis Mascherin":   juventusInFascia1 ? ["Napoli", "Juventus", "Como"] : ["Napoli", "Como", "Milan"],
+    "Lorenzo Moro":      juventusInFascia1 ? ["Milan", "Como"] : ["Milan", "Como"],
   };
 
   const listaAmmessa = ammesse[allenatore];
@@ -334,29 +327,6 @@ function getSquadreVietateFascia3(allenatore, disponibili) {
     return disponibili.filter(s => s !== "Bologna" && s !== "Lazio" && s !== "Atalanta");
   }
   return [];
-}
-
-function assegnaSquadreConVincoli(allenatori, squadre, fascia, fnVietate) {
-  let tentativi = 0;
-  while (tentativi < 1000) {
-    tentativi++;
-    let disp = shuffleArray([...squadre]);
-    let ass = [];
-    let ok = true;
-    for (let i = 0; i < allenatori.length; i++) {
-      const v = fnVietate(allenatori[i], disp);
-      const ammesse = disp.filter(s => !v.includes(s));
-      if (ammesse.length === 0) { ok = false; break; }
-      const s = ammesse[0];
-      ass.push({ a: allenatori[i], s: s });
-      disp = disp.filter(x => x !== s);
-    }
-    if (ok) {
-      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
-      return true;
-    }
-  }
-  return false;
 }
 
 function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
@@ -409,8 +379,8 @@ function inizializzaSorteggio() {
 
 function ripristinaRisultatiVisibili() {
   for (let i = 0; i < risultatiMostrati; i++) {
-    let [f, d] = risultati[i].split(": ");
-    let [p1, p2] = d.split(" -> ");
+    const [f, d] = risultati[i].split(": ");
+    const [p1, p2] = d.split(" -> ");
     if (p1 === "__HEADER__") {
       let h = document.createElement("div");
       h.classList.add("fascia-header-annuncio");
@@ -425,8 +395,11 @@ function ripristinaRisultatiVisibili() {
 function mostraProssimo() {
   if (risultatiMostrati >= risultati.length) return;
   document.getElementById("btnProssimo").disabled = true;
-  let [f, d] = risultati[risultatiMostrati].split(": ");
-  let [p1, p2] = d.split(" -> ");
+
+  const [f, d] = risultati[risultatiMostrati].split(": ");
+  const [p1, p2] = d.split(" -> ");
+
+  // ── Header di fascia: mostra il titolo e rientra subito ──
   if (p1 === "__HEADER__") {
     let h = document.createElement("div");
     h.classList.add("fascia-header-annuncio");
@@ -436,22 +409,25 @@ function mostraProssimo() {
     salvaEstrazioneCorrente();
     document.getElementById("btnProssimo").disabled = false;
     controllaFine();
-    // Mostra automaticamente la prima squadra della fascia
-    setTimeout(() => mostraProssimo(), 300);
+    // NESSUNA chiamata ricorsiva: l'utente preme di nuovo il bottone
     return;
   }
+
+  // ── Estrazione normale con countdown ──
   if (audio) { audio.pause(); }
   audio = new Audio("countdown-suspense.mp3");
   audio.play();
+
   let c = 5;
   let disp = document.createElement("div");
   disp.classList.add("countdown-display");
   disp.textContent = c;
-  document.getElementById("output").appendChild(disp);
+  getZonaFascia(f).appendChild(disp);
+
   let timer = setInterval(() => {
     c--;
     disp.textContent = c;
-    if (c <= 5) disp.classList.add("countdown-urgente");
+    if (c <= 2) disp.classList.add("countdown-urgente");
     if (c === 0) {
       clearInterval(timer);
       disp.classList.add("countdown-fine");
@@ -485,42 +461,34 @@ function generaMessaggioWhatsApp() {
     return "";
   }
 
-  // Mappa allenatori con loro fascia
   const allenaoriMap = {};
-  dataSet.allenatori.forEach(a => {
-    allenaoriMap[a.nome] = a.fascia;
-  });
+  dataSet.allenatori.forEach(a => { allenaoriMap[a.nome] = a.fascia; });
 
-  // Estrai le estrazioni (escludendo gli header)
   const estrazioni = risultati
     .filter(riga => {
-      const [fascia, dettagli] = riga.split(": ");
-      const [p1, p2] = dettagli.split(" -> ");
+      const [, dettagli] = riga.split(": ");
+      const [p1] = dettagli.split(" -> ");
       return p1 !== "__HEADER__";
     })
     .map((riga, index) => {
       const [fascia, dettagli] = riga.split(": ");
       const [allenatore, squadra] = dettagli.split(" -> ");
-      const fasciaNum = fascia.split(" ")[1];
-      const allenatoreFascia = allenaoriMap[allenatore] || "?";
       return {
         ordine: index + 1,
         allenatore,
         squadra,
-        fasciaEstrazione: fasciaNum,
-        fasciaAllenatore: allenatoreFascia
+        fasciaAllenatore: allenaoriMap[allenatore] || "?",
       };
     });
 
-  // Crea il messaggio
   const ora = new Date().toLocaleString("it-IT");
   let messaggio = "🎯 *SORTEGGIO FANTACALCIO* 🎯\n";
   messaggio += "*Lega Udinese 1896*\n";
   messaggio += `📅 ${ora}\n\n`;
   messaggio += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
 
+  const ordinaleDi = ["1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°"];
   estrazioni.forEach(e => {
-    const ordinaleDi = ["1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°"];
     const ordine = ordinaleDi[e.ordine - 1] || e.ordine + "°";
     const fasciaEmoji = ["", "🔴", "🟡", "🟢"][e.fasciaAllenatore] || "⚽";
     messaggio += `${ordine} ${e.allenatore} (Fascia ${e.fasciaAllenatore}) ${fasciaEmoji}\n`;
@@ -536,32 +504,19 @@ function generaMessaggioWhatsApp() {
 
 function condividiSuWhatsApp() {
   const messaggio = generaMessaggioWhatsApp();
-  
-  if (!messaggio) {
-    alert("Nessun sorteggio disponibile!");
-    return;
-  }
-
-  // Codifica il messaggio per URL
+  if (!messaggio) { alert("Nessun sorteggio disponibile!"); return; }
   const messaggioEncodato = encodeURIComponent(messaggio);
-  
-  // Link WhatsApp Web
-  const urlWhatsApp = `https://wa.me/?text=${messaggioEncodato}`;
-  
-  // Apri in nuova finestra
-  window.open(urlWhatsApp, "_blank");
+  window.open(`https://wa.me/?text=${messaggioEncodato}`, "_blank");
 }
 
 function aggiungiEffettiGlow() {
-  const buttons = document.querySelectorAll('button:not(#btnProssimo)');
-  buttons.forEach(btn => {
+  document.querySelectorAll('button:not(#btnProssimo)').forEach(btn => {
     btn.classList.add('glow-effect');
   });
 }
 
 function aggiungiTooltip() {
-  const squadreElements = document.querySelectorAll('#tabellaClassifica td:nth-child(2)');
-  squadreElements.forEach(el => {
+  document.querySelectorAll('#tabellaClassifica td:nth-child(2)').forEach(el => {
     el.setAttribute('title', 'Clicca per dettagli squadra');
     el.style.cursor = 'help';
   });
