@@ -300,10 +300,10 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
   const juventusInFascia1 = fascia1.includes("Juventus");
 
   const ammesse = {
-    "Federico Burello":  juventusInFascia1 ? ["Inter", "Como"] : ["Inter", "Como"],
-    "Kevin Di Bernardo": juventusInFascia1 ? ["Milan", "Napoli", "Como"] : ["Milan", "Napoli", "Como"],
-    "Denis Mascherin":   juventusInFascia1 ? ["Napoli", "Juventus", "Como"] : ["Napoli", "Juventus", "Como", "Milan"],
-    "Lorenzo Moro":      juventusInFascia1 ? ["Milan", "Como"] : ["Milan", "Como"],
+    "Federico Burello":  ["Inter", "Napoli"],
+    "Kevin Di Bernardo": ["Milan", "Napoli"],
+    "Denis Mascherin":   juventusInFascia1 ? ["Juventus", "Milan", "Napoli", "Como"] : ["Juventus", "Milan", "Napoli"],
+    "Lorenzo Moro":      ["Milan", "Napoli", "Como"],
   };
 
   const listaAmmessa = ammesse[allenatore];
@@ -312,31 +312,24 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
 }
 
 function getSquadreVietateFascia2(allenatore, disponibili) {
-  // fascia2_squadre = [pos5, pos6] dalla classifica reale
-  const squadraPos5 = fascia2_squadre[0]; // es. Como
-  const squadraPos6 = fascia2_squadre[1]; // es. Roma
+  const squadraPos5 = fascia2_squadre[0];
+  const squadraPos6 = fascia2_squadre[1];
 
   if (allenatore === "Alex Beltrame") {
-    // Deve prendere SOLO la squadra in 5ª posizione
     return disponibili.filter(s => s !== squadraPos5);
   }
   if (allenatore === "Cristian Tartaro") {
-    // Deve prendere la squadra in 6ª posizione, ma NON la Juventus
-    const vietate = disponibili.filter(s => s !== squadraPos6);
-    if (!vietate.includes("Juventus") && disponibili.includes("Juventus")) {
-      vietate.push("Juventus");
-    }
-    return vietate;
+    return disponibili.filter(s => s !== "Roma");
   }
   return [];
 }
 
 function getSquadreVietateFascia3(allenatore, disponibili) {
   if (allenatore === "Nicola Marano") {
-    return disponibili.filter(s => s !== "Atalanta" && s !== "Lazio");
+    return disponibili.filter(s => s !== "Atalanta");
   }
   if (allenatore === "Aidan Conti") {
-    return disponibili.filter(s => s !== "Bologna" && s !== "Lazio" && s !== "Atalanta");
+    return disponibili.filter(s => s !== "Bologna" && s !== "Lazio");
   }
   return [];
 }
@@ -411,7 +404,6 @@ function mostraProssimo() {
   const [f, d] = risultati[risultatiMostrati].split(": ");
   const [p1, p2] = d.split(" -> ");
 
-  // ── Header di fascia: mostra il titolo e rientra subito ──
   if (p1 === "__HEADER__") {
     let h = document.createElement("div");
     h.classList.add("fascia-header-annuncio");
@@ -421,11 +413,9 @@ function mostraProssimo() {
     salvaEstrazioneCorrente();
     document.getElementById("btnProssimo").disabled = false;
     controllaFine();
-    // NESSUNA chiamata ricorsiva: l'utente preme di nuovo il bottone
     return;
   }
 
-  // ── Estrazione normale con countdown ──
   if (audio) { audio.pause(); }
   audio = new Audio("countdown-suspense.mp3");
   audio.play();
