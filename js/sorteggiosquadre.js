@@ -302,7 +302,7 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
   const ammesse = {
     "Federico Burello":  juventusInFascia1 ? ["Inter", "Como"] : ["Inter", "Como"],
     "Kevin Di Bernardo": juventusInFascia1 ? ["Milan", "Napoli", "Como"] : ["Milan", "Napoli", "Como"],
-    "Denis Mascherin":   juventusInFascia1 ? ["Napoli", "Juventus", "Como"] : ["Napoli", "Como", "Milan"],
+    "Denis Mascherin":   juventusInFascia1 ? ["Napoli", "Juventus", "Como"] : ["Napoli", "Juventus", "Como", "Milan"],
     "Lorenzo Moro":      juventusInFascia1 ? ["Milan", "Como"] : ["Milan", "Como"],
   };
 
