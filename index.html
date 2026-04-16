@@ -21,6 +21,7 @@
         <button class="chip-btn" onclick="mostraTab('fasce', this)">Suddivisione Fasce</button>
         <button class="chip-btn" onclick="mostraTab('classifica-serie-a', this)">Classifica Serie A</button>
         <button class="chip-btn" onclick="mostraTab('classifica-fanta-tab', this)">Classifica Fanta</button>
+        <button class="chip-btn" onclick="mostraTab('calendario-26-27', this)">📅 Calendario 26/27</button>
         <button class="chip-btn" onclick="mostraTab('palmares-tab', this)">Palmarès</button>
     </nav>
 
@@ -89,6 +90,16 @@
         </div>
     </div>
 
+    <div class="tab-content" id="tab-calendario-26-27">
+        <div class="tab-inner">
+            <div class="section-header">
+                <h2>Calendario Fantacalcio 2026/2027</h2>
+                <p class="helper-text">Tutte le 38 giornate di campionato</p>
+            </div>
+            <div id="calendario-content" class="calendario-wrapper"></div>
+        </div>
+    </div>
+
     <div class="tab-content" id="tab-palmares-tab">
         <div class="tab-inner palmares-tab-inner">
             <div class="section-header">
@@ -105,5 +116,6 @@
     <script src="js/menuSotto.js"></script>
     <script src="js/classificaFantacalcio.js"></script>
     <script src="js/menuFasce.js"></script>
+    <script src="js/calendarioFantacalcio.js"></script>
 </body>
 </html>
