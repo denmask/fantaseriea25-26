@@ -1,0 +1,347 @@
+{
+  "stagione": "2026/2027",
+  "giornate": [
+    {
+      "numero": 1,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png" }, "trasferta": { "nome": "Como",   "logo": "images/como.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Roma",   "logo": "images/roma.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Milan",  "logo": "images/milan.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Napoli", "logo": "images/napoli.png" }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 2,
+      "partite": [
+        { "casa": { "nome": "Como",    "logo": "images/como.png"    }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",    "logo": "images/roma.png"    }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",   "logo": "images/milan.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",  "logo": "images/napoli.png"  }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 3,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Napoli",  "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Como",    "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Juventus","logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Roma",    "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 4,
+      "partite": [
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 5,
+      "partite": [
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 6,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 7,
+      "partite": [
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 8,
+      "partite": [
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 9,
+      "partite": [
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 10,
+      "partite": [
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 11,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 12,
+      "partite": [
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 13,
+      "partite": [
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 14,
+      "partite": [
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 15,
+      "partite": [
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 16,
+      "partite": [
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 17,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 18,
+      "partite": [
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 19,
+      "partite": [
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 20,
+      "partite": [
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 21,
+      "partite": [
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 22,
+      "partite": [
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 23,
+      "partite": [
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 24,
+      "partite": [
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 25,
+      "partite": [
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 26,
+      "partite": [
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 27,
+      "partite": [
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 28,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 29,
+      "partite": [
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 30,
+      "partite": [
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 31,
+      "partite": [
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 32,
+      "partite": [
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 33,
+      "partite": [
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 34,
+      "partite": [
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 35,
+      "partite": [
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Como",     "logo": "images/como.png"    }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Juventus", "logo": "images/juventus.png"}, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 36,
+      "partite": [
+        { "casa": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Como",     "logo": "images/como.png"    }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 37,
+      "partite": [
+        { "casa": { "nome": "Bologna",  "logo": "images/bologna.png" }, "trasferta": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Roma",     "logo": "images/roma.png"    }, "trasferta": { "nome": "Milan",    "logo": "images/milan.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "trasferta": { "nome": "Inter",    "logo": "images/inter.png"   }, "golCasa": null, "golTrasferta": null }
+      ]
+    },
+    {
+      "numero": 38,
+      "partite": [
+        { "casa": { "nome": "Inter",    "logo": "images/inter.png"   }, "trasferta": { "nome": "Lazio",    "logo": "images/lazio.png"   }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Napoli",   "logo": "images/napoli.png"  }, "trasferta": { "nome": "Atalanta", "logo": "images/atalanta.png"}, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Milan",    "logo": "images/milan.png"   }, "trasferta": { "nome": "Bologna",  "logo": "images/bologna.png" }, "golCasa": null, "golTrasferta": null },
+        { "casa": { "nome": "Juventus", "logo": "images/juventus.png"}, "trasferta": { "nome": "Roma",     "logo": "images/roma.png"    }, "golCasa": null, "golTrasferta": null }
+      ]
+    }
+  ]
+}
