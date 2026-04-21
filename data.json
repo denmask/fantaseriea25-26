@@ -33,10 +33,10 @@
     { "pos": 12, "nome": "Torino",      "punti": 40, "logo": "images/torino.png"      },
     { "pos": 13, "nome": "Genoa",       "punti": 39, "logo": "images/genoa.png"      },
     { "pos": 14, "nome": "Parma",       "punti": 39, "logo": "images/parma.png"     },
-    { "pos": 15, "nome": "Fiorentina",  "punti": 35, "logo": "images/fiorentina.png"   },
+    { "pos": 15, "nome": "Fiorentina",  "punti": 36, "logo": "images/fiorentina.png"   },
     { "pos": 16, "nome": "Cagliari",    "punti": 33, "logo": "images/cagliari.png" },
     { "pos": 17, "nome": "Cremonese",   "punti": 28, "logo": "images/cremonese.png" },
-    { "pos": 18, "nome": "Lecce",       "punti": 27, "logo": "images/lecce.png"     },
+    { "pos": 18, "nome": "Lecce",       "punti": 28, "logo": "images/lecce.png"     },
     { "pos": 19, "nome": "Pisa",        "punti": 18, "logo": "images/pisa.png"      },
     { "pos": 20, "nome": "Verona",      "punti": 18, "logo": "images/verona.png"    }
   ],
