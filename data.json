@@ -74,5 +74,137 @@
     "euro": [
       { "stagione": "2024", "squadra": "Spagna", "allenatore": "Cristian Tartaro", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" }
     ]
+  },
+  "classificheStoriche": {
+    "2021/2022": {
+      "titolo": "Serie A TIM 2021/2022 — Edizione I (4 partecipanti)",
+      "note": "Michele Picilli dimesso nel gennaio 2022 (squadra al 4° posto), al suo posto Riccardo Rella (a fine stagione al 2° posto).",
+      "classifica": [
+        { "pos": 1, "squadra": "Roma",       "allenatore": "Denis Mascherin",              "punti": 70, "fp": "--" },
+        { "pos": 2, "squadra": "Udinese",     "allenatore": "Michele Picilli / Riccardo Rella", "punti": 65, "fp": "--" },
+        { "pos": 3, "squadra": "H. Verona",   "allenatore": "Mattia Beltrame",              "punti": 47, "fp": "--" },
+        { "pos": 4, "squadra": "L.R. Vicenza","allenatore": "Kevin Sandri",                 "punti": 44, "fp": "--" }
+      ]
+    },
+    "2022/2023": {
+      "titolo": "Serie A TIM 2022/2023 — Edizione II (6 partecipanti)",
+      "note": "Juventus con 6 punti di penalizzazione (in base alla penalizzazione reale). Lotta scudetto Fanta tra Inter e Napoli: Riccardo Rella ha perso il Fanta all'ultima giornata ed è scivolato terzo.",
+      "classifica": [
+        { "pos": 1, "squadra": "Inter",    "allenatore": "Mattia Beltrame",     "punti": 55, "fp": "2741" },
+        { "pos": 2, "squadra": "Roma",     "allenatore": "Andrea Campagnolo",   "punti": 54, "fp": "2593" },
+        { "pos": 3, "squadra": "Napoli",   "allenatore": "Riccardo Rella",      "punti": 54, "fp": "2727" },
+        { "pos": 4, "squadra": "Milan",    "allenatore": "Denis Mascherin",     "punti": 54, "fp": "2674" },
+        { "pos": 5, "squadra": "Lazio",    "allenatore": "Kevin Sandri",        "punti": 52, "fp": "2766.5" },
+        { "pos": 6, "squadra": "Juventus", "allenatore": "Giovanni Bean (-6pt)","punti": 46, "fp": "2637" }
+      ]
+    },
+    "2023/2024": {
+      "titolo": "Serie A TIM 2023/2024 — Edizione III (8 partecipanti)",
+      "note": "Cristian Tartaro ha gestito l'Atalanta come vice di Federico Burello.",
+      "classifica": [
+        { "pos": 1, "squadra": "Inter",      "allenatore": "Mattia Beltrame",                      "punti": 71, "fp": "2911" },
+        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro (vice F. Burello)",   "punti": 66, "fp": "2898.5" },
+        { "pos": 3, "squadra": "Milan",      "allenatore": "Giovanni Bean",                        "punti": 56, "fp": "2691.5" },
+        { "pos": 4, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo",                    "punti": 53, "fp": "2644.5" },
+        { "pos": 5, "squadra": "Lazio",      "allenatore": "Kevin Sandri",                         "punti": 52, "fp": "2631" },
+        { "pos": 6, "squadra": "Juventus",   "allenatore": "Denis Mascherin",                      "punti": 51, "fp": "2752.5" },
+        { "pos": 7, "squadra": "Roma",       "allenatore": "Andrea Campagnolo",                    "punti": 45, "fp": "2636.5" },
+        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin (vice Giacomo Bot)",      "punti": 36, "fp": "2522.5" }
+      ]
+    },
+    "2024/2025": {
+      "titolo": "Serie A Enilive 2024/2025 — Edizione IV (8 partecipanti)",
+      "note": "Andrea Campagnolo sostituito da Alex Beltrame nella gestione della Roma.",
+      "classifica": [
+        { "pos": 1, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",                        "punti": 68, "fp": "2707.5" },
+        { "pos": 2, "squadra": "Milan",    "allenatore": "Kevin Di Bernardo",                      "punti": 61, "fp": "2561" },
+        { "pos": 3, "squadra": "Inter",    "allenatore": "Denis Mascherin",                        "punti": 60, "fp": "2784.5" },
+        { "pos": 4, "squadra": "Bologna",  "allenatore": "Federico Burello",                       "punti": 60, "fp": "2685" },
+        { "pos": 5, "squadra": "Atalanta", "allenatore": "Cristian Tartaro",                       "punti": 56, "fp": "2815.5" },
+        { "pos": 6, "squadra": "Juventus", "allenatore": "Kevin Sandri",                           "punti": 50, "fp": "2428.5" },
+        { "pos": 7, "squadra": "Roma",     "allenatore": "Andrea Campagnolo / Alex Beltrame",      "punti": 33, "fp": "2428.5" },
+        { "pos": 8, "squadra": "Genoa",    "allenatore": "Giovanni Bean",                          "punti": 30, "fp": "2383" }
+      ]
+    },
+    "2025/2026": {
+      "titolo": "Serie A Enilive 2025/2026 — Edizione V (8 partecipanti)",
+      "note": "",
+      "classifica": [
+        { "pos": 1, "squadra": "Inter",    "allenatore": "Federico Burello",    "punti": 64, "fp": "" },
+        { "pos": 2, "squadra": "Atalanta", "allenatore": "Kevin Di Bernardo",   "punti": 56, "fp": "" },
+        { "pos": 3, "squadra": "Juventus", "allenatore": "Denis Mascherin",     "punti": 51, "fp": "" },
+        { "pos": 4, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",     "punti": 50, "fp": "" },
+        { "pos": 5, "squadra": "Milan",    "allenatore": "Lorenzo Moro",        "punti": 49, "fp": "" },
+        { "pos": 6, "squadra": "Roma",     "allenatore": "Alex Beltrame",       "punti": 47, "fp": "" },
+        { "pos": 7, "squadra": "Lazio",    "allenatore": "Cristian Tartaro",    "punti": 40, "fp": "" },
+        { "pos": 8, "squadra": "Bologna",  "allenatore": "Nicola Marano",       "punti": 20, "fp": "" }
+      ]
+    }
+  },
+  "altreCompetizioni": {
+    "Fantamundial Qatar 2022": {
+      "titolo": "Fantamundial Qatar 2022",
+      "note": "",
+      "classifica": [
+        { "pos": 1, "squadra": "Argentina", "allenatore": "Kevin Sandri",       "punti": 12, "risultato": "CAMPIONE (Finale)" },
+        { "pos": 2, "squadra": "Francia",   "allenatore": "Denis Mascherin",    "punti": 9,  "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Brasile",   "allenatore": "Mattia Beltrame",    "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 4, "squadra": "Portogallo","allenatore": "Giovanni Bean",      "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 5, "squadra": "Spagna",    "allenatore": "Riccardo Rella",     "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 6, "squadra": "Germania",  "allenatore": "Andrea Campagnolo",  "punti": 3,  "risultato": "Fase a Gironi" }
+      ]
+    },
+    "Fantaeuropeo Germany 2024": {
+      "titolo": "Fantaeuropeo Germany 2024",
+      "note": "",
+      "classifica": [
+        { "pos": 1, "squadra": "Spagna",      "allenatore": "Cristian Tartaro",    "punti": 19, "risultato": "CAMPIONE (Finale)" },
+        { "pos": 2, "squadra": "Inghilterra", "allenatore": "Kevin Sandri",        "punti": 14, "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Germania",    "allenatore": "Denis Mascherin",     "punti": 12, "risultato": "Quarti di Finale" },
+        { "pos": 4, "squadra": "Francia",     "allenatore": "Mattia Beltrame",     "punti": 9,  "risultato": "Semifinale" },
+        { "pos": 5, "squadra": "Portogallo",  "allenatore": "Federico Burello",    "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 6, "squadra": "Italia",      "allenatore": "Kevin Di Bernardo",   "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 7, "squadra": "Belgio",      "allenatore": "Andrea Campagnolo",   "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 8, "squadra": "Croazia",     "allenatore": "Giacomo Bot",         "punti": 4,  "risultato": "Fase a Gironi" }
+      ]
+    },
+    "FantacoppaItalia 2023/2024": {
+      "titolo": "Fantacoppa Italia Frecciarossa 2023/2024",
+      "note": "",
+      "classifica": [
+        { "pos": 1, "squadra": "Juventus",   "allenatore": "Denis Mascherin",     "punti": null, "risultato": "CAMPIONE" },
+        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro",    "punti": null, "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo",   "punti": null, "risultato": "Semifinale" },
+        { "pos": 4, "squadra": "Lazio",      "allenatore": "Kevin Sandri",        "punti": null, "risultato": "Semifinale" },
+        { "pos": 5, "squadra": "Roma",       "allenatore": "Andrea Campagnolo",   "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 6, "squadra": "Milan",      "allenatore": "Giovanni Bean",       "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 7, "squadra": "Inter",      "allenatore": "Mattia Beltrame",     "punti": null, "risultato": "Ottavi di Finale" },
+        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin",        "punti": null, "risultato": "Ottavi di Finale" }
+      ]
+    },
+    "FantacoppaItalia 2024/2025": {
+      "titolo": "Fantacoppa Italia Frecciarossa 2024/2025",
+      "note": "",
+      "classifica": [
+        { "pos": 1, "squadra": "Bologna",  "allenatore": "Federico Burello",                  "punti": null, "risultato": "CAMPIONE" },
+        { "pos": 2, "squadra": "Milan",    "allenatore": "Kevin Di Bernardo",                 "punti": null, "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Inter",    "allenatore": "Denis Mascherin",                   "punti": null, "risultato": "Semifinale" },
+        { "pos": 4, "squadra": "Atalanta", "allenatore": "Cristian Tartaro",                  "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 5, "squadra": "Juventus", "allenatore": "Kevin Sandri",                      "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 6, "squadra": "Roma",     "allenatore": "Andrea Campagnolo / Alex Beltrame", "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 7, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",                   "punti": null, "risultato": "Ottavi di Finale" },
+        { "pos": 8, "squadra": "Genoa",    "allenatore": "Giovanni Bean",                     "punti": null, "risultato": "Sedicesimi di Finale" }
+      ]
+    },
+    "FantacoppaItalia 2025/2026": {
+      "titolo": "Fantacoppa Italia Frecciarossa 2025/2026",
+      "note": "Classifica da completare al termine della competizione.",
+      "classifica": []
+    },
+    "Fantamundial USA 2026": {
+      "titolo": "Fantamundial USA 2026",
+      "note": "Classifica da completare al termine della competizione.",
+      "classifica": []
+    }
   }
 }

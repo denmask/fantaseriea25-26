@@ -13,6 +13,29 @@ let risultati = [];
 let risultatiMostrati = 0;
 let audio = null;
 
+// Mappa colori squadre
+const TEAM_COLORS = {
+  "Inter": { primary: "#0068a8", secondary: "#000000", heart: "💙🖤" },
+  "Milan": { primary: "#cc0000", secondary: "#000000", heart: "❤️🖤" },
+  "Juventus": { primary: "#1a1a2e", secondary: "#ffffff", heart: "🤍🖤" },
+  "Napoli": { primary: "#009fd4", secondary: "#003087", heart: "💙💙" },
+  "Roma": { primary: "#cc0000", secondary: "#f5c518", heart: "❤️💛" },
+  "Lazio": { primary: "#87ceeb", secondary: "#ffffff", heart: "💙🤍" },
+  "Atalanta": { primary: "#0000ff", secondary: "#000000", heart: "💙🖤" },
+  "Fiorentina": { primary: "#6a0dad", secondary: "#ffffff", heart: "💜" },
+  "Bologna": { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Udinese": { primary: "#000000", secondary: "#ffffff", heart: "🖤🤍" },
+  "Genoa": { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
+  "Como": { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
+  "Argentina": { primary: "#74acdf", secondary: "#ffffff", heart: "💙🤍" },
+  "Spagna": { primary: "#c60b1e", secondary: "#f1bf00", heart: "❤️💛" },
+  "Francia": { primary: "#0055a4", secondary: "#ffffff", heart: "💙🤍❤️" },
+  "Inghilterra": { primary: "#c8102e", secondary: "#ffffff", heart: "❤️🤍" },
+  "Brasile": { primary: "#009c3b", secondary: "#ffdf00", heart: "💚💛" },
+  "Portogallo": { primary: "#006600", secondary: "#ff0000", heart: "💚❤️" },
+  "Germania": { primary: "#000000", secondary: "#ffcc00", heart: "🖤❤️💛" },
+};
+
 function salvaEstrazioneCorrente() {
   if (risultati.length === 0) return;
   const estrazione = {
@@ -35,7 +58,7 @@ function caricaEstrazioneCorrente() {
   return false;
 }
 
-function salvaEstrazioneCopletataInStorico() {
+function salvaEstrazioneCompletataInStorico() {
   if (risultati.length === 0) return;
   const estrazione = {
     data: new Date().toISOString(),
@@ -45,55 +68,6 @@ function salvaEstrazioneCopletataInStorico() {
   let estrazioniSalvate = JSON.parse(localStorage.getItem("estrazioniFantacalcio") || "[]");
   estrazioniSalvate.push(estrazione);
   localStorage.setItem("estrazioniFantacalcio", JSON.stringify(estrazioniSalvate));
-}
-
-function caricaEstrazioni() {
-  const estrazioni = localStorage.getItem("estrazioniFantacalcio");
-  return estrazioni ? JSON.parse(estrazioni) : [];
-}
-
-function visualizzaStorico() {
-  const estrazioni = caricaEstrazioni();
-  if (estrazioni.length === 0) {
-    alert("Nessuna estrazione salvata nello storico!");
-    return;
-  }
-  let html = '<div class="storico-estrazioni" style="margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 10px;"><h2>Storico Estrazioni Completate</h2>';
-  estrazioni.reverse().forEach((estrazione, index) => {
-    const realIndex = estrazioni.length - 1 - index;
-    const data = new Date(estrazione.data).toLocaleString("it-IT");
-    html += `<div class="estrazione-salvata" style="margin: 15px 0; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <h3 style="color: #333; margin-bottom: 10px;">Estrazione ${realIndex + 1} - ${data}</h3>
-      <ul style="list-style: none; padding: 0;">`;
-    estrazione.risultati.forEach((ris) => {
-      const [fascia, dettagli] = ris.split(": ");
-      const [p1, p2] = dettagli.split(" -> ");
-      if (p1 === "__HEADER__") return;
-      html += `<li style="padding: 8px; margin: 5px 0; background: #f9f9f9; border-left: 3px solid #4CAF50; padding-left: 10px;">
-        <strong>${fascia}:</strong> ${p1} → ${p2}
-      </li>`;
-    });
-    html += `</ul><button onclick="eliminaEstrazione(${realIndex})" style="margin-top: 10px; padding: 5px 15px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer;">Elimina</button></div>`;
-  });
-  html += "</div>";
-  document.getElementById("output").innerHTML = html;
-}
-
-function eliminaEstrazione(index) {
-  if (confirm("Sei sicuro?")) {
-    let estrazioni = caricaEstrazioni();
-    estrazioni.splice(index, 1);
-    localStorage.setItem("estrazioniFantacalcio", JSON.stringify(estrazioni));
-    visualizzaStorico();
-  }
-}
-
-function resetCompleto() {
-  if (confirm("Vuoi eliminare tutto?")) {
-    localStorage.removeItem("estrazioniFantacalcio");
-    localStorage.removeItem("estrazioneCorrente");
-    location.reload();
-  }
 }
 
 function inizializzaZoneFasce() {
@@ -171,30 +145,101 @@ function renderClassificaReale() {
   });
 }
 
-const TEAM_COLORS = {
-  "Inter":      { primary: "#0068a8", secondary: "#000000", heart: "💙🖤" },
-  "Milan":      { primary: "#cc0000", secondary: "#000000", heart: "❤️🖤" },
-  "Juventus":   { primary: "#ffffff", secondary: "#000000", heart: "🤍🖤" },
-  "Napoli":     { primary: "#009fd4", secondary: "#003087", heart: "💙💙" },
-  "Roma":       { primary: "#cc0000", secondary: "#f5c518", heart: "❤️💛" },
-  "Lazio":      { primary: "#87ceeb", secondary: "#ffffff", heart: "💙🤍" },
-  "Atalanta":   { primary: "#0000ff", secondary: "#000000", heart: "💙🖤" },
-  "Fiorentina": { primary: "#6a0dad", secondary: "#ffffff", heart: "💜" },
-  "Bologna":    { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Torino":     { primary: "#8b0000", secondary: "#ffffff", heart: "🤎" },
-  "Udinese":    { primary: "#000000", secondary: "#ffffff", heart: "🖤🤍" },
-  "Genoa":      { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Verona":     { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
-  "Empoli":     { primary: "#1e90ff", secondary: "#ffffff", heart: "💙" },
-  "Lecce":      { primary: "#ffcc00", secondary: "#cc0000", heart: "💛❤️" },
-  "Parma":      { primary: "#ffcc00", secondary: "#1e3a5f", heart: "💛💙" },
-  "Cagliari":   { primary: "#cc0000", secondary: "#1e3a5f", heart: "❤️💙" },
-  "Venezia":    { primary: "#ff6600", secondary: "#1e3a5f", heart: "🧡💙" },
-  "Monza":      { primary: "#cc0000", secondary: "#ffffff", heart: "❤️🤍" },
-  "Como":       { primary: "#1e3a5f", secondary: "#87ceeb", heart: "💙" },
-  "Argentina":  { primary: "#74acdf", secondary: "#ffffff", heart: "💙🤍" },
-  "Spagna":     { primary: "#c60b1e", secondary: "#f1bf00", heart: "❤️💛" },
-};
+// ========== MODAL PER CLASSIFICHE STORICHE ==========
+function showSeasonDetails(seasonId, seasonLabel, squadraVincente, allenatoreVincente, tipoCompetizione) {
+  let seasonData = null;
+  let isSerieA = true;
+
+  if (tipoCompetizione === "Coppa Italia") {
+    // --- COPPA ITALIA: legge sempre da altreCompetizioni ---
+    isSerieA = false;
+    if (seasonId.includes("2023")) {
+      seasonData = dataSet.altreCompetizioni?.["FantacoppaItalia 2023/2024"];
+    } else if (seasonId.includes("2024")) {
+      seasonData = dataSet.altreCompetizioni?.["FantacoppaItalia 2024/2025"];
+    } else {
+      seasonData = dataSet.altreCompetizioni?.["FantacoppaItalia 2025/2026"];
+    }
+  } else if (tipoCompetizione === "Mondiali") {
+    // --- MONDIALI ---
+    isSerieA = false;
+    if (seasonId.includes("2026")) {
+      seasonData = dataSet.altreCompetizioni?.["Fantamundial USA 2026"];
+    } else {
+      seasonData = dataSet.altreCompetizioni?.["Fantamundial Qatar 2022"];
+    }
+  } else if (tipoCompetizione === "Europei") {
+    // --- EUROPEI ---
+    isSerieA = false;
+    seasonData = dataSet.altreCompetizioni?.["Fantaeuropeo Germany 2024"];
+  } else {
+    // --- SERIE A ---
+    isSerieA = true;
+    if (seasonId.includes("2021")) {
+      seasonData = dataSet.classificheStoriche?.["2021/2022"];
+    } else if (seasonId.includes("2022")) {
+      seasonData = dataSet.classificheStoriche?.["2022/2023"];
+    } else if (seasonId.includes("2023")) {
+      seasonData = dataSet.classificheStoriche?.["2023/2024"];
+    } else if (seasonId.includes("2024")) {
+      seasonData = dataSet.classificheStoriche?.["2024/2025"];
+    } else if (seasonId.includes("2025")) {
+      seasonData = dataSet.classificheStoriche?.["2025/2026"];
+    }
+  }
+
+  const titolo = seasonData?.titolo || seasonLabel;
+  const classifica = seasonData?.classifica || [];
+  const note = seasonData?.note || "";
+
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🏆 ${titolo}</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        ${classifica.length > 0 ? `
+          <table class="classifica-modal">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Squadra</th>
+                <th>Allenatore</th>
+                <th>Punti</th>
+                ${isSerieA ? '<th>FP</th>' : '<th>Risultato</th>'}
+              </tr>
+            </thead>
+            <tbody>
+              ${classifica.map((c, idx) => `
+                <tr ${c.squadra === squadraVincente ? 'style="background: var(--gold-dim);"' : ''}>
+                  <td>${c.pos || idx + 1}</td>
+                  <td><strong>${c.squadra}</strong> ${c.squadra === squadraVincente ? '🏆' : ''}</td>
+                  <td>${c.allenatore || "-"}</td>
+                  <td>${c.punti ?? "-"}</td>
+                  <td>${isSerieA ? (c.fp || "-") : (c.risultato || "-")}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+          ${note ? `<p style="margin-top:16px;padding:12px;background:var(--surface-2);border-radius:12px;font-size:13px;color:var(--muted);"><strong>📝 Nota:</strong> ${note}</p>` : ""}
+        ` : `
+          <p style="text-align:center;color:var(--muted);padding:32px;">
+            📋 Classifica dettagliata non ancora disponibile per questa stagione.
+          </p>
+          ${squadraVincente ? `<p style="text-align:center;font-size:16px;font-weight:bold;color:var(--gold);">🏆 Vincitore: ${squadraVincente}${allenatoreVincente ? ` (${allenatoreVincente})` : ""}</p>` : ""}
+        `}
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  modal.classList.add("active");
+  modal.querySelector(".modal-close").onclick = () => modal.remove();
+  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+}
 
 function renderPalmares(palmares) {
   const container = document.getElementById("palmares-content");
@@ -202,10 +247,10 @@ function renderPalmares(palmares) {
   container.innerHTML = "";
 
   const icone = {
-    "Serie A":      "⚽",
+    "Serie A": "⚽",
     "Coppa Italia": "🏅",
-    "Mondiali":     "🌍",
-    "Europei":      "🌟",
+    "Mondiali": "🌍",
+    "Europei": "🌟",
   };
 
   const makeList = (title, items) => {
@@ -218,8 +263,8 @@ function renderPalmares(palmares) {
 
     (items || []).forEach(item => {
       const li = document.createElement("li");
-      const tc = TEAM_COLORS[item.squadra] || null;
-      const isPending = !item.squadra || item.squadra === "";
+      const tc = TEAM_COLORS[item.squadra] || TEAM_COLORS[item.squadra?.split("/")[0]] || null;
+      const isPending = !item.squadra || item.squadra === "TBD" || item.squadra === "";
       const isNazionale = !!item.bandiera;
       const hearts = (tc && !isNazionale) ? `<span class="team-hearts">${tc.heart}</span>` : "";
 
@@ -228,24 +273,34 @@ function renderPalmares(palmares) {
         li.innerHTML = `
           <div class="palmares-row">
             <span class="palmares-stagione">${item.stagione.replace("/20", "/").replace("20", "")}</span>
-            <span class="palmares-squadra pending-text">In corso…</span>
-          </div>`;
+            <span class="palmares-squadra pending-text">📅 In corso…</span>
+          </div>
+          <div class="allenatore pending-text">In attesa</div>`;
       } else {
-        if (tc) {
-          li.style.setProperty("--team-color", tc.primary);
-          li.style.setProperty("--team-color-2", tc.secondary);
-        }
-        li.classList.add("palmares-item-colored");
+        li.classList.add("palmares-item");
+
+        // Passa data-tipo con il titolo della sezione (es. "Coppa Italia", "Serie A", ecc.)
+        const squadraHtml = `<span class="clickable-team" data-season="${item.stagione}" data-squadra="${item.squadra}" data-coach="${item.allenatore}" data-tipo="${title}">${item.emoji || "🏆"} ${item.squadra} ${hearts}</span>`;
+        const allenatoreHtml = `<span class="clickable-coach" data-season="${item.stagione}" data-squadra="${item.squadra}" data-coach="${item.allenatore}" data-tipo="${title}">${item.allenatore || ""}</span>`;
+
         li.innerHTML = `
           <div class="palmares-row">
             <span class="palmares-stagione">${item.stagione.replace("/20", "/").replace("20", "")}</span>
             <span class="palmares-squadra">
-              ${item.emoji || "🏆"} ${item.squadra}
-              ${hearts}
-              ${item.bandiera ? `<img src="${item.bandiera}" class="palmares-bandiera" alt="bandiera">` : ""}
+              ${squadraHtml}
             </span>
           </div>
-          <span class="allenatore">${item.allenatore || ""}</span>`;
+          <div class="allenatore">
+            👤 ${allenatoreHtml}
+          </div>`;
+
+        // Aggiungi bandiera se presente
+        if (item.bandiera && li.querySelector(".palmares-squadra")) {
+          const bandieraImg = document.createElement("img");
+          bandieraImg.src = item.bandiera;
+          bandieraImg.classList.add("palmares-bandiera");
+          li.querySelector(".palmares-squadra").appendChild(bandieraImg);
+        }
       }
       ul.appendChild(li);
     });
@@ -258,12 +313,27 @@ function renderPalmares(palmares) {
   makeList("Coppa Italia", palmares.coppaItalia);
   makeList("Mondiali", palmares.worldCup);
   makeList("Europei", palmares.euro);
+
+  // Aggiungi event listener per i click
+  setTimeout(() => {
+    document.querySelectorAll(".clickable-team, .clickable-coach").forEach(el => {
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const season = el.dataset.season;
+        const squadra = el.dataset.squadra;
+        const coach = el.dataset.coach;
+        const tipo = el.dataset.tipo; // "Serie A", "Coppa Italia", "Mondiali", "Europei"
+        showSeasonDetails(season, season, squadra, coach, tipo);
+      });
+    });
+  }, 100);
 }
 
 async function caricaDati() {
   try {
-    const response = await fetch("data.json", { cache: "no-cache" });
+    const response = await fetch("data.json?t=" + Date.now(), { cache: "no-cache" });
     dataSet = await response.json();
+
     const classifica = [...dataSet.classificaSerieA].sort((a, b) => a.pos - b.pos);
     const f1c = dataSet?.config?.fasce?.fascia1Count ?? 4;
     const f2c = dataSet?.config?.fasce?.fascia2Count ?? 2;
@@ -313,7 +383,6 @@ function getSquadreVietateFascia1(allenatore, disponibili) {
 
 function getSquadreVietateFascia2(allenatore, disponibili) {
   const squadraPos5 = fascia2_squadre[0];
-  const squadraPos6 = fascia2_squadre[1];
 
   if (allenatore === "Alex Beltrame") {
     return disponibili.filter(s => s !== squadraPos5);
@@ -358,10 +427,6 @@ function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVi
   return false;
 }
 
-function assegnaFascia3ConOrdineSquadre(allenatori, squadreOrdinate, fnVietate) {
-  return assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, 3, fnVietate);
-}
-
 function inizializzaSorteggio() {
   if (!caricaEstrazioneCorrente()) {
     risultati = [];
@@ -371,13 +436,14 @@ function inizializzaSorteggio() {
     risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
     assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietateFascia2);
     risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
-    assegnaFascia3ConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, getSquadreVietateFascia3);
+    assegnaFasciaConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
     salvaEstrazioneCorrente();
   }
   inizializzaZoneFasce();
   if (risultatiMostrati >= risultati.length) {
     document.getElementById("btnProssimo").style.display = "none";
     document.getElementById("btnRicomincia").style.display = "inline-block";
+    document.getElementById("btnWhatsApp").style.display = "inline-block";
   }
   if (risultatiMostrati > 0) ripristinaRisultatiVisibili();
 }
@@ -452,8 +518,23 @@ function controllaFine() {
     document.getElementById("btnProssimo").style.display = "none";
     document.getElementById("btnRicomincia").style.display = "inline-block";
     document.getElementById("btnWhatsApp").style.display = "inline-block";
-    salvaEstrazioneCopletataInStorico();
+    salvaEstrazioneCompletataInStorico();
     localStorage.removeItem("estrazioneCorrente");
+  }
+}
+
+function ricominciaSorteggio() {
+  if (confirm("Vuoi ricominciare il sorteggio da capo?")) {
+    localStorage.removeItem("estrazioneCorrente");
+    location.reload();
+  }
+}
+
+function resetCompleto() {
+  if (confirm("⚠️ ATTENZIONE: Questo cancellerà TUTTI i sorteggi salvati. Sei sicuro?")) {
+    localStorage.removeItem("estrazioniFantacalcio");
+    localStorage.removeItem("estrazioneCorrente");
+    location.reload();
   }
 }
 
@@ -462,9 +543,6 @@ function generaMessaggioWhatsApp() {
     alert("Nessun sorteggio da condividere!");
     return "";
   }
-
-  const allenaoriMap = {};
-  dataSet.allenatori.forEach(a => { allenaoriMap[a.nome] = a.fascia; });
 
   const estrazioni = risultati
     .filter(riga => {
@@ -475,12 +553,7 @@ function generaMessaggioWhatsApp() {
     .map((riga, index) => {
       const [fascia, dettagli] = riga.split(": ");
       const [allenatore, squadra] = dettagli.split(" -> ");
-      return {
-        ordine: index + 1,
-        allenatore,
-        squadra,
-        fasciaAllenatore: allenaoriMap[allenatore] || "?",
-      };
+      return { ordine: index + 1, allenatore, squadra };
     });
 
   const ora = new Date().toLocaleString("it-IT");
@@ -492,15 +565,12 @@ function generaMessaggioWhatsApp() {
   const ordinaleDi = ["1°", "2°", "3°", "4°", "5°", "6°", "7°", "8°"];
   estrazioni.forEach(e => {
     const ordine = ordinaleDi[e.ordine - 1] || e.ordine + "°";
-    const fasciaEmoji = ["", "🔴", "🟡", "🟢"][e.fasciaAllenatore] || "⚽";
-    messaggio += `${ordine} ${e.allenatore} (Fascia ${e.fasciaAllenatore}) ${fasciaEmoji}\n`;
+    messaggio += `${ordine} ${e.allenatore}\n`;
     messaggio += `   → *${e.squadra}*\n\n`;
   });
 
   messaggio += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-  messaggio += `✅ Estrazione completata: ${estrazioni.length}/8 allenatori\n`;
   messaggio += "🏆 Buona fortuna a tutti!\n";
-
   return messaggio;
 }
 
@@ -511,24 +581,17 @@ function condividiSuWhatsApp() {
   window.open(`https://wa.me/?text=${messaggioEncodato}`, "_blank");
 }
 
-function aggiungiEffettiGlow() {
-  document.querySelectorAll('button:not(#btnProssimo)').forEach(btn => {
-    btn.classList.add('glow-effect');
-  });
-}
-
-function aggiungiTooltip() {
-  document.querySelectorAll('#tabellaClassifica td:nth-child(2)').forEach(el => {
-    el.setAttribute('title', 'Clicca per dettagli squadra');
-    el.style.cursor = 'help';
-  });
-}
+// mostraTab è definita in navigation.js
 
 async function bootstrap() {
   await caricaDati();
   inizializzaSorteggio();
-  aggiungiEffettiGlow();
-  aggiungiTooltip();
 }
+
+// Rendi funzioni globali
+window.mostraProssimo = mostraProssimo;
+window.ricominciaSorteggio = ricominciaSorteggio;
+window.resetCompleto = resetCompleto;
+window.condividiSuWhatsApp = condividiSuWhatsApp;
 
 document.addEventListener("DOMContentLoaded", bootstrap);
