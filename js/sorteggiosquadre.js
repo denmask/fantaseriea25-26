@@ -151,7 +151,6 @@ function showSeasonDetails(seasonId, seasonLabel, squadraVincente, allenatoreVin
   let isSerieA = true;
 
   if (tipoCompetizione === "Coppa Italia") {
-    // --- COPPA ITALIA: legge sempre da altreCompetizioni ---
     isSerieA = false;
     if (seasonId.includes("2023")) {
       seasonData = dataSet.altreCompetizioni?.["FantacoppaItalia 2023/2024"];
@@ -161,7 +160,6 @@ function showSeasonDetails(seasonId, seasonLabel, squadraVincente, allenatoreVin
       seasonData = dataSet.altreCompetizioni?.["FantacoppaItalia 2025/2026"];
     }
   } else if (tipoCompetizione === "Mondiali") {
-    // --- MONDIALI ---
     isSerieA = false;
     if (seasonId.includes("2026")) {
       seasonData = dataSet.altreCompetizioni?.["Fantamundial USA 2026"];
@@ -169,11 +167,9 @@ function showSeasonDetails(seasonId, seasonLabel, squadraVincente, allenatoreVin
       seasonData = dataSet.altreCompetizioni?.["Fantamundial Qatar 2022"];
     }
   } else if (tipoCompetizione === "Europei") {
-    // --- EUROPEI ---
     isSerieA = false;
     seasonData = dataSet.altreCompetizioni?.["Fantaeuropeo Germany 2024"];
   } else {
-    // --- SERIE A ---
     isSerieA = true;
     if (seasonId.includes("2021")) {
       seasonData = dataSet.classificheStoriche?.["2021/2022"];
@@ -278,8 +274,6 @@ function renderPalmares(palmares) {
           <div class="allenatore pending-text">In attesa</div>`;
       } else {
         li.classList.add("palmares-item");
-
-        // Passa data-tipo con il titolo della sezione (es. "Coppa Italia", "Serie A", ecc.)
         const squadraHtml = `<span class="clickable-team" data-season="${item.stagione}" data-squadra="${item.squadra}" data-coach="${item.allenatore}" data-tipo="${title}">${item.emoji || "🏆"} ${item.squadra} ${hearts}</span>`;
         const allenatoreHtml = `<span class="clickable-coach" data-season="${item.stagione}" data-squadra="${item.squadra}" data-coach="${item.allenatore}" data-tipo="${title}">${item.allenatore || ""}</span>`;
 
@@ -294,7 +288,6 @@ function renderPalmares(palmares) {
             👤 ${allenatoreHtml}
           </div>`;
 
-        // Aggiungi bandiera se presente
         if (item.bandiera && li.querySelector(".palmares-squadra")) {
           const bandieraImg = document.createElement("img");
           bandieraImg.src = item.bandiera;
@@ -314,7 +307,6 @@ function renderPalmares(palmares) {
   makeList("Mondiali", palmares.worldCup);
   makeList("Europei", palmares.euro);
 
-  // Aggiungi event listener per i click
   setTimeout(() => {
     document.querySelectorAll(".clickable-team, .clickable-coach").forEach(el => {
       el.addEventListener("click", (e) => {
@@ -322,11 +314,74 @@ function renderPalmares(palmares) {
         const season = el.dataset.season;
         const squadra = el.dataset.squadra;
         const coach = el.dataset.coach;
-        const tipo = el.dataset.tipo; // "Serie A", "Coppa Italia", "Mondiali", "Europei"
+        const tipo = el.dataset.tipo;
         showSeasonDetails(season, season, squadra, coach, tipo);
       });
     });
   }, 100);
+}
+
+// ========== SISTEMA VINCOLI DINAMICO ==========
+// I vincoli per fascia sono letti direttamente da data.json.
+// Per ogni allenatore puoi aggiungere "squadreAmmesse" e/o "squadreVietate"
+// nel campo "vincoli" dentro data.json.
+//
+// Esempio in data.json:
+// {
+//   "nome": "Federico Burello",
+//   "fascia": 1,
+//   "foto": "images/...",
+//   "vincoli": {
+//     "squadreAmmesse": ["Inter", "Napoli"]
+//   }
+// }
+//
+// Se "squadreAmmesse" è presente → l'allenatore può ricevere SOLO quelle squadre.
+// Se "squadreVietate" è presente → l'allenatore NON può ricevere quelle squadre.
+// Se non c'è nessun vincolo → qualsiasi squadra disponibile va bene.
+//
+// Per aggiornare le fasce basta modificare "fascia" in data.json.
+// Nessuna modifica al codice JS è necessaria! 🎉
+
+function getSquadreVietate(allenatore, disponibili, fasciaNum) {
+  const datiAllenatore = (dataSet.allenatori || []).find(a => a.nome === allenatore);
+  const vincoli = datiAllenatore?.vincoli || {};
+
+  // Se ci sono squadre ammesse, vieto tutto tranne quelle
+  if (vincoli.squadreAmmesse && vincoli.squadreAmmesse.length > 0) {
+    return disponibili.filter(s => !vincoli.squadreAmmesse.includes(s));
+  }
+
+  // Se ci sono squadre esplicitamente vietate, le vieto
+  if (vincoli.squadreVietate && vincoli.squadreVietate.length > 0) {
+    return disponibili.filter(s => vincoli.squadreVietate.includes(s));
+  }
+
+  return [];
+}
+
+function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
+  let tentativi = 0;
+  while (tentativi < 1000) {
+    tentativi++;
+    let squadreDisp = shuffleArray([...squadreOrdinate]);
+    let ass = [];
+    let ok = true;
+    for (let i = 0; i < allenatori.length; i++) {
+      const allenatore = allenatori[i];
+      const vietate = fnVietate(allenatore, squadreDisp, fascia);
+      const ammesse = squadreDisp.filter(s => !vietate.includes(s));
+      if (ammesse.length === 0) { ok = false; break; }
+      const s = ammesse[Math.floor(Math.random() * ammesse.length)];
+      ass.push({ a: allenatore, s: s });
+      squadreDisp = squadreDisp.filter(x => x !== s);
+    }
+    if (ok) {
+      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
+      return true;
+    }
+  }
+  return false;
 }
 
 async function caricaDati() {
@@ -343,12 +398,16 @@ async function caricaDati() {
     fasceCalcolate.fascia3_pure = classifica.slice(f1c + f2c, f1c + f2c + f3c);
     logoPerSquadra = Object.fromEntries(classifica.map(s => [s.nome, s.logo]));
     fotoAllenatore = Object.fromEntries((dataSet.allenatori || []).map(a => [a.nome, a.foto]));
+
+    // Le fasce degli allenatori sono lette dinamicamente da data.json
     fascia1_allenatori = dataSet.allenatori.filter(a => a.fascia === 1).map(a => a.nome);
     fascia2_allenatori = dataSet.allenatori.filter(a => a.fascia === 2).map(a => a.nome);
     fascia3_allenatori = dataSet.allenatori.filter(a => a.fascia === 3).map(a => a.nome);
+
     fascia1_squadre = fasceCalcolate.fascia1.map(s => s.nome);
     fascia2_squadre = fasceCalcolate.fascia2.map(s => s.nome);
     fascia3_squadre_pure = fasceCalcolate.fascia3_pure.map(s => s.nome);
+
     renderFasceTable();
     renderClassificaReale();
     renderPalmares(dataSet?.palmares);
@@ -365,66 +424,15 @@ function shuffleArray(array) {
   return array;
 }
 
-function getSquadreVietateFascia1(allenatore, disponibili) {
-  const fascia1 = fascia1_squadre;
-  const juventusInFascia1 = fascia1.includes("Juventus");
-
-  const ammesse = {
-    "Federico Burello":  ["Inter", "Napoli"],
-    "Kevin Di Bernardo": ["Milan", "Napoli"],
-    "Denis Mascherin":   juventusInFascia1 ? ["Juventus", "Milan", "Napoli", "Como"] : ["Juventus", "Milan", "Napoli"],
-    "Lorenzo Moro":      ["Milan", "Napoli", "Como"],
-  };
-
-  const listaAmmessa = ammesse[allenatore];
-  if (!listaAmmessa) return [];
-  return disponibili.filter(s => !listaAmmessa.includes(s));
-}
-
-function getSquadreVietateFascia2(allenatore, disponibili) {
-  const squadraPos5 = fascia2_squadre[0];
-
-  if (allenatore === "Alex Beltrame") {
-    return disponibili.filter(s => s !== squadraPos5);
-  }
-  if (allenatore === "Cristian Tartaro") {
-    return disponibili.filter(s => s !== "Roma");
-  }
-  return [];
-}
-
-function getSquadreVietateFascia3(allenatore, disponibili) {
-  if (allenatore === "Nicola Marano") {
-    return disponibili.filter(s => s !== "Atalanta");
-  }
-  if (allenatore === "Aidan Conti") {
-    return disponibili.filter(s => s !== "Bologna" && s !== "Lazio");
-  }
-  return [];
-}
-
-function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
-  let tentativi = 0;
-  while (tentativi < 1000) {
-    tentativi++;
-    let squadreDisp = shuffleArray([...squadreOrdinate]);
-    let ass = [];
-    let ok = true;
-    for (let i = 0; i < allenatori.length; i++) {
-      const allenatore = allenatori[i];
-      const vietate = fnVietate(allenatore, squadreDisp);
-      const ammesse = squadreDisp.filter(s => !vietate.includes(s));
-      if (ammesse.length === 0) { ok = false; break; }
-      const s = ammesse[Math.floor(Math.random() * ammesse.length)];
-      ass.push({ a: allenatore, s: s });
-      squadreDisp = squadreDisp.filter(x => x !== s);
-    }
-    if (ok) {
-      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
-      return true;
-    }
-  }
-  return false;
+function inizializzaZoneFasce() {
+  const output = document.getElementById("output");
+  output.innerHTML = "";
+  ["zona-fascia-1", "zona-fascia-2", "zona-fascia-3"].forEach(id => {
+    const div = document.createElement("div");
+    div.id = id;
+    div.classList.add("zona-fascia");
+    output.appendChild(div);
+  });
 }
 
 function inizializzaSorteggio() {
@@ -432,11 +440,11 @@ function inizializzaSorteggio() {
     risultati = [];
     risultatiMostrati = 0;
     risultati.push("Fascia 1: __HEADER__ -> ⚽ SORTEGGIO FASCIA 1");
-    assegnaFasciaConOrdineSquadre(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietateFascia1);
+    assegnaFasciaConOrdineSquadre(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietate);
     risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
-    assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietateFascia2);
+    assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietate);
     risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
-    assegnaFasciaConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietateFascia3);
+    assegnaFasciaConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietate);
     salvaEstrazioneCorrente();
   }
   inizializzaZoneFasce();
@@ -581,14 +589,11 @@ function condividiSuWhatsApp() {
   window.open(`https://wa.me/?text=${messaggioEncodato}`, "_blank");
 }
 
-// mostraTab è definita in navigation.js
-
 async function bootstrap() {
   await caricaDati();
   inizializzaSorteggio();
 }
 
-// Rendi funzioni globali
 window.mostraProssimo = mostraProssimo;
 window.ricominciaSorteggio = ricominciaSorteggio;
 window.resetCompleto = resetCompleto;
