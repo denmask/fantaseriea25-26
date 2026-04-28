@@ -12,7 +12,7 @@
       "fascia": 1,
       "foto": "images/federico_burello.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli"]
+        "squadreAmmesse": ["Inter", "Napoli", "Como"]
       }
     },
     {
@@ -20,7 +20,7 @@
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Milan", "Napoli"]
+        "squadreAmmesse": ["Milan", "Napoli", "Como"]
       }
     },
     {
@@ -60,7 +60,7 @@
       "fascia": 3,
       "foto": "images/nicola_marano.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Atalanta"]
+        "squadreAmmesse": ["Atalanta", "Lazio"]
       }
     },
     {
@@ -68,7 +68,7 @@
       "fascia": 3,
       "foto": "images/aidan_conti.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Bologna", "Lazio"]
+        "squadreAmmesse": ["Lazio", "Bologna"]
       }
     }
   ],
@@ -80,15 +80,15 @@
     { "pos": 5, "nome": "Como", "punti": 61, "logo": "images/como.png" },
     { "pos": 6, "nome": "Roma", "punti": 61, "logo": "images/roma.png" },
     { "pos": 7, "nome": "Atalanta", "punti": 54, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 48, "logo": "images/bologna.png" },
-    { "pos": 9, "nome": "Lazio", "punti": 47, "logo": "images/lazio.png" },
+    { "pos": 8, "nome": "Lazio", "punti": 48, "logo": "images/lazio.png" },
+    { "pos": 9, "nome": "Bologna", "punti": 48, "logo": "images/bologna.png" },
     { "pos": 10, "nome": "Sassuolo", "punti": 46, "logo": "images/sassuolo.png" },
-    { "pos": 11, "nome": "Udinese", "punti": 43, "logo": "images/udinese.png" },
+    { "pos": 11, "nome": "Udinese", "punti": 44, "logo": "images/udinese.png" },
     { "pos": 12, "nome": "Parma", "punti": 42, "logo": "images/parma.png" },
     { "pos": 13, "nome": "Torino", "punti": 41, "logo": "images/torino.png" },
     { "pos": 14, "nome": "Genoa", "punti": 39, "logo": "images/genoa.png" },
     { "pos": 15, "nome": "Fiorentina", "punti": 37, "logo": "images/fiorentina.png" },
-    { "pos": 16, "nome": "Cagliari", "punti": 33, "logo": "images/cagliari.png" },
+    { "pos": 16, "nome": "Cagliari", "punti": 36, "logo": "images/cagliari.png" },
     { "pos": 17, "nome": "Lecce", "punti": 29, "logo": "images/lecce.png" },
     { "pos": 18, "nome": "Cremonese", "punti": 28, "logo": "images/cremonese.png" },
     { "pos": 19, "nome": "Verona", "punti": 19, "logo": "images/verona.png" },
@@ -115,10 +115,10 @@
     "coppaItalia": [
       {
         "stagione": "2025/2026",
-        "squadra": "Inter/Atalanta/Lazio",
-        "allenatore": "Federico Burello/Kevin Di Bernardo/Cristian Tartaro",
+        "squadra": "Inter/Lazio",
+        "allenatore": "Federico Burello/Cristian Tartaro",
         "emoji": "🏆",
-        "cuore": "🖤💙/🖤💙/🤍💙"
+        "cuore": "🖤💙/🤍💙"
       },
       { "stagione": "2024/2025", "squadra": "Bologna", "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "❤️💙" },
       { "stagione": "2023/2024", "squadra": "Juventus", "allenatore": "Denis Mascherin", "emoji": "🏆", "cuore": "🤍🖤" }
