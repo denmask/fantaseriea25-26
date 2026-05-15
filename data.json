@@ -12,7 +12,7 @@
       "fascia": 1,
       "foto": "images/federico_burello.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli"]
+        "squadreAmmesse": ["Napoli", "Inter", "Milan"]
       }
     },
     {
@@ -20,7 +20,7 @@
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Napoli", "Milan"]
+        "squadreAmmesse": ["Napoli", "Milan", "Juventus"]
       }
     },
     {
@@ -28,7 +28,7 @@
       "fascia": 1,
       "foto": "images/alex_beltrame.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli", "Milan"]
+        "squadreAmmesse": ["Inter", "Napoli", "Juventus", "Milan"]
       }
     },
     {
@@ -36,7 +36,7 @@
       "fascia": 1,
       "foto": "images/denis_mascherin.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Napoli", "Milan", "Juventus"]
+        "squadreAmmesse": ["Inter", "Juventus", "Napoli", "Milan" ]
       }
     },
     {
