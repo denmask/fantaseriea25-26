@@ -40,14 +40,6 @@
       }
     },
     {
-      "nome": "Lorenzo Moro",
-      "fascia": 2,
-      "foto": "images/lorenzo_moro.jpg",
-      "vincoli": {
-        "squadreAmmesse": ["Como", "Juventus"]
-      }
-    },
-    {
       "nome": "Cristian Tartaro",
       "fascia": 2,
       "foto": "images/cristian_tartaro.jpg",
@@ -57,18 +49,26 @@
     },
     {
       "nome": "Nicola Marano",
-      "fascia": 3,
+      "fascia": 2,
       "foto": "images/nicola_marano.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Atalanta"]
+        "squadreAmmesse": ["Como", "Juventus"]
       }
-    },
+    },   
+    {
+      "nome": "Kevin Sandri",
+      "fascia": 3,
+      "foto": "images/kevin_sandri.jpg",
+      "vincoli": {
+      "squadreAmmesse": ["Atalanta", "Bologna"]
+      }
+   },
     {
       "nome": "Aidan Conti",
       "fascia": 3,
       "foto": "images/aidan_conti.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Bologna"]
+        "squadreAmmesse": ["Atalanta","Bologna"]
       }
     }
   ],
