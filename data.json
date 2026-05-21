@@ -20,7 +20,7 @@
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli", "Milan" , "Roma"]
+        "squadreAmmesse": ["Napoli", "Milan" , "Roma"]
       }
     },
     {
@@ -40,35 +40,36 @@
       }
     },
     {
+      "nome": "Kevin Sandri",
+      "fascia": 2,
+      "foto": "images/kevin_sandri.jpg",
+      "vincoli": {
+      "squadreAmmesse": ["Como"]
+      }
+   },
+    {
       "nome": "Cristian Tartaro",
       "fascia": 2,
       "foto": "images/cristian_tartaro.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Como", "Juventus"]
+        "squadreAmmesse": ["Juventus"]
       }
     },
     {
       "nome": "Nicola Marano",
-      "fascia": 2,
+      "fascia": 3,
       "foto": "images/nicola_marano.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Como", "Juventus"]
+        "squadreAmmesse": ["Atalanta"]
       }
     },   
-    {
-      "nome": "Kevin Sandri",
-      "fascia": 3,
-      "foto": "images/kevin_sandri.jpg",
-      "vincoli": {
-      "squadreAmmesse": ["Atalanta", "Bologna"]
-      }
-   },
+    
     {
       "nome": "Aidan Conti",
       "fascia": 3,
       "foto": "images/aidan_conti.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Atalanta","Bologna"]
+        "squadreAmmesse": ["Bologna"]
       }
     }
   ],
