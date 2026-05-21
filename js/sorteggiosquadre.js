@@ -494,7 +494,7 @@ function mostraProssimo() {
   audio = new Audio("countdown-suspense.mp3");
   audio.play();
 
-  let c = 5;
+  let c = 10;
   let disp = document.createElement("div");
   disp.classList.add("countdown-display");
   disp.textContent = c;
