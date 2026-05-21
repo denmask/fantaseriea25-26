@@ -360,7 +360,50 @@ function getSquadreVietate(allenatore, disponibili, fasciaNum) {
   return [];
 }
 
-function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate) {
+// ========== ORDINAMENTO RIVELAZIONE PER CLASSIFICA ==========
+//
+// Le card vengono rivelate nell'ordine della classifica reale (dalla squadra
+// più alta in classifica alla più bassa), NON nell'ordine degli allenatori.
+//
+// Puoi sovrascrivere manualmente l'ordine di rivelazione in data.json:
+//
+// "config": {
+//   "fasce": { "fascia1Count": 4, "fascia2Count": 2, "fascia3Count": 2 },
+//   "ordineSorteggio": {
+//     "fascia1": ["Inter", "Napoli", "Milan", "Roma"],
+//     "fascia2": ["Como", "Juventus"],
+//     "fascia3": ["Atalanta", "Bologna"]
+//   }
+// }
+//
+// Se "ordineSorteggio" NON è presente in data.json, viene usato
+// automaticamente l'ordine della classifica reale (campo "pos").
+// Se una squadra non è nell'ordine specificato, viene messa in fondo.
+
+function getOrdineSquadre(fasciaKey) {
+  // Prima controlla se c'è un override manuale in data.json
+  const override = dataSet?.config?.ordineSorteggio?.[fasciaKey];
+  if (override && override.length > 0) return override;
+
+  // Default: ordine classifica reale (dal 1° posto in su)
+  const classifica = [...dataSet.classificaSerieA].sort((a, b) => a.pos - b.pos);
+  return classifica.map(s => s.nome);
+}
+
+function riordinaRighePerClassifica(righe, fasciaKey) {
+  const ordine = getOrdineSquadre(fasciaKey);
+  return [...righe].sort((a, b) => {
+    const squadraA = a.split(" -> ")[1];
+    const squadraB = b.split(" -> ")[1];
+    const iA = ordine.indexOf(squadraA);
+    const iB = ordine.indexOf(squadraB);
+    return (iA === -1 ? 999 : iA) - (iB === -1 ? 999 : iB);
+  });
+}
+
+// Versione modificata: accetta un buffer opzionale invece di scrivere
+// direttamente in risultati (così possiamo riordinare prima di inserire)
+function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVietate, buffer) {
   let tentativi = 0;
   while (tentativi < 1000) {
     tentativi++;
@@ -377,7 +420,14 @@ function assegnaFasciaConOrdineSquadre(allenatori, squadreOrdinate, fascia, fnVi
       squadreDisp = squadreDisp.filter(x => x !== s);
     }
     if (ok) {
-      ass.forEach(x => risultati.push(`Fascia ${fascia}: ${x.a} -> ${x.s}`));
+      ass.forEach(x => {
+        const riga = `${x.a} -> ${x.s}`;
+        if (buffer) {
+          buffer.push(riga);
+        } else {
+          risultati.push(`Fascia ${fascia}: ${riga}`);
+        }
+      });
       return true;
     }
   }
@@ -424,27 +474,35 @@ function shuffleArray(array) {
   return array;
 }
 
-function inizializzaZoneFasce() {
-  const output = document.getElementById("output");
-  output.innerHTML = "";
-  ["zona-fascia-1", "zona-fascia-2", "zona-fascia-3"].forEach(id => {
-    const div = document.createElement("div");
-    div.id = id;
-    div.classList.add("zona-fascia");
-    output.appendChild(div);
-  });
-}
-
 function inizializzaSorteggio() {
   if (!caricaEstrazioneCorrente()) {
     risultati = [];
     risultatiMostrati = 0;
+
+    // ── FASE 1: sorteggio casuale in buffer separati ──────────────────────
+    const bufferF1 = [];
+    const bufferF2 = [];
+    const bufferF3 = [];
+
+    assegnaFasciaConOrdineSquadre(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietate, bufferF1);
+    assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietate, bufferF2);
+    assegnaFasciaConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietate, bufferF3);
+
+    // ── FASE 2: riordino per classifica reale (o override manuale) ────────
+    const f1Ordinata = riordinaRighePerClassifica(bufferF1, "fascia1");
+    const f2Ordinata = riordinaRighePerClassifica(bufferF2, "fascia2");
+    const f3Ordinata = riordinaRighePerClassifica(bufferF3, "fascia3");
+
+    // ── FASE 3: costruzione array risultati finale ─────────────────────────
     risultati.push("Fascia 1: __HEADER__ -> ⚽ SORTEGGIO FASCIA 1");
-    assegnaFasciaConOrdineSquadre(fascia1_allenatori, fascia1_squadre, 1, getSquadreVietate);
+    f1Ordinata.forEach(r => risultati.push("Fascia 1: " + r));
+
     risultati.push("Fascia 2: __HEADER__ -> ⚽ SORTEGGIO FASCIA 2");
-    assegnaFasciaConOrdineSquadre(fascia2_allenatori, fascia2_squadre, 2, getSquadreVietate);
+    f2Ordinata.forEach(r => risultati.push("Fascia 2: " + r));
+
     risultati.push("Fascia 3: __HEADER__ -> ⚽ SORTEGGIO FASCIA 3");
-    assegnaFasciaConOrdineSquadre(fascia3_allenatori, fascia3_squadre_pure, 3, getSquadreVietate);
+    f3Ordinata.forEach(r => risultati.push("Fascia 3: " + r));
+
     salvaEstrazioneCorrente();
   }
   inizializzaZoneFasce();
