@@ -48,29 +48,17 @@ function renderLegendaFasce(dataset) {
     3: { label: "Fascia 3", classe: "legenda-fascia-3", emoji: "🥉" },
   };
 
-  // Numero massimo di allenatori in una fascia
-  const maxAllenatori = Math.max(...[1, 2, 3].map((f) => fasceMap[f].length));
-
   let html = '<div class="legenda-fasce-wrapper">';
   html += '<h3 class="legenda-fasce-title">👥 Fantallenatori per Fascia</h3>';
   html += '<p class="legenda-fasce-sub">La fascia determina il pool di squadre sorteggiabili</p>';
 
-  // Griglia flat: ogni "sezione" è una riga orizzontale su 3 colonne
-  html += '<div class="legenda-fasce-grid">';
+  // ── HEADER: 3 colonne con titolo fascia + squadre ref ──
+  html += '<div class="legenda-table">';
 
-  // RIGA 1: header delle 3 fasce
+  // Riga intestazione fasce
+  html += '<div class="legenda-row legenda-header-row">';
   [1, 2, 3].forEach((f) => {
     const cfg = fasciaConfig[f];
-    const lista = fasceMap[f];
-    html += `<div class="legenda-fascia-header ${cfg.classe}-header">`;
-    html += `<span class="legenda-fascia-emoji">${cfg.emoji}</span>`;
-    html += `<span class="legenda-fascia-label ${cfg.classe}-label">${cfg.label}</span>`;
-    html += `<span class="legenda-fascia-count">${lista.length} allenator${lista.length === 1 ? "e" : "i"}</span>`;
-    html += `</div>`;
-  });
-
-  // RIGA 2: squadre di riferimento per ciascuna fascia
-  [1, 2, 3].forEach((f) => {
     const lista = fasceMap[f];
     const squadreRef = [];
     lista.forEach((a) => {
@@ -78,35 +66,63 @@ function renderLegendaFasce(dataset) {
         if (!squadreRef.includes(s)) squadreRef.push(s);
       });
     });
-    html += `<div class="legenda-squadre-ref legenda-fascia-${f}-ref">`;
-    html += `<span class="legenda-squadre-ref-label">🏟 Squadre di riferimento</span>`;
-    html += `<div class="legenda-squadre-ref-chips">`;
-    squadreRef.forEach((s) => {
-      const logoKey = s.toLowerCase().replace(/\s+/g, "");
-      html += `<span class="legenda-squadra-chip legenda-fascia-${f}-chip">`;
-      html += `<img class="legenda-squadra-chip-logo" src="images/${logoKey}.png" alt="${s}" onerror="this.style.display='none'">`;
-      html += `${s}`;
-      html += `</span>`;
-    });
-    html += `</div></div>`;
-  });
 
-  // RIGA 3..N: allenatori riga per riga (sincronizzati)
-  for (let i = 0; i < maxAllenatori; i++) {
+    html += `<div class="legenda-col legenda-fascia-${f}-col">`;
+
+    // Header fascia
+    html += `<div class="legenda-fascia-header legenda-fascia-${f}-header">`;
+    html += `<span class="legenda-fascia-emoji">${cfg.emoji}</span>`;
+    html += `<span class="legenda-fascia-label legenda-fascia-${f}-label">${cfg.label}</span>`;
+    html += `<span class="legenda-fascia-count">${lista.length} allenator${lista.length === 1 ? "e" : "i"}</span>`;
+    html += `</div>`;
+
+    // Squadre di riferimento
+    if (squadreRef.length > 0) {
+      html += `<div class="legenda-squadre-ref legenda-fascia-${f}-ref">`;
+      html += `<span class="legenda-squadre-ref-label">🏟 Squadre di riferimento</span>`;
+      html += `<div class="legenda-squadre-ref-chips">`;
+      squadreRef.forEach((s) => {
+        const logoKey = s.toLowerCase().replace(/\s+/g, "");
+        html += `<span class="legenda-squadra-chip legenda-fascia-${f}-chip">`;
+        html += `<img class="legenda-squadra-chip-logo" src="images/${logoKey}.png" alt="${s}" onerror="this.style.display='none'">`;
+        html += `${s}`;
+        html += `</span>`;
+      });
+      html += `</div></div>`;
+    }
+
+    // Lista allenatori visibile solo su mobile (su desktop le righe sono separate)
+    html += `<div class="legenda-allenatori-lista legenda-mobile-only">`;
+    fasceMap[f].forEach((a) => {
+      html += `<div class="legenda-allenatore-item legenda-allenatore-cell legenda-fascia-${f}-item">`;
+      html += `<img class="legenda-foto" src="${a.foto}" alt="${a.nome}" onerror="this.style.opacity='0'">`;
+      html += `<span class="legenda-nome">${a.nome}</span>`;
+      html += `</div>`;
+    });
+    html += `</div>`;
+
+    html += `</div>`; // fine col
+  });
+  html += '</div>'; // fine header-row
+
+  // ── RIGHE ALLENATORI: 1 riga per slot (max 4 righe) ──
+  const maxRows = Math.max(fasceMap[1].length, fasceMap[2].length, fasceMap[3].length);
+  for (let i = 0; i < maxRows; i++) {
+    html += `<div class="legenda-row legenda-allenatore-row">`;
     [1, 2, 3].forEach((f) => {
       const a = fasceMap[f][i];
+      html += `<div class="legenda-col legenda-fascia-${f}-col legenda-allenatore-cell legenda-fascia-${f}-item">`;
       if (a) {
-        html += `<div class="legenda-allenatore-item legenda-fascia-${f}-item">`;
         html += `<img class="legenda-foto" src="${a.foto}" alt="${a.nome}" onerror="this.style.opacity='0'">`;
         html += `<span class="legenda-nome">${a.nome}</span>`;
-        html += `</div>`;
-      } else {
-        html += `<div class="legenda-allenatore-placeholder"></div>`;
       }
+      html += `</div>`;
     });
+    html += `</div>`;
   }
 
-  html += "</div></div>";
+  html += '</div>'; // fine legenda-table
+  html += '</div>'; // fine wrapper
   container.innerHTML = html;
 }
 

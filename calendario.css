@@ -287,14 +287,26 @@ img[src*="juventus"].logo-piccolo {
   letter-spacing: 0.04em;
 }
 
-/* Grid flat 3 colonne — ogni child occupa 1 colonna, le righe si allineano automaticamente */
+/* ── GRIGLIA: 3 card affiancate su desktop, verticale su mobile ── */
 .legenda-fasce-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  row-gap: 8px;
-  column-gap: 18px;
+  gap: 18px;
+  align-items: start;
 }
+
+/* ── CARD SINGOLA FASCIA ── */
+.legenda-fascia-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.legenda-fascia-1-card { border-color: rgba(212,175,55,0.45); }
+.legenda-fascia-2-card { border-color: rgba(150,150,150,0.35); }
+.legenda-fascia-3-card { border-color: rgba(180,120,60,0.35); }
 
 /* ── HEADER FASCIA ── */
 .legenda-fascia-header {
@@ -302,9 +314,7 @@ img[src*="juventus"].logo-piccolo {
   align-items: center;
   gap: 10px;
   padding: 14px 16px;
-  border-radius: 14px 14px 0 0;
-  border: 1px solid var(--border);
-  border-bottom: none;
+  border-bottom: 1px solid var(--border);
 }
 
 .legenda-fascia-1-header { background: linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.06) 100%); border-color: rgba(212,175,55,0.45); }
@@ -336,16 +346,14 @@ img[src*="juventus"].logo-piccolo {
 
 /* ── SQUADRE DI RIFERIMENTO ── */
 .legenda-squadre-ref {
-  padding: 10px 14px 10px;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border);
   background: rgba(255,255,255,0.02);
 }
 
-.legenda-fascia-1-ref { border-color: rgba(212,175,55,0.45); }
-.legenda-fascia-2-ref { border-color: rgba(150,150,150,0.35); }
-.legenda-fascia-3-ref { border-color: rgba(180,120,60,0.35); }
+.legenda-fascia-1-ref { border-color: rgba(212,175,55,0.3); }
+.legenda-fascia-2-ref { border-color: rgba(150,150,150,0.25); }
+.legenda-fascia-3-ref { border-color: rgba(180,120,60,0.25); }
 
 .legenda-squadre-ref-label {
   display: block;
@@ -387,31 +395,30 @@ img[src*="juventus"].logo-piccolo {
   flex-shrink: 0;
 }
 
-/* ── CARD ALLENATORE (flat, allineata per riga) ── */
+/* ── LISTA ALLENATORI DENTRO LA CARD ── */
+.legenda-allenatori-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 .legenda-allenatore-item {
   display: flex;
   align-items: center;
   gap: 12px;
   background: var(--surface-3);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border-bottom: 1px solid var(--border);
   padding: 10px 14px;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.legenda-fascia-1-item { border-color: rgba(212,175,55,0.2); }
-.legenda-fascia-1-item:hover { border-color: rgba(212,175,55,0.5); background: rgba(212,175,55,0.04); }
-.legenda-fascia-2-item { border-color: rgba(150,150,150,0.2); }
-.legenda-fascia-2-item:hover { border-color: rgba(150,150,150,0.45); background: rgba(150,150,150,0.04); }
-.legenda-fascia-3-item { border-color: rgba(180,120,60,0.2); }
-.legenda-fascia-3-item:hover { border-color: rgba(180,120,60,0.45); background: rgba(180,120,60,0.04); }
-
-.legenda-allenatore-placeholder {
-  /* cella vuota per mantenere allineamento */
-  visibility: hidden;
-  height: 62px;
-  border-radius: 10px;
+.legenda-allenatore-item:last-child {
+  border-bottom: none;
 }
+
+.legenda-fascia-1-item:hover { background: rgba(212,175,55,0.04); }
+.legenda-fascia-2-item:hover { background: rgba(150,150,150,0.04); }
+.legenda-fascia-3-item:hover { background: rgba(180,120,60,0.04); }
 
 .legenda-foto {
   width: 40px;
@@ -436,9 +443,110 @@ img[src*="juventus"].logo-piccolo {
   text-transform: uppercase;
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .legenda-fasce-grid { grid-template-columns: repeat(2, 1fr); }
+  .legenda-fasce-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
-@media (max-width: 600px) {
-  .legenda-fasce-grid { grid-template-columns: 1fr; }
+
+/* ── LEGENDA A RIGHE (layout desktop: allenatori allineati per slot) ── */
+.legenda-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.legenda-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.legenda-col {
+  border-right: 1px solid var(--border);
+}
+.legenda-col:last-child {
+  border-right: none;
+}
+
+/* Colori colonne */
+.legenda-fascia-1-col { background: rgba(212,175,55,0.03); }
+.legenda-fascia-2-col { background: rgba(150,150,150,0.03); }
+.legenda-fascia-3-col { background: rgba(180,120,60,0.03); }
+
+/* Header dentro ogni colonna */
+.legenda-col .legenda-fascia-header {
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* Squadre ref dentro ogni colonna */
+.legenda-col .legenda-squadre-ref {
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* Righe allenatori */
+.legenda-allenatore-row {
+  border-top: 1px solid var(--border);
+}
+
+.legenda-allenatore-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  min-height: 64px;
+  transition: background 0.2s ease;
+}
+
+.legenda-fascia-1-item:hover { background: rgba(212,175,55,0.06); }
+.legenda-fascia-2-item:hover { background: rgba(150,150,150,0.06); }
+.legenda-fascia-3-item:hover { background: rgba(180,120,60,0.06); }
+
+/* Mobile: stack verticale, ogni fascia come sezione */
+@media (max-width: 768px) {
+  .legenda-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .legenda-row {
+    display: contents;
+  }
+  .legenda-header-row .legenda-col {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  .legenda-header-row .legenda-fascia-1-col { border-color: rgba(212,175,55,0.45); }
+  .legenda-header-row .legenda-fascia-2-col { border-color: rgba(150,150,150,0.35); }
+  .legenda-header-row .legenda-fascia-3-col { border-color: rgba(180,120,60,0.35); }
+
+  /* Nascondi righe allenatori separate su mobile (già raggruppati nelle col header) */
+  .legenda-allenatore-row {
+    display: none;
+  }
+
+  /* Mostra lista mobile */
+  .legenda-mobile-only {
+    display: flex !important;
+  }
+}
+
+/* Su desktop nascondi la lista mobile */
+.legenda-mobile-only {
+  display: none;
+}
+.legenda-allenatori-lista.legenda-mobile-only {
+  flex-direction: column;
+  gap: 0;
 }
