@@ -22,6 +22,7 @@
         <div class="nav-chips">
             <button class="chip-btn active" onclick="mostraTab('sorteggio', this)">Sorteggio</button>
             <button class="chip-btn" onclick="mostraTab('fasce', this)">Suddivisione Fasce</button>
+            <button class="chip-btn" onclick="mostraTab('legenda-fasce-tab', this)">👥 Legenda Fasce</button>
             <button class="chip-btn" onclick="mostraTab('classifica-serie-a', this)">Classifica Serie A</button>
             <button class="chip-btn" onclick="mostraTab('classifica-fanta-tab', this)">Classifica Fanta</button>
             <button class="chip-btn" onclick="mostraTab('calendario-26-27', this)">📅 Calendario 26/27</button>
@@ -39,6 +40,7 @@
             <div class="nav-mobile-dropdown">
                 <button class="chip-btn active" onclick="mostraTab('sorteggio', this)">Sorteggio</button>
                 <button class="chip-btn" onclick="mostraTab('fasce', this)">Suddivisione Fasce</button>
+                <button class="chip-btn" onclick="mostraTab('legenda-fasce-tab', this)">👥 Legenda Fasce</button>
                 <button class="chip-btn" onclick="mostraTab('classifica-serie-a', this)">Classifica Serie A</button>
                 <button class="chip-btn" onclick="mostraTab('classifica-fanta-tab', this)">Classifica Fanta</button>
                 <button class="chip-btn" onclick="mostraTab('calendario-26-27', this)">📅 Calendario 26/27</button>
@@ -88,6 +90,16 @@
                 </thead>
                 <tbody></tbody>
             </table>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab-legenda-fasce-tab">
+        <div class="tab-inner">
+            <div class="section-header">
+                <h2>Legenda Fasce</h2>
+                <p class="helper-text">Fantallenatori e fascia di appartenenza</p>
+            </div>
+            <div id="legenda-fasce"></div>
         </div>
     </div>
 

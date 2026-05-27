@@ -264,3 +264,181 @@ img[src*="juventus"].logo-piccolo {
     align-items: flex-start;
   }
 }
+/* ── LEGENDA FASCE ── */
+.legenda-fasce-wrapper {
+  margin-top: 32px;
+  animation: fadeInDown 0.5s ease both;
+}
+
+.legenda-fasce-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin: 0 0 6px 0;
+  text-align: center;
+}
+
+.legenda-fasce-sub {
+  text-align: center;
+  color: var(--muted-2);
+  font-size: 13px;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.04em;
+}
+
+/* Grid flat 3 colonne — ogni child occupa 1 colonna, le righe si allineano automaticamente */
+.legenda-fasce-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  row-gap: 8px;
+  column-gap: 18px;
+}
+
+/* ── HEADER FASCIA ── */
+.legenda-fascia-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid var(--border);
+  border-bottom: none;
+}
+
+.legenda-fascia-1-header { background: linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.06) 100%); border-color: rgba(212,175,55,0.45); }
+.legenda-fascia-2-header { background: linear-gradient(135deg, rgba(150,150,150,0.14) 0%, rgba(150,150,150,0.04) 100%); border-color: rgba(150,150,150,0.35); }
+.legenda-fascia-3-header { background: linear-gradient(135deg, rgba(180,120,60,0.16) 0%, rgba(180,120,60,0.05) 100%); border-color: rgba(180,120,60,0.35); }
+
+.legenda-fascia-emoji { font-size: 22px; line-height: 1; }
+
+.legenda-fascia-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.07em;
+  flex: 1;
+}
+.legenda-fascia-1-label { color: #d4af37; }
+.legenda-fascia-2-label { color: #8a8a8a; }
+.legenda-fascia-3-label { color: #cd7f32; }
+
+.legenda-fascia-count {
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ── SQUADRE DI RIFERIMENTO ── */
+.legenda-squadre-ref {
+  padding: 10px 14px 10px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+
+.legenda-fascia-1-ref { border-color: rgba(212,175,55,0.45); }
+.legenda-fascia-2-ref { border-color: rgba(150,150,150,0.35); }
+.legenda-fascia-3-ref { border-color: rgba(180,120,60,0.35); }
+
+.legenda-squadre-ref-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.legenda-squadre-ref-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.legenda-squadra-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 3px 10px 3px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+}
+.legenda-fascia-1-chip { background: rgba(212,175,55,0.1); border-color: rgba(212,175,55,0.3); color: #e8c84a; }
+.legenda-fascia-2-chip { background: rgba(150,150,150,0.1); border-color: rgba(150,150,150,0.3); color: #8a8a8a; }
+.legenda-fascia-3-chip { background: rgba(180,120,60,0.1); border-color: rgba(180,120,60,0.3); color: #d4935a; }
+
+.legenda-squadra-chip-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ── CARD ALLENATORE (flat, allineata per riga) ── */
+.legenda-allenatore-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.legenda-fascia-1-item { border-color: rgba(212,175,55,0.2); }
+.legenda-fascia-1-item:hover { border-color: rgba(212,175,55,0.5); background: rgba(212,175,55,0.04); }
+.legenda-fascia-2-item { border-color: rgba(150,150,150,0.2); }
+.legenda-fascia-2-item:hover { border-color: rgba(150,150,150,0.45); background: rgba(150,150,150,0.04); }
+.legenda-fascia-3-item { border-color: rgba(180,120,60,0.2); }
+.legenda-fascia-3-item:hover { border-color: rgba(180,120,60,0.45); background: rgba(180,120,60,0.04); }
+
+.legenda-allenatore-placeholder {
+  /* cella vuota per mantenere allineamento */
+  visibility: hidden;
+  height: 62px;
+  border-radius: 10px;
+}
+
+.legenda-foto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.legenda-nome {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .legenda-fasce-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .legenda-fasce-grid { grid-template-columns: 1fr; }
+}
