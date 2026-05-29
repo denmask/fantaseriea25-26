@@ -20,7 +20,7 @@
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli",  "Roma" , "Como" ]
+        "squadreAmmesse": ["Napoli",  "Roma" , "Como" ]
       }
     },
     {
