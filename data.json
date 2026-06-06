@@ -12,7 +12,7 @@
       "fascia": 1,
       "foto": "images/federico_burello.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli","Roma", "Como"]
+        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
       }
     },
     {
@@ -20,7 +20,7 @@
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Napoli",  "Roma" , "Como" ]
+        "squadreAmmesse": ["Napoli", "Roma", "Como"]
       }
     },
     {
@@ -28,7 +28,7 @@
       "fascia": 1,
       "foto": "images/alex_beltrame.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli",  "Roma", "Como"]
+        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
       }
     },
     {
@@ -36,10 +36,9 @@
       "fascia": 1,
       "foto": "images/denis_mascherin.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli",  "Roma", "Como" ]
+        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
       }
     },
-    
     {
       "nome": "Cristian Tartaro",
       "fascia": 2,
@@ -53,9 +52,9 @@
       "fascia": 2,
       "foto": "images/nicola_marano.jpg",
       "vincoli": {
-      "squadreAmmesse": ["Milan"]
+        "squadreAmmesse": ["Milan"]
       }
-   },
+    },
     {
       "nome": "Kevin Sandri",
       "fascia": 3,
@@ -63,8 +62,7 @@
       "vincoli": {
         "squadreAmmesse": ["Atalanta"]
       }
-    },   
-    
+    },
     {
       "nome": "Aidan Conti",
       "fascia": 3,
@@ -74,170 +72,201 @@
       }
     }
   ],
+
   "classificaSerieA": [
-    { "pos": 1, "nome": "Inter", "punti": 87, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Napoli", "punti": 76, "logo": "images/napoli.png" },
-    { "pos": 3, "nome": "Roma","punti": 73, "logo": "images/roma.png" },
-    { "pos": 4, "nome": "Como", "punti": 71, "logo": "images/como.png" },
-    { "pos": 5, "nome": "Milan", "punti": 70, "logo": "images/milan.png" },
-    { "pos": 6, "nome": "Juventus", "punti": 69, "logo": "images/juventus.png" },
-    { "pos": 7, "nome": "Atalanta", "punti": 59, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 56, "logo": "images/bologna.png" },
-    { "pos": 9, "nome": "Lazio", "punti": 54, "logo": "images/lazio.png" },
-    { "pos": 10, "nome": "Udinese", "punti": 50, "logo": "images/udinese.png" },
-    { "pos": 11, "nome": "Sassuolo", "punti": 49, "logo": "images/sassuolo.png" },
-    { "pos": 12, "nome": "Torino", "punti": 45, "logo": "images/torino.png" },
-    { "pos": 13, "nome": "Parma", "punti": 45, "logo": "images/parma.png" },
-    { "pos": 14, "nome": "Cagliari", "punti": 43, "logo": "images/cagliari.png" },
-    { "pos": 15, "nome": "Fiorentina", "punti": 42, "logo": "images/fiorentina.png" },
-    { "pos": 16, "nome": "Genoa", "punti": 41, "logo": "images/genoa.png" },
-    { "pos": 17, "nome": "Lecce", "punti": 38, "logo": "images/lecce.png" },
-    { "pos": 18, "nome": "Cremonese", "punti": 34, "logo": "images/cremonese.png" },
-    { "pos": 19, "nome": "Verona", "punti": 21, "logo": "images/verona.png" },
-    { "pos": 20, "nome": "Pisa", "punti": 18, "logo": "images/pisa.png" }
+    { "pos": 1,  "nome": "Atalanta",   "punti": 0, "logo": "images/atalanta.png" },
+    { "pos": 2,  "nome": "Bologna",    "punti": 0, "logo": "images/bologna.png" },
+    { "pos": 3,  "nome": "Cagliari",   "punti": 0, "logo": "images/cagliari.png" },
+    { "pos": 4,  "nome": "Como",       "punti": 0, "logo": "images/como.png" },
+    { "pos": 5,  "nome": "Fiorentina", "punti": 0, "logo": "images/fiorentina.png" },
+    { "pos": 6,  "nome": "Frosinone",  "punti": 0, "logo": "images/frosinone.png" },
+    { "pos": 7,  "nome": "Genoa",      "punti": 0, "logo": "images/genoa.png" },
+    { "pos": 8,  "nome": "Inter",      "punti": 0, "logo": "images/inter.png" },
+    { "pos": 9,  "nome": "Juventus",   "punti": 0, "logo": "images/juventus.png" },
+    { "pos": 10, "nome": "Lazio",      "punti": 0, "logo": "images/lazio.png" },
+    { "pos": 11, "nome": "Lecce",      "punti": 0, "logo": "images/lecce.png" },
+    { "pos": 12, "nome": "Milan",      "punti": 0, "logo": "images/milan.png" },
+    { "pos": 13, "nome": "Monza",      "punti": 0, "logo": "images/monza.png" },
+    { "pos": 14, "nome": "Napoli",     "punti": 0, "logo": "images/napoli.png" },
+    { "pos": 15, "nome": "Parma",      "punti": 0, "logo": "images/parma.png" },
+    { "pos": 16, "nome": "Roma",       "punti": 0, "logo": "images/roma.png" },
+    { "pos": 17, "nome": "Sassuolo",   "punti": 0, "logo": "images/sassuolo.png" },
+    { "pos": 18, "nome": "Torino",     "punti": 0, "logo": "images/torino.png" },
+    { "pos": 19, "nome": "Udinese",    "punti": 0, "logo": "images/udinese.png" },
+    { "pos": 20, "nome": "Venezia",    "punti": 0, "logo": "images/venezia.png" }
   ],
+
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Inter", "punti": 71, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Atalanta", "punti": 62, "logo": "images/atalanta.png" },
-    { "pos": 3, "nome": "Roma", "punti": 59, "logo": "images/roma.png" },
-    { "pos": 4, "nome": "Juventus", "punti": 57, "logo": "images/juventus.png" },
-    { "pos": 5, "nome": "Napoli", "punti": 56, "logo": "images/napoli.png" },
-    { "pos": 6, "nome": "Milan", "punti": 53, "logo": "images/milan.png" },
-    { "pos": 7, "nome": "Lazio", "punti": 49, "logo": "images/lazio.png" },
-    { "pos": 8, "nome": "Bologna", "punti": 27, "logo": "images/bologna.png" }
+    { "pos": 1, "nome": "Inter",     "punti": 0, "logo": "images/inter.png" },
+    { "pos": 2, "nome": "Napoli",    "punti": 0, "logo": "images/napoli.png" },
+    { "pos": 3, "nome": "Roma",      "punti": 0, "logo": "images/roma.png" },
+    { "pos": 4, "nome": "Como",      "punti": 0, "logo": "images/como.png" },
+    { "pos": 5, "nome": "Milan",     "punti": 0, "logo": "images/milan.png" },
+    { "pos": 6, "nome": "Juventus",  "punti": 0, "logo": "images/juventus.png" },
+    { "pos": 7, "nome": "Atalanta",  "punti": 0, "logo": "images/atalanta.png" },
+    { "pos": 8, "nome": "Bologna",   "punti": 0, "logo": "images/bologna.png" }
   ],
+
   "palmares": {
     "serieA": [
-      { "stagione": "2025/2026", "squadra": "Inter", "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "🖤💙" },
-      { "stagione": "2024/2025", "squadra": "Napoli", "allenatore": "Mattia Beltrame", "emoji": "🏆", "cuore": "💙💙" },
-      { "stagione": "2023/2024", "squadra": "Inter", "allenatore": "Mattia Beltrame", "emoji": "🏆", "cuore": "🖤💙" },
-      { "stagione": "2022/2023", "squadra": "Inter", "allenatore": "Mattia Beltrame", "emoji": "🏆", "cuore": "🖤💙" },
-      { "stagione": "2021/2022", "squadra": "Roma", "allenatore": "Denis Mascherin", "emoji": "🏆", "cuore": "💛❤️" }
+      { "stagione": "2025/2026", "squadra": "Inter",  "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "🖤💙" },
+      { "stagione": "2024/2025", "squadra": "Napoli", "allenatore": "Mattia Beltrame",  "emoji": "🏆", "cuore": "💙💙" },
+      { "stagione": "2023/2024", "squadra": "Inter",  "allenatore": "Mattia Beltrame",  "emoji": "🏆", "cuore": "🖤💙" },
+      { "stagione": "2022/2023", "squadra": "Inter",  "allenatore": "Mattia Beltrame",  "emoji": "🏆", "cuore": "🖤💙" },
+      { "stagione": "2021/2022", "squadra": "Roma",   "allenatore": "Denis Mascherin",  "emoji": "🏆", "cuore": "💛❤️" }
     ],
     "coppaItalia": [
-      {
-        "stagione": "2025/2026",
-        "squadra": "Inter",
-        "allenatore": "Federico Burello",
-        "emoji": "🏆",
-        "cuore": "🖤💙"
-      },
-      { "stagione": "2024/2025", "squadra": "Bologna", "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "❤️💙" },
-      { "stagione": "2023/2024", "squadra": "Juventus", "allenatore": "Denis Mascherin", "emoji": "🏆", "cuore": "🤍🖤" }
+      { "stagione": "2025/2026", "squadra": "Inter",    "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "🖤💙" },
+      { "stagione": "2024/2025", "squadra": "Bologna",  "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "❤️💙" },
+      { "stagione": "2023/2024", "squadra": "Juventus", "allenatore": "Denis Mascherin",  "emoji": "🏆", "cuore": "🤍🖤" }
     ],
     "worldCup": [
-      { "stagione": "2026", "squadra": "TBD", "allenatore": "TBD" },
+      { "stagione": "2026", "squadra": "TBD",       "allenatore": "TBD" },
       { "stagione": "2022", "squadra": "Argentina", "allenatore": "Kevin Sandri", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" }
     ],
     "euro": [
       { "stagione": "2024", "squadra": "Spagna", "allenatore": "Cristian Tartaro", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" }
     ]
   },
+
   "classificheStoriche": {
     "2021/2022": {
       "titolo": "Serie A TIM 2021/2022 — Edizione I (4 partecipanti)",
       "note": "Michele Picilli dimesso nel gennaio 2022 (squadra al 4° posto), al suo posto Riccardo Rella (a fine stagione al 2° posto).",
       "classifica": [
-        { "pos": 1, "squadra": "Roma",        "allenatore": "Denis Mascherin",               "punti": 70, "fp": "--" },
+        { "pos": 1, "squadra": "Roma",        "allenatore": "Denis Mascherin",                "punti": 70, "fp": "--" },
         { "pos": 2, "squadra": "Udinese",      "allenatore": "Michele Picilli / Riccardo Rella", "punti": 65, "fp": "--" },
-        { "pos": 3, "squadra": "H. Verona",    "allenatore": "Mattia Beltrame",               "punti": 47, "fp": "--" },
-        { "pos": 4, "squadra": "L.R. Vicenza", "allenatore": "Kevin Sandri",                  "punti": 44, "fp": "--" }
+        { "pos": 3, "squadra": "H. Verona",    "allenatore": "Mattia Beltrame",                "punti": 47, "fp": "--" },
+        { "pos": 4, "squadra": "L.R. Vicenza", "allenatore": "Kevin Sandri",                   "punti": 44, "fp": "--" }
       ]
     },
     "2022/2023": {
       "titolo": "Serie A TIM 2022/2023 — Edizione II (6 partecipanti)",
       "note": "Juventus con 6 punti di penalizzazione (in base alla penalizzazione reale). Lotta scudetto Fanta tra Inter e Napoli: Riccardo Rella ha perso il Fanta all'ultima giornata ed è scivolato terzo.",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",    "allenatore": "Mattia Beltrame",     "punti": 55, "fp": "2741" },
-        { "pos": 2, "squadra": "Roma",     "allenatore": "Andrea Campagnolo",   "punti": 54, "fp": "2593" },
-        { "pos": 3, "squadra": "Napoli",   "allenatore": "Riccardo Rella",      "punti": 54, "fp": "2727" },
-        { "pos": 4, "squadra": "Milan",    "allenatore": "Denis Mascherin",     "punti": 54, "fp": "2674" },
-        { "pos": 5, "squadra": "Lazio",    "allenatore": "Kevin Sandri",        "punti": 52, "fp": "2766.5" },
-        { "pos": 6, "squadra": "Juventus", "allenatore": "Giovanni Bean (-6pt)","punti": 46, "fp": "2637" }
+        { "pos": 1, "squadra": "Inter",    "allenatore": "Mattia Beltrame",      "punti": 55, "fp": "2741" },
+        { "pos": 2, "squadra": "Roma",     "allenatore": "Andrea Campagnolo",    "punti": 54, "fp": "2593" },
+        { "pos": 3, "squadra": "Napoli",   "allenatore": "Riccardo Rella",       "punti": 54, "fp": "2727" },
+        { "pos": 4, "squadra": "Milan",    "allenatore": "Denis Mascherin",      "punti": 54, "fp": "2674" },
+        { "pos": 5, "squadra": "Lazio",    "allenatore": "Kevin Sandri",         "punti": 52, "fp": "2766.5" },
+        { "pos": 6, "squadra": "Juventus", "allenatore": "Giovanni Bean (-6pt)", "punti": 46, "fp": "2637" }
       ]
     },
     "2023/2024": {
       "titolo": "Serie A TIM 2023/2024 — Edizione III (8 partecipanti)",
       "note": "Cristian Tartaro ha gestito l'Atalanta come vice di Federico Burello.",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",      "allenatore": "Mattia Beltrame",                      "punti": 71, "fp": "2911" },
-        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro (vice F. Burello)",   "punti": 66, "fp": "2898.5" },
-        { "pos": 3, "squadra": "Milan",      "allenatore": "Giovanni Bean",                        "punti": 56, "fp": "2691.5" },
-        { "pos": 4, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo",                    "punti": 53, "fp": "2644.5" },
-        { "pos": 5, "squadra": "Lazio",      "allenatore": "Kevin Sandri",                         "punti": 52, "fp": "2631" },
-        { "pos": 6, "squadra": "Juventus",   "allenatore": "Denis Mascherin",                      "punti": 51, "fp": "2752.5" },
-        { "pos": 7, "squadra": "Roma",       "allenatore": "Andrea Campagnolo",                    "punti": 45, "fp": "2636.5" },
-        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin (vice Giacomo Bot)",      "punti": 36, "fp": "2522.5" }
+        { "pos": 1, "squadra": "Inter",      "allenatore": "Mattia Beltrame",                    "punti": 71, "fp": "2911" },
+        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro (vice F. Burello)", "punti": 66, "fp": "2898.5" },
+        { "pos": 3, "squadra": "Milan",      "allenatore": "Giovanni Bean",                      "punti": 56, "fp": "2691.5" },
+        { "pos": 4, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo",                  "punti": 53, "fp": "2644.5" },
+        { "pos": 5, "squadra": "Lazio",      "allenatore": "Kevin Sandri",                       "punti": 52, "fp": "2631" },
+        { "pos": 6, "squadra": "Juventus",   "allenatore": "Denis Mascherin",                    "punti": 51, "fp": "2752.5" },
+        { "pos": 7, "squadra": "Roma",       "allenatore": "Andrea Campagnolo",                  "punti": 45, "fp": "2636.5" },
+        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin (vice Giacomo Bot)",    "punti": 36, "fp": "2522.5" }
       ]
     },
     "2024/2025": {
       "titolo": "Serie A Enilive 2024/2025 — Edizione IV (8 partecipanti)",
       "note": "Andrea Campagnolo sostituito da Alex Beltrame nella gestione della Roma.",
       "classifica": [
-        { "pos": 1, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",                        "punti": 68, "fp": "2707.5" },
-        { "pos": 2, "squadra": "Milan",    "allenatore": "Kevin Di Bernardo",                      "punti": 61, "fp": "2561" },
-        { "pos": 3, "squadra": "Inter",    "allenatore": "Denis Mascherin",                        "punti": 60, "fp": "2784.5" },
-        { "pos": 4, "squadra": "Bologna",  "allenatore": "Federico Burello",                       "punti": 60, "fp": "2685" },
-        { "pos": 5, "squadra": "Atalanta", "allenatore": "Cristian Tartaro",                       "punti": 56, "fp": "2815.5" },
-        { "pos": 6, "squadra": "Juventus", "allenatore": "Kevin Sandri",                           "punti": 50, "fp": "2428.5" },
-        { "pos": 7, "squadra": "Roma",     "allenatore": "Andrea Campagnolo / Alex Beltrame",      "punti": 33, "fp": "2428.5" },
-        { "pos": 8, "squadra": "Genoa",    "allenatore": "Giovanni Bean",                          "punti": 30, "fp": "2383" }
+        { "pos": 1, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",                   "punti": 68, "fp": "2707.5" },
+        { "pos": 2, "squadra": "Milan",    "allenatore": "Kevin Di Bernardo",                 "punti": 61, "fp": "2561" },
+        { "pos": 3, "squadra": "Inter",    "allenatore": "Denis Mascherin",                   "punti": 60, "fp": "2784.5" },
+        { "pos": 4, "squadra": "Bologna",  "allenatore": "Federico Burello",                  "punti": 60, "fp": "2685" },
+        { "pos": 5, "squadra": "Atalanta", "allenatore": "Cristian Tartaro",                  "punti": 56, "fp": "2815.5" },
+        { "pos": 6, "squadra": "Juventus", "allenatore": "Kevin Sandri",                      "punti": 50, "fp": "2428.5" },
+        { "pos": 7, "squadra": "Roma",     "allenatore": "Andrea Campagnolo / Alex Beltrame", "punti": 33, "fp": "2428.5" },
+        { "pos": 8, "squadra": "Genoa",    "allenatore": "Giovanni Bean",                     "punti": 30, "fp": "2383" }
       ]
     },
     "2025/2026": {
       "titolo": "Serie A Enilive 2025/2026 — Edizione V (8 partecipanti)",
       "note": "",
+      "classificaSerieA": [
+        { "pos": 1,  "nome": "Inter",      "punti": 87, "logo": "images/inter.png" },
+        { "pos": 2,  "nome": "Napoli",     "punti": 76, "logo": "images/napoli.png" },
+        { "pos": 3,  "nome": "Roma",       "punti": 73, "logo": "images/roma.png" },
+        { "pos": 4,  "nome": "Como",       "punti": 71, "logo": "images/como.png" },
+        { "pos": 5,  "nome": "Milan",      "punti": 70, "logo": "images/milan.png" },
+        { "pos": 6,  "nome": "Juventus",   "punti": 69, "logo": "images/juventus.png" },
+        { "pos": 7,  "nome": "Atalanta",   "punti": 59, "logo": "images/atalanta.png" },
+        { "pos": 8,  "nome": "Bologna",    "punti": 56, "logo": "images/bologna.png" },
+        { "pos": 9,  "nome": "Lazio",      "punti": 54, "logo": "images/lazio.png" },
+        { "pos": 10, "nome": "Udinese",    "punti": 50, "logo": "images/udinese.png" },
+        { "pos": 11, "nome": "Sassuolo",   "punti": 49, "logo": "images/sassuolo.png" },
+        { "pos": 12, "nome": "Torino",     "punti": 45, "logo": "images/torino.png" },
+        { "pos": 13, "nome": "Parma",      "punti": 45, "logo": "images/parma.png" },
+        { "pos": 14, "nome": "Cagliari",   "punti": 43, "logo": "images/cagliari.png" },
+        { "pos": 15, "nome": "Fiorentina", "punti": 42, "logo": "images/fiorentina.png" },
+        { "pos": 16, "nome": "Genoa",      "punti": 41, "logo": "images/genoa.png" },
+        { "pos": 17, "nome": "Lecce",      "punti": 38, "logo": "images/lecce.png" },
+        { "pos": 18, "nome": "Cremonese",  "punti": 34, "logo": "images/cremonese.png" },
+        { "pos": 19, "nome": "Verona",     "punti": 21, "logo": "images/verona.png" },
+        { "pos": 20, "nome": "Pisa",       "punti": 18, "logo": "images/pisa.png" }
+      ],
       "classifica": [
-        { "pos": 1, "squadra": "Inter",    "allenatore": "Federico Burello",    "punti": 68, "fp": "" },
-        { "pos": 2, "squadra": "Atalanta", "allenatore": "Kevin Di Bernardo",   "punti": 62, "fp": "" },
-        { "pos": 3, "squadra": "Roma",     "allenatore": "Alex Beltrame",       "punti": 56, "fp": "" },
-        { "pos": 4, "squadra": "Juventus", "allenatore": "Denis Mascherin",     "punti": 54, "fp": "" },
-        { "pos": 5, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",     "punti": 53, "fp": "" },
-        { "pos": 6, "squadra": "Milan",    "allenatore": "Lorenzo Moro",        "punti": 50, "fp": "" },
-        { "pos": 7, "squadra": "Lazio",    "allenatore": "Cristian Tartaro",    "punti": 43, "fp": "" },
-        { "pos": 8, "squadra": "Bologna",  "allenatore": "Nicola Marano",       "punti": 24, "fp": "" }
+        { "pos": 1, "squadra": "Inter",    "allenatore": "Federico Burello",  "punti": 68, "fp": "" },
+        { "pos": 2, "squadra": "Atalanta", "allenatore": "Kevin Di Bernardo", "punti": 62, "fp": "" },
+        { "pos": 3, "squadra": "Roma",     "allenatore": "Alex Beltrame",     "punti": 56, "fp": "" },
+        { "pos": 4, "squadra": "Juventus", "allenatore": "Denis Mascherin",   "punti": 54, "fp": "" },
+        { "pos": 5, "squadra": "Napoli",   "allenatore": "Mattia Beltrame",   "punti": 53, "fp": "" },
+        { "pos": 6, "squadra": "Milan",    "allenatore": "Lorenzo Moro",      "punti": 50, "fp": "" },
+        { "pos": 7, "squadra": "Lazio",    "allenatore": "Cristian Tartaro",  "punti": 43, "fp": "" },
+        { "pos": 8, "squadra": "Bologna",  "allenatore": "Nicola Marano",     "punti": 24, "fp": "" }
+      ],
+      "classificaFantacalcio": [
+        { "pos": 1, "nome": "Inter",    "punti": 71, "logo": "images/inter.png" },
+        { "pos": 2, "nome": "Atalanta", "punti": 62, "logo": "images/atalanta.png" },
+        { "pos": 3, "nome": "Roma",     "punti": 59, "logo": "images/roma.png" },
+        { "pos": 4, "nome": "Juventus", "punti": 57, "logo": "images/juventus.png" },
+        { "pos": 5, "nome": "Napoli",   "punti": 56, "logo": "images/napoli.png" },
+        { "pos": 6, "nome": "Milan",    "punti": 53, "logo": "images/milan.png" },
+        { "pos": 7, "nome": "Lazio",    "punti": 49, "logo": "images/lazio.png" },
+        { "pos": 8, "nome": "Bologna",  "punti": 27, "logo": "images/bologna.png" }
       ]
     }
   },
+
   "altreCompetizioni": {
     "Fantamundial Qatar 2022": {
       "titolo": "Fantamundial Qatar 2022",
       "note": "",
       "classifica": [
-        { "pos": 1, "squadra": "Argentina", "allenatore": "Kevin Sandri",       "punti": 12, "risultato": "CAMPIONE (Finale)" },
-        { "pos": 2, "squadra": "Francia",   "allenatore": "Denis Mascherin",    "punti": 9,  "risultato": "Vicecampione (2° posto)" },
-        { "pos": 3, "squadra": "Brasile",   "allenatore": "Mattia Beltrame",    "punti": 9,  "risultato": "Quarti di Finale" },
-        { "pos": 4, "squadra": "Portogallo","allenatore": "Giovanni Bean",      "punti": 9,  "risultato": "Quarti di Finale" },
-        { "pos": 5, "squadra": "Spagna",    "allenatore": "Riccardo Rella",     "punti": 7,  "risultato": "Ottavi di Finale" },
-        { "pos": 6, "squadra": "Germania",  "allenatore": "Andrea Campagnolo",  "punti": 3,  "risultato": "Fase a Gironi" }
+        { "pos": 1, "squadra": "Argentina", "allenatore": "Kevin Sandri",      "punti": 12, "risultato": "CAMPIONE (Finale)" },
+        { "pos": 2, "squadra": "Francia",   "allenatore": "Denis Mascherin",   "punti": 9,  "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Brasile",   "allenatore": "Mattia Beltrame",   "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 4, "squadra": "Portogallo","allenatore": "Giovanni Bean",     "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 5, "squadra": "Spagna",    "allenatore": "Riccardo Rella",    "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 6, "squadra": "Germania",  "allenatore": "Andrea Campagnolo", "punti": 3,  "risultato": "Fase a Gironi" }
       ]
     },
     "Fantaeuropeo Germany 2024": {
       "titolo": "Fantaeuropeo Germany 2024",
       "note": "",
       "classifica": [
-        { "pos": 1, "squadra": "Spagna",      "allenatore": "Cristian Tartaro",    "punti": 19, "risultato": "CAMPIONE (Finale)" },
-        { "pos": 2, "squadra": "Inghilterra", "allenatore": "Kevin Sandri",        "punti": 14, "risultato": "Vicecampione (2° posto)" },
-        { "pos": 3, "squadra": "Germania",    "allenatore": "Denis Mascherin",     "punti": 12, "risultato": "Quarti di Finale" },
-        { "pos": 4, "squadra": "Francia",     "allenatore": "Mattia Beltrame",     "punti": 9,  "risultato": "Semifinale" },
-        { "pos": 5, "squadra": "Portogallo",  "allenatore": "Federico Burello",    "punti": 9,  "risultato": "Quarti di Finale" },
-        { "pos": 6, "squadra": "Italia",      "allenatore": "Kevin Di Bernardo",   "punti": 7,  "risultato": "Ottavi di Finale" },
-        { "pos": 7, "squadra": "Belgio",      "allenatore": "Andrea Campagnolo",   "punti": 7,  "risultato": "Ottavi di Finale" },
-        { "pos": 8, "squadra": "Croazia",     "allenatore": "Giacomo Bot",         "punti": 4,  "risultato": "Fase a Gironi" }
+        { "pos": 1, "squadra": "Spagna",      "allenatore": "Cristian Tartaro",  "punti": 19, "risultato": "CAMPIONE (Finale)" },
+        { "pos": 2, "squadra": "Inghilterra", "allenatore": "Kevin Sandri",      "punti": 14, "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Germania",    "allenatore": "Denis Mascherin",   "punti": 12, "risultato": "Quarti di Finale" },
+        { "pos": 4, "squadra": "Francia",     "allenatore": "Mattia Beltrame",   "punti": 9,  "risultato": "Semifinale" },
+        { "pos": 5, "squadra": "Portogallo",  "allenatore": "Federico Burello",  "punti": 9,  "risultato": "Quarti di Finale" },
+        { "pos": 6, "squadra": "Italia",      "allenatore": "Kevin Di Bernardo", "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 7, "squadra": "Belgio",      "allenatore": "Andrea Campagnolo", "punti": 7,  "risultato": "Ottavi di Finale" },
+        { "pos": 8, "squadra": "Croazia",     "allenatore": "Giacomo Bot",       "punti": 4,  "risultato": "Fase a Gironi" }
       ]
     },
     "FantacoppaItalia 2023/2024": {
       "titolo": "Fantacoppa Italia Frecciarossa 2023/2024",
       "note": "",
       "classifica": [
-        { "pos": 1, "squadra": "Juventus",   "allenatore": "Denis Mascherin",     "punti": null, "risultato": "CAMPIONE" },
-        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro",    "punti": null, "risultato": "Vicecampione (2° posto)" },
-        { "pos": 3, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo",   "punti": null, "risultato": "Semifinale" },
-        { "pos": 4, "squadra": "Lazio",      "allenatore": "Kevin Sandri",        "punti": null, "risultato": "Semifinale" },
-        { "pos": 5, "squadra": "Roma",       "allenatore": "Andrea Campagnolo",   "punti": null, "risultato": "Quarti di Finale" },
-        { "pos": 6, "squadra": "Milan",      "allenatore": "Giovanni Bean",       "punti": null, "risultato": "Quarti di Finale" },
-        { "pos": 7, "squadra": "Inter",      "allenatore": "Mattia Beltrame",     "punti": null, "risultato": "Ottavi di Finale" },
-        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin",        "punti": null, "risultato": "Ottavi di Finale" }
+        { "pos": 1, "squadra": "Juventus",   "allenatore": "Denis Mascherin",   "punti": null, "risultato": "CAMPIONE" },
+        { "pos": 2, "squadra": "Atalanta",   "allenatore": "Cristian Tartaro",  "punti": null, "risultato": "Vicecampione (2° posto)" },
+        { "pos": 3, "squadra": "Fiorentina", "allenatore": "Kevin Di Bernardo", "punti": null, "risultato": "Semifinale" },
+        { "pos": 4, "squadra": "Lazio",      "allenatore": "Kevin Sandri",      "punti": null, "risultato": "Semifinale" },
+        { "pos": 5, "squadra": "Roma",       "allenatore": "Andrea Campagnolo", "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 6, "squadra": "Milan",      "allenatore": "Giovanni Bean",     "punti": null, "risultato": "Quarti di Finale" },
+        { "pos": 7, "squadra": "Inter",      "allenatore": "Mattia Beltrame",   "punti": null, "risultato": "Ottavi di Finale" },
+        { "pos": 8, "squadra": "Napoli",     "allenatore": "Mattia Minin",      "punti": null, "risultato": "Ottavi di Finale" }
       ]
     },
     "FantacoppaItalia 2024/2025": {
@@ -259,15 +288,21 @@
       "note": "Classifica da completare al termine della competizione.",
       "classifica": []
     },
+    "FantacoppaItalia 2026/2027": {
+      "titolo": "Fantacoppa Italia Frecciarossa 2026/2027",
+      "note": "Classifica da completare al termine della competizione.",
+      "classifica": []
+    },
     "Fantamundial USA 2026": {
       "titolo": "Fantamundial USA 2026",
       "note": "Classifica da completare al termine della competizione.",
       "classifica": []
     }
   },
+
   "ordineSorteggio": {
-  "fascia1": ["Inter", "Napoli", "Roma", "Como"],
-  "fascia2": ["Milan", "Juventus"],
-  "fascia3": ["Atalanta", "Bologna"]
-}
+    "fascia1": ["Inter", "Napoli", "Roma", "Como"],
+    "fascia2": ["Milan", "Juventus"],
+    "fascia3": ["Atalanta", "Bologna"]
+  }
 }
