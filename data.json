@@ -74,37 +74,37 @@
   ],
 
   "classificaSerieA": [
-    { "pos": 1,  "nome": "Atalanta",   "punti": 0, "logo": "images/atalanta.png" },
-    { "pos": 2,  "nome": "Bologna",    "punti": 0, "logo": "images/bologna.png" },
-    { "pos": 3,  "nome": "Cagliari",   "punti": 0, "logo": "images/cagliari.png" },
-    { "pos": 4,  "nome": "Como",       "punti": 0, "logo": "images/como.png" },
-    { "pos": 5,  "nome": "Fiorentina", "punti": 0, "logo": "images/fiorentina.png" },
-    { "pos": 6,  "nome": "Frosinone",  "punti": 0, "logo": "images/frosinone.png" },
-    { "pos": 7,  "nome": "Genoa",      "punti": 0, "logo": "images/genoa.png" },
-    { "pos": 8,  "nome": "Inter",      "punti": 0, "logo": "images/inter.png" },
-    { "pos": 9,  "nome": "Juventus",   "punti": 0, "logo": "images/juventus.png" },
-    { "pos": 10, "nome": "Lazio",      "punti": 0, "logo": "images/lazio.png" },
-    { "pos": 11, "nome": "Lecce",      "punti": 0, "logo": "images/lecce.png" },
-    { "pos": 12, "nome": "Milan",      "punti": 0, "logo": "images/milan.png" },
-    { "pos": 13, "nome": "Monza",      "punti": 0, "logo": "images/monza.png" },
-    { "pos": 14, "nome": "Napoli",     "punti": 0, "logo": "images/napoli.png" },
-    { "pos": 15, "nome": "Parma",      "punti": 0, "logo": "images/parma.png" },
-    { "pos": 16, "nome": "Roma",       "punti": 0, "logo": "images/roma.png" },
-    { "pos": 17, "nome": "Sassuolo",   "punti": 0, "logo": "images/sassuolo.png" },
-    { "pos": 18, "nome": "Torino",     "punti": 0, "logo": "images/torino.png" },
-    { "pos": 19, "nome": "Udinese",    "punti": 0, "logo": "images/udinese.png" },
+    { "pos": 1,  "nome": "Roma",   "punti": 13, "logo": "images/roma.png" },
+    { "pos": 2,  "nome": "Inter",    "punti": 13, "logo": "images/inter.png" },
+    { "pos": 3,  "nome": "Lazio",   "punti": 13, "logo": "images/lazio.png" },
+    { "pos": 4,  "nome": "Cagliari",  "punti": 12, "logo": "images/cagliari.png" },
+    { "pos": 5,  "nome": "Milan", "punti": 11, "logo": "images/milan.png" },
+    { "pos": 6,  "nome": "Frosinone",  "punti": 10, "logo": "images/frosinone.png" },
+    { "pos": 7,  "nome": "Juventus",  "punti": 10, "logo": "images/juventus.png" },
+    { "pos": 8,  "nome": "Como",   "punti": 10, "logo": "images/como.png" },
+    { "pos": 9,  "nome": "Napoli",   "punti": 7, "logo": "images/napoli.png" },
+    { "pos": 10, "nome": "Sassuolo",  "punti": 7, "logo": "images/sassuolo.png" },
+    { "pos": 11, "nome": "Atalanta",  "punti": 6, "logo": "images/atalanta.png" },
+    { "pos": 12, "nome": "Lecce",      "punti": 6, "logo": "images/lecce.png" },
+    { "pos": 13, "nome": "Udinese",      "punti": 4, "logo": "images/udinese.png" },
+    { "pos": 14, "nome": "Torino",     "punti": 4, "logo": "images/torino.png" },
+    { "pos": 15, "nome": "Parma",      "punti": 4, "logo": "images/parma.png" },
+    { "pos": 16, "nome": "Monza",       "punti": 4, "logo": "images/monza.png" },
+    { "pos": 17, "nome": "Fiorentina",   "punti": 4, "logo": "images/fiorentina.png" },
+    { "pos": 18, "nome": "Bologna",     "punti": 2, "logo": "images/bologna.png" },
+    { "pos": 19, "nome": "Genoa",    "punti": 1, "logo": "images/genoa.png" },
     { "pos": 20, "nome": "Venezia",    "punti": 0, "logo": "images/venezia.png" }
   ],
 
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Inter",     "punti": 0, "logo": "images/inter.png" },
-    { "pos": 2, "nome": "Napoli",    "punti": 0, "logo": "images/napoli.png" },
-    { "pos": 3, "nome": "Roma",      "punti": 0, "logo": "images/roma.png" },
-    { "pos": 4, "nome": "Como",      "punti": 0, "logo": "images/como.png" },
-    { "pos": 5, "nome": "Milan",     "punti": 0, "logo": "images/milan.png" },
-    { "pos": 6, "nome": "Juventus",  "punti": 0, "logo": "images/juventus.png" },
-    { "pos": 7, "nome": "Atalanta",  "punti": 0, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna",   "punti": 0, "logo": "images/bologna.png" }
+    { "pos": 1, "nome": "Roma",     "punti": 12, "logo": "images/roma.png" },
+    { "pos": 2, "nome": "Como",    "punti": 9, "logo": "images/como.png" },
+    { "pos": 3, "nome": "Juventus",  "punti": 9, "logo": "images/juventus.png" },
+    { "pos": 4, "nome": "Inter",      "punti": 9, "logo": "images/inter.png" },
+    { "pos": 5, "nome": "Napoli",     "punti": 7, "logo": "images/napoli.png" },
+    { "pos": 6, "nome": "Atalanta",  "punti": 4, "logo": "images/atalanta.png" },
+    { "pos": 7, "nome": "Milan",  "punti": 4, "logo": "images/milan.png" },
+    { "pos": 8, "nome": "Bologna",   "punti": 4, "logo": "images/bologna.png" }
   ],
 
   "palmares": {
@@ -121,7 +121,7 @@
       { "stagione": "2023/2024", "squadra": "Juventus", "allenatore": "Denis Mascherin",  "emoji": "🏆", "cuore": "🤍🖤" }
     ],
     "worldCup": [
-      { "stagione": "2026", "squadra": "TBD",       "allenatore": "TBD" },
+      { "stagione": "2026", "squadra": "Spagna", "allenatore": "Andrea Campagnolo", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" },
       { "stagione": "2022", "squadra": "Argentina", "allenatore": "Kevin Sandri", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" }
     ],
     "euro": [
