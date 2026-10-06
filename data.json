@@ -8,27 +8,11 @@
   },
   "allenatori": [
     {
-      "nome": "Federico Burello",
-      "fascia": 1,
-      "foto": "images/federico_burello.jpg",
-      "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
-      }
-    },
-    {
       "nome": "Kevin Di Bernardo",
       "fascia": 1,
       "foto": "images/kevin_di_bernardo.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Napoli", "Roma", "Como"]
-      }
-    },
-    {
-      "nome": "Alex Beltrame",
-      "fascia": 1,
-      "foto": "images/alex_beltrame.jpg",
-      "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
+        "squadreAmmesse": ["Roma", "Inter", "Lazio", "Cagliari"]
       }
     },
     {
@@ -36,15 +20,31 @@
       "fascia": 1,
       "foto": "images/denis_mascherin.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Inter", "Napoli", "Roma", "Como"]
+        "squadreAmmesse": ["Roma", "Inter", "Lazio", "Cagliari"]
       }
     },
     {
       "nome": "Cristian Tartaro",
-      "fascia": 2,
+      "fascia": 1,
       "foto": "images/cristian_tartaro.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Juventus"]
+        "squadreAmmesse": ["Roma", "Inter", "Lazio", "Cagliari"]
+      }
+    },
+    {
+      "nome": "Alex Beltrame",
+      "fascia": 1,
+      "foto": "images/alex_beltrame.jpg",
+      "vincoli": {
+        "squadreAmmesse": ["Roma", "Inter", "Lazio", "Cagliari"]
+      }
+    },
+    {
+      "nome": "Kevin Sandri",
+      "fascia": 2,
+      "foto": "images/kevin_sandri.jpg",
+      "vincoli": {
+        "squadreAmmesse": ["Milan", "Frosinone"]
       }
     },
     {
@@ -52,15 +52,7 @@
       "fascia": 2,
       "foto": "images/nicola_marano.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Milan"]
-      }
-    },
-    {
-      "nome": "Kevin Sandri",
-      "fascia": 3,
-      "foto": "images/kevin_sandri.jpg",
-      "vincoli": {
-        "squadreAmmesse": ["Atalanta"]
+        "squadreAmmesse": ["Milan", "Frosinone"]
       }
     },
     {
@@ -68,7 +60,15 @@
       "fascia": 3,
       "foto": "images/aidan_conti.jpg",
       "vincoli": {
-        "squadreAmmesse": ["Bologna"]
+        "squadreAmmesse": ["Juventus", "Como"]
+      }
+    },
+    {
+      "nome": "Daniel Zanin N.EW",
+      "fascia": 3,
+      "foto": "images/daniel_zanin.jpg",
+      "vincoli": {
+        "squadreAmmesse": ["Juventus", "Como"]
       }
     }
   ],
