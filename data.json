@@ -109,6 +109,7 @@
 
   "palmares": {
     "serieA": [
+      { "stagione": "2026/2027", "squadra": "", "allenatore": "", "emoji":"🏆", "cuore": ""},
       { "stagione": "2025/2026", "squadra": "Inter",  "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "🖤💙" },
       { "stagione": "2024/2025", "squadra": "Napoli", "allenatore": "Mattia Beltrame",  "emoji": "🏆", "cuore": "💙💙" },
       { "stagione": "2023/2024", "squadra": "Inter",  "allenatore": "Mattia Beltrame",  "emoji": "🏆", "cuore": "🖤💙" },
@@ -116,6 +117,7 @@
       { "stagione": "2021/2022", "squadra": "Roma",   "allenatore": "Denis Mascherin",  "emoji": "🏆", "cuore": "💛❤️" }
     ],
     "coppaItalia": [
+      { "stagione": "2026/2027", "squadra": "", "allenatore": "", "emoji":"🏆", "cuore": ""},
       { "stagione": "2025/2026", "squadra": "Inter",    "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "🖤💙" },
       { "stagione": "2024/2025", "squadra": "Bologna",  "allenatore": "Federico Burello", "emoji": "🏆", "cuore": "❤️💙" },
       { "stagione": "2023/2024", "squadra": "Juventus", "allenatore": "Denis Mascherin",  "emoji": "🏆", "cuore": "🤍🖤" }
@@ -125,6 +127,7 @@
       { "stagione": "2022", "squadra": "Argentina", "allenatore": "Kevin Sandri", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" }
     ],
     "euro": [
+      {"stagione": "2028", "squadra": "", "allenatore": "", "bandiera": ""},
       { "stagione": "2024", "squadra": "Spagna", "allenatore": "Cristian Tartaro", "bandiera": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" }
     ]
   },
