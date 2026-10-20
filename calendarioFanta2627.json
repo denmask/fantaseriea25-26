@@ -356,7 +356,7 @@
             "logo": "images/como.png"
           },
           "golCasa": 4,
-          "golTrasferta": 2
+          "golTrasferta": 4
         },
         {
           "casa": {
@@ -368,7 +368,7 @@
             "logo": "images/juventus.png"
           },
           "golCasa": 1,
-          "golTrasferta": 0
+          "golTrasferta": 2
         }
       ]
     },
