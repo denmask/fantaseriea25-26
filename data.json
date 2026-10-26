@@ -91,7 +91,7 @@
     { "pos": 12, "nome": "Lecce",  "punti": 9, "logo": "images/lecce.png" },
     { "pos": 13, "nome": "Bologna",     "punti": 8, "logo": "images/bologna.png" },
     { "pos": 14, "nome": "Sassuolo",      "punti": 8, "logo": "images/sassuolo.png" },
-    { "pos": 15, "nome": "Monza",     "punti": 7, "logo": "images/bologna.png" },
+    { "pos": 15, "nome": "Monza",     "punti": 7, "logo": "images/monza.png" },
     { "pos": 16, "nome": "Genoa",      "punti": 7, "logo": "images/genoa.png" },
     { "pos": 17, "nome": "Udinese",       "punti": 4, "logo": "images/udinese.png" },
     { "pos": 18, "nome": "Fiorentina",   "punti": 4, "logo": "images/fiorentina.png" },
