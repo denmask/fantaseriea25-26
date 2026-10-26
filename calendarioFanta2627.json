@@ -384,8 +384,8 @@
             "nome": "Roma",
             "logo": "images/roma.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 3,
+          "golTrasferta": 1
         },
         {
           "casa": {
@@ -396,8 +396,8 @@
             "nome": "Bologna",
             "logo": "images/bologna.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 2,
+          "golTrasferta": 1
         },
         {
           "casa": {
@@ -408,8 +408,8 @@
             "nome": "Juventus",
             "logo": "images/juventus.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 4,
+          "golTrasferta": 3
         },
         {
           "casa": {
@@ -420,8 +420,8 @@
             "nome": "Inter",
             "logo": "images/inter.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 3,
+          "golTrasferta": 2
         }
       ]
     },
