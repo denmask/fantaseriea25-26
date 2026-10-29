@@ -437,8 +437,8 @@
             "nome": "Napoli",
             "logo": "images/napoli.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 2,
+          "golTrasferta": 3
         },
         {
           "casa": {
@@ -449,8 +449,8 @@
             "nome": "Juventus",
             "logo": "images/juventus.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 2,
+          "golTrasferta": 4
         },
         {
           "casa": {
@@ -461,8 +461,8 @@
             "nome": "Milan",
             "logo": "images/milan.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 3,
+          "golTrasferta": 3
         },
         {
           "casa": {
@@ -473,8 +473,8 @@
             "nome": "Atalanta",
             "logo": "images/atalanta.png"
           },
-          "golCasa": null,
-          "golTrasferta": null
+          "golCasa": 1,
+          "golTrasferta": 0
         }
       ]
     },
