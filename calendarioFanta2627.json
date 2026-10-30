@@ -474,7 +474,7 @@
             "logo": "images/atalanta.png"
           },
           "golCasa": 1,
-          "golTrasferta": 0
+          "golTrasferta": 1
         }
       ]
     },

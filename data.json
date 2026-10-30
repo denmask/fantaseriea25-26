@@ -83,20 +83,20 @@
     { "pos": 3,  "nome": "Roma",   "punti": 21, "logo": "images/roma.png" },
     { "pos": 4,  "nome": "Como",  "punti": 20, "logo": "images/como.png" },
     { "pos": 5,  "nome": "Milan", "punti": 18, "logo": "images/milan.png" },
-    { "pos": 6,  "nome": "Frosinone",  "punti": 14, "logo": "images/frosinone.png" },
+    { "pos": 6,  "nome": "Frosinone",  "punti": 17, "logo": "images/frosinone.png" },
     { "pos": 7,  "nome": "Napoli",  "punti": 14, "logo": "images/napoli.png" },
     { "pos": 8,  "nome": "Juventus",   "punti": 14, "logo": "images/juventus.png" },
     { "pos": 9,  "nome": "Torino",   "punti": 13, "logo": "images/torino.png" },
     { "pos": 10, "nome": "Cagliari",  "punti": 13, "logo": "images/cagliari.png" },
     { "pos": 11, "nome": "Bologna",  "punti": 11, "logo": "images/bologna.png" },
-    { "pos": 12, "nome": "Atalanta",  "punti": 10, "logo": "images/atalanta.png" },
+    { "pos": 12, "nome": "Atalanta",  "punti": 11, "logo": "images/atalanta.png" },
     { "pos": 13, "nome": "Genoa",     "punti": 10, "logo": "images/genoa.png" },
     { "pos": 14, "nome": "Lecce",      "punti": 9, "logo": "images/lecce.png" },
     { "pos": 15, "nome": "Sassuolo",     "punti": 8, "logo": "images/sassuolo.png" },
     { "pos": 16, "nome": "Monza",      "punti": 7, "logo": "images/monza.png" },
     { "pos": 17, "nome": "Udinese",       "punti": 5, "logo": "images/udinese.png" },
     { "pos": 18, "nome": "Parma",   "punti": 5, "logo": "images/parma.png" },
-    { "pos": 19, "nome": "Fiorentina",    "punti": 4, "logo": "images/fiorentina.png" },
+    { "pos": 19, "nome": "Fiorentina",    "punti": 5, "logo": "images/fiorentina.png" },
     { "pos": 20, "nome": "Venezia",    "punti": 3, "logo": "images/venezia.png" }
   ],
 
@@ -107,8 +107,8 @@
     { "pos": 4, "nome": "Milan", "punti": 14, "logo": "images/milan.png" },
     { "pos": 5, "nome": "Como",     "punti": 13, "logo": "images/como.png" },
     { "pos": 6, "nome": "Inter",  "punti": 12, "logo": "images/inter.png" },
-    { "pos": 7, "nome": "Atalanta",  "punti": 8, "logo": "images/atalanta.png" },
-    { "pos": 8, "nome": "Bologna",   "punti": 7, "logo": "images/bologna.png" }
+    { "pos": 7, "nome": "Atalanta",  "punti": 9, "logo": "images/atalanta.png" },
+    { "pos": 8, "nome": "Bologna",   "punti": 5, "logo": "images/bologna.png" }
   ],
 
   "palmares": {
