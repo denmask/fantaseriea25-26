@@ -101,7 +101,7 @@
   ],
 
   "classificaFantacalcio": [
-    { "pos": 1, "nome": "Juventus",     "punti": 21, "logo": "images/juventus.png" },
+    { "pos": 1, "nome": "Juventus",     "punti": 24, "logo": "images/juventus.png" },
     { "pos": 2, "nome": "Roma",    "punti": 19, "logo": "images/roma.png" },
     { "pos": 3, "nome": "Milan",  "punti": 18, "logo": "images/milan.png" },
     { "pos": 4, "nome": "Inter", "punti": 18, "logo": "images/inter.png" },
